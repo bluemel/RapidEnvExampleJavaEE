@@ -1,0 +1,11 @@
+This is an exampole project structure according to JEE Example Tutorial:
+http://javathreads.de/2011/05/tutorial-mit-java-ee-6-unter-eclipse-helios-und-mit-maven-unterstuetzung-starten
+
+jboss tools update site:
+http://downloads.sourceforge.net/project/jboss/JBossTools/JBossTools3.2.x/jbosstools-3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329.zip?r=http%3A%2F%2Fwww.jboss.org%2Ftools%2Fdownload%2Fstable%2F3_2_GA&amp;ts=1322340366&amp;use_mirror=dfn
+
+m2e update site:
+http://m2eclipse.sonatype.org/sites/m2e/0.12.1.20110112-1712/
+
+m2e-extras
+http://m2eclipse.sonatype.org/sites/m2e-extras/0.12.0.20110421-1500

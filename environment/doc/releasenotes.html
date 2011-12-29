@@ -1,0 +1,180 @@
+<html><head><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>RapidEnv Release Notes</title><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article" title="RapidEnv Release Notes"><div class="titlepage"><div><div><h2 class="title"><a name="N2000C"></a>
+		RapidEnv Release Notes
+	</h2></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#N20013">1.2.x</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N20018">1.3.0</a></span></dt><dt><span class="sect2"><a href="#N20053">1.2.0</a></span></dt></dl></dd><dt><span class="sect1"><a href="#N200E0">1.1.x</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N200E5">1.1.0</a></span></dt></dl></dd><dt><span class="sect1"><a href="#N201AD">1.0.x</a></span></dt><dd><dl><dt><span class="sect2"><a href="#N201B2">1.0.3</a></span></dt><dt><span class="sect2"><a href="#N201CE">1.0.2</a></span></dt><dt><span class="sect2"><a href="#N201DE">1.0.1</a></span></dt></dl></dd></dl></div>
+	
+	<div class="sect1" title="1.2.x"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20013"></a>1.2.x</h2></div></div></div>
+		
+	<div class="sect2" title="1.3.0"><div class="titlepage"><div><div><h3 class="title"><a name="N20018"></a>1.3.0</h3></div></div></div>
+		
+		<p>
+			Issue date: 12/31/2011
+		</p>
+		<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+				<p><span class="bold"><strong>Introduced install state data file ".renvstate.xml"</strong></span>
+				in order to persist the installation state and to make install unit home directories
+				independent from the name/version convention.
+				<span class="bold"><strong>Please not: this change requires migration of existing environment.</strong></span>
+				Migration should happen automatically during the first "renv" call.
+				If not simply install the installation unit again.
+				</p>
+			</li><li class="listitem">
+				<p><span class="bold"><strong>Introduced integration of ant tasks</strong></span>
+				alternatively to system commands</p>
+			</li><li class="listitem">
+				<p><span class="bold"><strong>Introduced input for commands with multiple lines.</strong></span>
+				in order to allow automatic user interactions of e. g. installers.</p>
+			</li><li class="listitem">
+				<p><span class="bold"><strong>Introduced message texts for commands</strong></span></p>
+			</li><li class="listitem">
+				<p><span class="bold"><strong>Improved HTTP download speed by factor 4</strong></span></p>
+			</li></ul></div>
+	</div>
+	<div class="sect2" title="1.2.0"><div class="titlepage"><div><div><h3 class="title"><a name="N20053"></a>1.2.0</h3></div></div></div>
+		
+		<p>
+			Issue date: 11/03/2011
+		</p>
+		<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+				<p><span class="bold"><strong>RapidEnv language changes</strong></span>
+					(slight migration effort):
+					</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+							<p>
+								Renamed property attribute <span class="bold"><strong>propmode</strong></span> to <span class="bold"><strong>category</strong></span>
+							</p>
+						</li><li class="listitem">
+							<p>
+								Renamed property attribute <span class="bold"><strong>proptype</strong></span> to <span class="bold"><strong>valuetype</strong></span>
+							</p>
+						</li><li class="listitem">
+							<p>
+								Changed property category value <span class="bold"><strong>individual</strong></span> to <span class="bold"><strong>personal</strong></span>
+							</p>
+						</li></ul></div><p>
+				</p>
+			</li><li class="listitem"><p>
+				<span class="bold"><strong>Improved properties status display:</strong></span>
+				show common properties { '=' , '!' } and personal properties 'p'.
+				</p>
+			</li><li class="listitem"><p><span class="bold"><strong>Introduced explicit property modification:</strong></span>
+				while "renv u &lt;property-name&gt; ..." will update one ore more
+				common properties if necessary the same command given on a
+				personal property will let you redefine its value.
+				"renv c &lt;property-name&gt; ..." exactly behaves the same
+				way.</p>
+			</li><li class="listitem">
+				<p>Introduced <span class="bold"><strong>folder</strong></span> configuration (in analogy
+				    to file configuration):
+					the <span class="bold"><strong>sourceurl</strong></span> property defines a packed file
+					to unpack under the folder. If no packed file is specified the folder simply is
+					created</p>
+			</li><li class="listitem"><p>
+				Introduced element <span class="bold"><strong>commandonconfig:</strong></span>
+				for commands that should be executed whenever a file or folder has been (re) configured.
+				</p>
+			</li><li class="listitem"><p>
+				Introduced property <span class="bold"><strong>deleteafterdeinstall:</strong></span>
+				for configuration files (folders) outside the installation root (e. g. Eclipse links).
+				</p>
+			</li><li class="listitem"><p><span class="bold"><strong>Replaced windows shortcut creation JShortcut solution
+				with Windows scripting host solution.</strong></span></p>
+			</li><li class="listitem"><p>Introduced <span class="bold"><strong>replace() function expression</strong></span>
+				for simple text replacement in expressions.</p>
+			</li><li class="listitem"><p>
+				<span class="bold"><strong>Started with Eclipse support:</strong></span>
+				plugins, simple workspace configurations (build pat variables), projects, ...
+				</p>
+			</li></ul></div>
+	</div>
+	</div>
+	<div class="sect1" title="1.1.x"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N200E0"></a>1.1.x</h2></div></div></div>
+		
+	<div class="sect2" title="1.1.0"><div class="titlepage"><div><div><h3 class="title"><a name="N200E5"></a>1.1.0</h3></div></div></div>
+		
+		<p>
+			Issue date: 08/01/2011
+		</p>
+		<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p><span class="bold"><strong>Introduced UNIX support</strong></span> with
+				</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p>a cmd line shell script wrapper renv (execute '. renv')</p></li><li class="listitem"><p>support of desktop icons maintenance (start menu support is still incomplete)</p></li><li class="listitem"><p>support of a "command prompt here" like Dolphin (KDE) and Nautilus (Gnome) menu extension</p></li></ul></div><p>
+				tested und openSUSE Linux 11.4 together with KDE and Gnome</p></li><li class="listitem"><p><span class="bold"><strong>Extended unpacking of archive files</strong></span>
+				in order to support not only zip format:
+				Currently the following formats are supported:
+				<span class="bold"><strong>zip</strong></span> "*.zip
+				<span class="bold"><strong>jar</strong></span> "*.jar
+				<span class="bold"><strong>war</strong></span> "*.war
+				<span class="bold"><strong>tar</strong></span> "*.tar
+				<span class="bold"><strong>tar with gzip compression</strong></span> "*.tar.gz, *.tgz
+				<span class="bold"><strong>tar with b2zip compression</strong></span> "*.tar.bz2, *.bz2
+				</p></li><li class="listitem"><p><span class="bold"><strong>Introduced expression function packaging()</strong></span>
+				to determine platform specific packaging ("zip" vs. "tar.gz")</p>
+			</li><li class="listitem"><p><span class="bold"><strong>Introduced expression function userhome()</strong></span>
+				to determine the user's home directory platform independently</p>
+			</li><li class="listitem"><p><span class="bold"><strong>Introduced conversionmap argument</strong></span>
+				for expression functions <span class="bold"><strong>osname()</strong></span>,
+				<span class="bold"><strong>architcture()</strong></span>,
+				and <span class="bold"><strong>packaging()</strong></span>
+				in order to allow flexible determination of OS and architecture specific
+				installation file names.</p>
+			</li><li class="listitem"><p><span class="bold"><strong>Fixed expression function homedir()</strong></span>
+				which did not know its parent installunit in some cases.</p>
+			</li><li class="listitem"><p><span class="bold"><strong>Introduced attribute sourcefile</strong></span>
+				to compensate complex download URLs.</p>
+			</li><li class="listitem"><p><span class="bold"><strong>Introduced icon configuration</strong></span>
+				for shortcuts and start menu entries on the desktop (Windows and KDE)</p>
+			</li><li class="listitem"><p><span class="bold"><strong>Introduced special environment variable RAPID_ENV_PROJECT_HOME</strong></span>
+				to determine the project development root directory.
+				Defining a property mapped to this environment variable lets you define
+				this project root commonly or individual.
+				Once RAPID_ENV_PROJECT_HOME is defined renv will issue a warning if executed
+				with a workind directory that is not below the project root. This will help
+				developers not to get mixed up especially when working with multiple development
+				environments for the same project e.g. when working with different branches.</p>
+			</li><li class="listitem"><p><span class="bold"><strong>Fixed deinstallation of old installation unit versions during up and downgrade.</strong></span>
+				Upgrade and downgrade now perform a complete deinstallation instead of only removing the
+				installation files. The version to deinstall will now be properly expanded into expressions
+				used to define icons, deinstalltion commands etc...</p></li><li class="listitem"><p><span class="bold"><strong>Fixed exception for "renv -v"</strong></span>
+				which is the shortcut for "renv -verbose stat"</p></li><li class="listitem"><p><span class="bold"><strong>Fixed several use cases dealing with path extensions</strong></span>
+				including suppression of extendng path component '.' or './'.</p></li><li class="listitem"><p><span class="bold"><strong>Renamed install control literal deprecated</strong></span>
+				to <span class="bold"><strong>discontinued</strong></span>.</p></li><li class="listitem"><p><span class="bold"><strong>Fixed missing propagation of "discontinued" to sub installation units</strong></span></p></li><li class="listitem"><p><span class="bold"><strong>Investigated reflexive command path definition</strong></span>
+				When the command path is defined recursively during the next update all old values
+				were contained including the path that should be removed.
+				You have to use function "substractextions" around recursive value definitions
+				and you have to mark path compomnents you want to remove with a property extision
+				of kind "remove". Summary: do not define the command path as common property reflexively.
+				Rather define an individual string property that is part of the common command path property.</p></li><li class="listitem"><p><span class="bold"><strong>Introduced new option "-yes": </strong></span>
+				If you use this option the "boot", "update", or "configuration"
+				will run without user interaction which causes individual properties to get the default values.
+				Yes / No questions will be automatically answered with "Yes".
+				So you should use this option for non-interactive (batch) build processes or scripts.</p>
+			</li><li class="listitem"><p><span class="bold"><strong>Adapted property update behaviour: </strong></span>
+				Properties are from now on updated on demand
+				(with commands "update" or "configure").</p></li><li class="listitem"><p><span class="bold"><strong>Introduced release notes</strong></span></p></li></ul></div>
+	</div>
+	</div>
+	<div class="sect1" title="1.0.x"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N201AD"></a>1.0.x</h2></div></div></div>
+		
+	<div class="sect2" title="1.0.3"><div class="titlepage"><div><div><h3 class="title"><a name="N201B2"></a>1.0.3</h3></div></div></div>
+		
+		<p>
+			Issue date: 12/20/2010
+		</p>
+		<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Renamed project attribute
+				<span class="bold"><strong>branch</strong></span> to
+				<span class="bold"><strong>tag</strong></span>.</p></li><li class="listitem"><p>Improved reference manual</p></li></ul></div>
+	</div>
+	<div class="sect2" title="1.0.2"><div class="titlepage"><div><div><h3 class="title"><a name="N201CE"></a>1.0.2</h3></div></div></div>
+		
+		<p>
+			Issue date: 11/11/2010
+		</p>
+		<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Fixed exception in case of unknown functions.
+Unknown functions now simply remain uninterpreted.</p></li></ul></div>
+	</div>
+	<div class="sect2" title="1.0.1"><div class="titlepage"><div><div><h3 class="title"><a name="N201DE"></a>1.0.1</h3></div></div></div>
+		
+		<p>
+			Issue date: 10/12/2010
+		</p>
+		<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>First versioned release</p></li></ul></div>
+	</div>
+	</div>
+</div></body></html>

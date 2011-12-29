@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<runtimes>
+  <runtime id="JBoss 6.0 Runtime"
+    location="@@@jboss.home@@@"
+    name="JBoss 6.0 Runtime"
+    org.jboss.ide.eclipse.as.core.runtime.configurationLocation="server"
+    org.jboss.ide.eclipse.as.core.runtime.configurationName="default"
+    runtime-type-id="org.jboss.ide.eclipse.as.runtime.60"
+    timestamp="1"
+    />
+</runtimes>

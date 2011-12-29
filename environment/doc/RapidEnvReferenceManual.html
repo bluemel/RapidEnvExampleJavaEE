@@ -1,0 +1,4822 @@
+<html><head><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>RapidEnv Reference Manual Martin Bl&uuml;mel</title><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" title="RapidEnv Reference Manual Martin Bl&uuml;mel"><div class="titlepage"><div><div><h1 class="title"><a name="N2000B"></a>
+		RapidEnv Reference Manual
+		<div class="author"><h3 class="author">Martin Bl&uuml;mel</h3></div>
+	</h1></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="preface"><a href="#N20018"></a></span></dt><dt><span class="chapter"><a href="#N20020">1. RapidEnv Configuration Language Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#N20025">project</a></span></dt><dt><span class="section"><a href="#N200BB">property</a></span></dt><dt><span class="section"><a href="#N20219">specificvalue</a></span></dt><dt><span class="section"><a href="#N2025B">environment</a></span></dt><dt><span class="section"><a href="#N202AF">extension</a></span></dt><dt><span class="section"><a href="#N20303">installunit</a></span></dt><dt><span class="section"><a href="#N205B2">download</a></span></dt><dt><span class="section"><a href="#N20632">sourcefilecheck</a></span></dt><dt><span class="section"><a href="#N206B2">subunit</a></span></dt><dt><span class="section"><a href="#N20961">folder</a></span></dt><dt><span class="section"><a href="#N20B07">task</a></span></dt><dt><span class="section"><a href="#N20B49">commandonconfig</a></span></dt><dt><span class="section"><a href="#N20CE6">argument</a></span></dt><dt><span class="section"><a href="#N20D7C">return</a></span></dt><dt><span class="section"><a href="#N20DAC">stdout</a></span></dt><dt><span class="section"><a href="#N20DEE">stderr</a></span></dt><dt><span class="section"><a href="#N20E30">verifycmd</a></span></dt><dt><span class="section"><a href="#N20FCD">icon</a></span></dt><dt><span class="section"><a href="#N2112E">propertiesfile</a></span></dt><dt><span class="section"><a href="#N212D4">setpropvalue</a></span></dt><dt><span class="section"><a href="#N2135E">textfile</a></span></dt><dt><span class="section"><a href="#N21522">replace</a></span></dt><dt><span class="section"><a href="#N21588">delete</a></span></dt><dt><span class="section"><a href="#N215DC">insert</a></span></dt><dt><span class="section"><a href="#N2166E">anttask</a></span></dt><dt><span class="section"><a href="#N2181D">command</a></span></dt><dt><span class="section"><a href="#N219BA">xmlfile</a></span></dt><dt><span class="section"><a href="#N21BA5">deletenode</a></span></dt><dt><span class="section"><a href="#N21BF9">setnodevalue</a></span></dt><dt><span class="section"><a href="#N21C5F">installcommand</a></span></dt><dt><span class="section"><a href="#N21DFC">deinstallcommand</a></span></dt><dt><span class="section"><a href="#N21F99">propextension</a></span></dt></dl></dd><dt><span class="chapter"><a href="#N21FFD">2. RapidEnv Expression Language Reference</a></span></dt><dd><dl><dt><span class="sect1"><a href="#N22002">String Literal</a></span></dt><dt><span class="sect1"><a href="#N2200B">Property Value Expansion</a></span></dt><dt><span class="sect1"><a href="#N22014">Functions</a></span></dt></dl></dd><dt><span class="chapter"><a href="#N22229">3. RapidEnv Command Line Reference</a></span></dt><dd><dl><dt><span class="sect1"><a href="#N2222E">Usage</a></span></dt><dt><span class="sect1"><a href="#N22237">Commands</a></span></dt><dt><span class="sect1"><a href="#N2229A">Options</a></span></dt></dl></dd></dl></div>
+	
+	<div class="preface"><div class="titlepage"></div>
+		<p>
+			The comprehensive reference describing the configuration language,
+			the expression language, and the commandline interface.
+		</p>
+
+	</div>
+	<div class="chapter" title="Chapter&nbsp;1.&nbsp;RapidEnv Configuration Language Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N20020"></a>Chapter&nbsp;1.&nbsp;RapidEnv Configuration Language Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#N20025">project</a></span></dt><dt><span class="section"><a href="#N200BB">property</a></span></dt><dt><span class="section"><a href="#N20219">specificvalue</a></span></dt><dt><span class="section"><a href="#N2025B">environment</a></span></dt><dt><span class="section"><a href="#N202AF">extension</a></span></dt><dt><span class="section"><a href="#N20303">installunit</a></span></dt><dt><span class="section"><a href="#N205B2">download</a></span></dt><dt><span class="section"><a href="#N20632">sourcefilecheck</a></span></dt><dt><span class="section"><a href="#N206B2">subunit</a></span></dt><dt><span class="section"><a href="#N20961">folder</a></span></dt><dt><span class="section"><a href="#N20B07">task</a></span></dt><dt><span class="section"><a href="#N20B49">commandonconfig</a></span></dt><dt><span class="section"><a href="#N20CE6">argument</a></span></dt><dt><span class="section"><a href="#N20D7C">return</a></span></dt><dt><span class="section"><a href="#N20DAC">stdout</a></span></dt><dt><span class="section"><a href="#N20DEE">stderr</a></span></dt><dt><span class="section"><a href="#N20E30">verifycmd</a></span></dt><dt><span class="section"><a href="#N20FCD">icon</a></span></dt><dt><span class="section"><a href="#N2112E">propertiesfile</a></span></dt><dt><span class="section"><a href="#N212D4">setpropvalue</a></span></dt><dt><span class="section"><a href="#N2135E">textfile</a></span></dt><dt><span class="section"><a href="#N21522">replace</a></span></dt><dt><span class="section"><a href="#N21588">delete</a></span></dt><dt><span class="section"><a href="#N215DC">insert</a></span></dt><dt><span class="section"><a href="#N2166E">anttask</a></span></dt><dt><span class="section"><a href="#N2181D">command</a></span></dt><dt><span class="section"><a href="#N219BA">xmlfile</a></span></dt><dt><span class="section"><a href="#N21BA5">deletenode</a></span></dt><dt><span class="section"><a href="#N21BF9">setnodevalue</a></span></dt><dt><span class="section"><a href="#N21C5F">installcommand</a></span></dt><dt><span class="section"><a href="#N21DFC">deinstallcommand</a></span></dt><dt><span class="section"><a href="#N21F99">propextension</a></span></dt></dl></div>
+		
+
+			<div class="section" title="project"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20025"></a>project</h2></div></div></div>
+				
+
+				<p>The root object for every project environment defined
+by means of RapidEnv. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>name: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The development environment project name
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>tag: </strong></span>string, <span class="emphasis"><em>optional</em></span>, default = "main"
+					</p>
+
+					<p>The tag specifies an ID which together with the project name
+uniquely identifies a development environment on your machine.
+Since you usually only have more than one development environment
+concerning the same project on your machine in case you have to
+work with different branches in parellel this tag will usually
+specify the branch (e. g. "main"). but it's also possible to work with
+two different local development environments on the same branch.
+In this case the tag value has to be specified differently
+(e. g. "main_a" and main_b").
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>installsourceurl: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The URL where all installation unit packages are taken from
+by default. If an installunit's "sourceurl" is not defined
+it automatically defaults to &lt;installsourceurl&gt;/&lt;installunit.space&gt;/&lt;installunit.name&gt;/&lt;installunit.version&gt;
+whereas each component of "installunit.space" will become a separate subfolder. 
+Otherwise install units define their specific source URL.
+This property is not mandatory but you are supposed to
+ether specify a value for it
+or to specify "sourceurl" for all the project's installunits.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>installtargetdir: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The relative or absolute path to the local folder where all install units are installed to by default.
+If an installunit's "homedir" is not defined the "homedir" automatically defaults to
+&lt;installtargetdir&gt;/&lt;installunit.space&gt;/&lt;installunit.name&gt;/&lt;installunit.version&gt;
+whereas each component of "space" will become a separate subfolder. 
+Otherwise install units define their specific home directory.
+This property is not mandatory but you are supposed to
+ether specify a value for it
+or to specify a "homedir" for all the project's installunits.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>profiledir: </strong></span>path to local file, <span class="emphasis"><em>optional</em></span>, default = "profile"
+					</p>
+
+					<p>The folder where all user profiles are located.
+By default this value is the folder where the renv command is located.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>property: </strong></span>child element [0..*]
+					</p>
+
+					<p>The global property definitions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>installunit: </strong></span>child element [0..*]
+					</p>
+
+					<p>The install unit definitions
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>expressionLiteralEscaping: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Set this value to true if you want to use
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="property"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N200BB"></a>property</h2></div></div></div>
+				
+
+				<p>A property is a named value that is either defined centrally
+(mode = "common") or personally (mode = "personal"). 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>name: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The property's name.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>value: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The property's value depending from its mode:
+
+common: value simply defines the value.
+
+personal: value only defines the default value which interactively can be overwritten.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>category: </strong></span>single choice of { common | personal }, <span class="emphasis"><em>optional</em></span>, default = "common"
+					</p>
+
+					<p>Determines if the property's value can and should be
+individulally set by the user or be a common setting for all environments
+which can be centrally controlled.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>common:</strong></span>
+A common property is defined in the
+environment definition. Its value is not supposed to be changed not be changed personally.
+Whenever its is changed in the environment definition file all installed environments can overtake
+this change during the next run of the renv "update" or "configure" command.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>personal:</strong></span>
+A personal property can be adapted by a developer.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>valuetype: </strong></span>single choice of { string | file | path | url }, <span class="emphasis"><em>optional</em></span>, default = "string"
+					</p>
+
+					<p>Determines the type of this property's value.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>string:</strong></span>
+A string of nearly arbitrary length only limited be the OS.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>file:</strong></span>
+A (path to a) local file or directory.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>path:</strong></span>
+A set of many paths to a local file like the
+OS command path or the Java class path.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>url:</strong></span>
+A path to a remote resource.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>filetype: </strong></span>single choice of { file | directory }, <span class="emphasis"><em>optional</em></span>, default = "directory"
+					</p>
+
+					<p>Specifies if a file is a folder / directory or a simple flat file.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>file:</strong></span>
+
+			A flat file.
+		
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>directory:</strong></span>
+
+			A folder.
+		
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>mustExist: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Only used for propertys of type "file".
+If it is true it is veryfied if the local file or folder exists.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>createIfNotExist: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Only used for propertys of type "file" with file type
+"directory" and if mustExist = "true".
+If it is true for propertys of type 'common' the path automatically
+created if it does not exist. For propertys of type 'personal' the
+user is asked for creation if it does not exist.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>normalize: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Only used for propertys of type "file" and "path".
+If set to "true" file propertys will become normalized which means
+have canonical path(s).
+Additionally in "paths" duplicate entries will be removed.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>interpret: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>If true the specified property value is interpreted.
+If interpretation is not possible and you do not need it you can turn it off here.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>interpretdepth: </strong></span>integer, <span class="emphasis"><em>optional</em></span>, default = "-1"
+					</p>
+
+					<p>If less than 0 the interpretation depth ist unlimited.
+If greater or equal 1 the interpretation depth is limited.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>specificvalue: </strong></span>child element [0..*]
+					</p>
+
+					<p>Specific value definition(s) for this property.
+You might use more than one in case you want to have this property
+different value for different operating systems.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>environment: </strong></span>child element [0..*]
+					</p>
+
+					<p>Environment variable definition(s) for this property.
+You might use more than one in case you want to name the environment variables
+differently for different operating systems.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>extension: </strong></span>child element [0..*]
+					</p>
+
+					<p>Extensions extend the property value by being
+successively appended or prepended.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>installunitextensions: </strong></span>comma separated list of [0..*]
+					</p>
+
+					<p>Install unit extensions extend the property value by being
+successively appended or prepended but lead to some automatic migration in
+case the install unit is upgraded.
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="specificvalue"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20219"></a>specificvalue</h2></div></div></div>
+				
+
+				<p>A specifc value defintion for a RapidEnv property
+This specific value definition overdefines the parent property's value attribute
+for two purposes:
+1) platform (os) specific value definitions
+2) complex value definitions that can't be performed in an XML attribute and need an
+   XML element 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the environment variable becomes a platform specific one.
+If ist is undefined the definition the property's value is valid for all platforms.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="environment"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2025B"></a>environment</h2></div></div></div>
+				
+
+				<p>An environment variable defintion for a RapidEnv property 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>name: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The environment variable name
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the environment variable will become a platform specific one.
+If it is undefined the definition is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="extension"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N202AF"></a>extension</h2></div></div></div>
+				
+
+				<p>A path extension defintion for a RapidEnv property containing any path.
+The platform specific path separator is automatically used in order to prepend or append the extension. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>propextmode: </strong></span>single choice of { prepend | append | remove }, <span class="emphasis"><em>optional</em></span>, default = "append"
+					</p>
+
+					<p>Defines wether to "prepend" or "append" this path extension.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>prepend:</strong></span>
+
+			Prepend the path extension.
+		
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>append:</strong></span>
+
+			Append the path extension.
+		
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>remove:</strong></span>
+
+			Remove an unwanted path extension.
+		
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>value: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The environment variable's (default) value.
+Could be platform specific when using the "osfamily" attribute.
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="installunit"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20303"></a>installunit</h2></div></div></div>
+				
+
+				<p>An installation unit is an installable and configurable unit
+		needed for your development environment e. g
+		the execution platform like JDK,
+		a build tool like Ant,
+		or an IDE like Eclipse. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>space: </strong></span>string, <span class="emphasis"><em>optional</em></span>, default = ""
+					</p>
+
+					<p>The installation unit name space.
+			Works like a package in Java.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>name: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The installation unit name.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>version: </strong></span>version, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The version that is or should be installed.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>depends: </strong></span>comma separated list of [0..*]
+					</p>
+
+					<p>Defines the n to n dependency assocition between installation units.
+Installation of units that depend from other units (depends not null or empty)
+requires the installation of these units before (this holds for transitive dependencies
+too).
+If you install such a unit depending on other ones selectively the required units will be
+automatically be installed before. If you install all units RapidEnv will choose an
+appropriate installation sequence.
+If you deinstall a unit that is required by other ones selectively all other units directly
+or indirectly requiering this unit will be automatically deinstalled before (after user
+confirmation).
+
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>sourcetype: </strong></span>single choice of { url | mavenrepo }, <span class="emphasis"><em>optional</em></span>, default = "url"
+					</p>
+
+					<p>Defines how to get access to the installation source.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>url:</strong></span>
+
+			Installation unit source is defined by a url.
+		
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mavenrepo:</strong></span>
+
+			Installation unit source comes from a Maven repository.
+		
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>sourceurl: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines where the installation source comes from.
+If "sourceurl" is not defined it automatically defaults to
+project.installsourceurl/space/name/version
+whereas each component of "space" will become a separate subfolder.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>sourcefile: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Complex source URLs sometimes make it hard or impossible to figure out the source file name.
+In this case you simply specify the source file name separately.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>homedir: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The folder where the unit is installed on your machine.
+If "homedir" is not defined it automatically defaults to
+project.installtargetdir/space/name/version
+whereas each component of "space" will become a separate subfolder.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the install unit will exclusievely be installed on
+this type of operating system otherwise it will be installed operating system independently.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>installcontrol: </strong></span>single choice of { normal | optional | discontinued }, <span class="emphasis"><em>optional</em></span>, default = "normal"
+					</p>
+
+					<p>Determines if to install or deinstall the installation unit.
+normal: install and update as usual
+optional: install only when explicitely specified in the installation or update command.
+  Update as usual
+discontinued: deinstall during update, refuse instsllstion snd configuration
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>normal:</strong></span>
+
+			Install and update as usual.
+		
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>optional:</strong></span>
+
+			Install only when explicitely specified in the installation or update command.
+Update as usual.
+		
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>discontinued:</strong></span>
+
+			Deinstall during update, refuse installtion and configuration.
+		
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>installmode: </strong></span>single choice of { put | unpack | execute }, <span class="emphasis"><em>optional</em></span>, default = "unpack"
+					</p>
+
+					<p>Determines how to install the installation unit.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>put:</strong></span>
+Simply put a single file into the specified folder.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>unpack:</strong></span>
+Unpack a zip, jar, or tar file.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>execute:</strong></span>
+Execute an installer.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>packaging: </strong></span>single choice of { zip | jar | tar | ziptar }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Determines the type of packaging.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>zip:</strong></span>
+zip file.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>jar:</strong></span>
+jar file.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>tar:</strong></span>
+tar file.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ziptar:</strong></span>
+zipped tar file.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>removerootdirs: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>This flag drives the removal of one or more
+(single) root directories after having unpacked the
+installation zip file under "homedir". While "homedir" is usually
+sufficient the default behavior is removerootdirs="true".
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>deinstallunusedmode: </strong></span>single choice of { never | always | prompt }, <span class="emphasis"><em>optional</em></span>, default = "always"
+					</p>
+
+					<p>Determines if or if not to deinstall unused version(s) after upgrade.
+Per default unused version(s) will always be deinstalled.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>never:</strong></span>
+never deinstall unused versions
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>always:</strong></span>
+always deinstall unused versions
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>prompt:</strong></span>
+prompt if unused versions should be deinstalled
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>property: </strong></span>child element [0..*]
+					</p>
+
+					<p>Installation unit specific property definitions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>download: </strong></span>child element [0..*]
+					</p>
+
+					<p>URLs where to download the installation source
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>sourcefilecheck: </strong></span>child element [0..*]
+					</p>
+
+					<p>Checks on the source file
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>subunit: </strong></span>child element [0..*]
+					</p>
+
+					<p>Subunits if the installation unit. Subunits:
+- can not be installed specifically before their parent units are installed.
+- will be automatically installed when their parent units are installed.
+- will be automatically deinstalled when their parent units are deinstalled (no confirmation).
+- will be usually installed into the parent units installtion location.
+f you install all units RapidEnv will choose an
+appropriate installation sequence.
+
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>folder: </strong></span>child element [0..*]
+					</p>
+
+					<p>Configurations serve to configure an installation unit in distinct phases.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>icon: </strong></span>child element [0..*]
+					</p>
+
+					<p>Configurations serve to configure an installation unit in distinct phases.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>propertiesfile: </strong></span>child element [0..*]
+					</p>
+
+					<p>Configurations serve to configure an installation unit in distinct phases.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>textfile: </strong></span>child element [0..*]
+					</p>
+
+					<p>Configurations serve to configure an installation unit in distinct phases.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>anttask: </strong></span>child element [0..*]
+					</p>
+
+					<p>Configurations serve to configure an installation unit in distinct phases.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>command: </strong></span>child element [0..*]
+					</p>
+
+					<p>Configurations serve to configure an installation unit in distinct phases.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>xmlfile: </strong></span>child element [0..*]
+					</p>
+
+					<p>Configurations serve to configure an installation unit in distinct phases.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>installcommand: </strong></span>child element [0..1]
+					</p>
+
+					<p>Only valid for and mandatory for install units of mode "execute"
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>deinstallcommand: </strong></span>child element [0..1]
+					</p>
+
+					<p>Only valid for and mandatory for install units of mode "execute"
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>propextension: </strong></span>child element [0..*]
+					</p>
+
+					<p>Defines a path extension defintion coming from this install unit.
+The extension will lead to some migration of the property value during upgrade if it changes.
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="download"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N205B2"></a>download</h2></div></div></div>
+				
+
+				<p>Defines a download for one single file. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined this check will become an operating system specific one.
+If it is undefined the definition is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>downloadtype: </strong></span>single choice of { automatic | manual }, <span class="emphasis"><em>optional</em></span>, default = "automatic"
+					</p>
+
+					<p>Describes the method how to download (automatic versus manual))
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>automatic:</strong></span>
+The file may be loaded automatically by the tool.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>manual:</strong></span>
+You have to download the file manually e. g. for license reasons.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>url: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The URL where you can download the file.
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="sourcefilecheck"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20632"></a>sourcefilecheck</h2></div></div></div>
+				
+
+				<p>Defines a hash value check on a file. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined this check will become an operating system specific one.
+If it is undefined the definition is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>hashalgorithm: </strong></span>single choice of { MD5 | SHA1 }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The hash algorithm to use for the check.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>MD5:</strong></span>
+MD5 hash algorithm
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>SHA1:</strong></span>
+SHA1 hash algorithm
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>hashvalue: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The hash value to check against.
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="subunit"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N206B2"></a>subunit</h2></div></div></div>
+				
+
+				<p>An installation unit is an installable and configurable unit
+		needed for your development environment e. g
+		the execution platform like JDK,
+		a build tool like Ant,
+		or an IDE like Eclipse. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>space: </strong></span>string, <span class="emphasis"><em>optional</em></span>, default = ""
+					</p>
+
+					<p>The installation unit name space.
+			Works like a package in Java.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>name: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The installation unit name.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>version: </strong></span>version, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The version that is or should be installed.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>depends: </strong></span>comma separated list of [0..*]
+					</p>
+
+					<p>Defines the n to n dependency assocition between installation units.
+Installation of units that depend from other units (depends not null or empty)
+requires the installation of these units before (this holds for transitive dependencies
+too).
+If you install such a unit depending on other ones selectively the required units will be
+automatically be installed before. If you install all units RapidEnv will choose an
+appropriate installation sequence.
+If you deinstall a unit that is required by other ones selectively all other units directly
+or indirectly requiering this unit will be automatically deinstalled before (after user
+confirmation).
+
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>sourcetype: </strong></span>single choice of { url | mavenrepo }, <span class="emphasis"><em>optional</em></span>, default = "url"
+					</p>
+
+					<p>Defines how to get access to the installation source.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>url:</strong></span>
+
+			Installation unit source is defined by a url.
+		
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mavenrepo:</strong></span>
+
+			Installation unit source comes from a Maven repository.
+		
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>sourceurl: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines where the installation source comes from.
+If "sourceurl" is not defined it automatically defaults to
+project.installsourceurl/space/name/version
+whereas each component of "space" will become a separate subfolder.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>sourcefile: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Complex source URLs sometimes make it hard or impossible to figure out the source file name.
+In this case you simply specify the source file name separately.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>homedir: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The folder where the unit is installed on your machine.
+If "homedir" is not defined it automatically defaults to
+project.installtargetdir/space/name/version
+whereas each component of "space" will become a separate subfolder.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the install unit will exclusievely be installed on
+this type of operating system otherwise it will be installed operating system independently.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>installcontrol: </strong></span>single choice of { normal | optional | discontinued }, <span class="emphasis"><em>optional</em></span>, default = "normal"
+					</p>
+
+					<p>Determines if to install or deinstall the installation unit.
+normal: install and update as usual
+optional: install only when explicitely specified in the installation or update command.
+  Update as usual
+discontinued: deinstall during update, refuse instsllstion snd configuration
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>normal:</strong></span>
+
+			Install and update as usual.
+		
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>optional:</strong></span>
+
+			Install only when explicitely specified in the installation or update command.
+Update as usual.
+		
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>discontinued:</strong></span>
+
+			Deinstall during update, refuse installtion and configuration.
+		
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>installmode: </strong></span>single choice of { put | unpack | execute }, <span class="emphasis"><em>optional</em></span>, default = "unpack"
+					</p>
+
+					<p>Determines how to install the installation unit.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>put:</strong></span>
+Simply put a single file into the specified folder.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>unpack:</strong></span>
+Unpack a zip, jar, or tar file.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>execute:</strong></span>
+Execute an installer.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>packaging: </strong></span>single choice of { zip | jar | tar | ziptar }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Determines the type of packaging.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>zip:</strong></span>
+zip file.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>jar:</strong></span>
+jar file.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>tar:</strong></span>
+tar file.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ziptar:</strong></span>
+zipped tar file.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>removerootdirs: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>This flag drives the removal of one or more
+(single) root directories after having unpacked the
+installation zip file under "homedir". While "homedir" is usually
+sufficient the default behavior is removerootdirs="true".
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>deinstallunusedmode: </strong></span>single choice of { never | always | prompt }, <span class="emphasis"><em>optional</em></span>, default = "always"
+					</p>
+
+					<p>Determines if or if not to deinstall unused version(s) after upgrade.
+Per default unused version(s) will always be deinstalled.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>never:</strong></span>
+never deinstall unused versions
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>always:</strong></span>
+always deinstall unused versions
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>prompt:</strong></span>
+prompt if unused versions should be deinstalled
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>property: </strong></span>child element [0..*]
+					</p>
+
+					<p>Installation unit specific property definitions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>download: </strong></span>child element [0..*]
+					</p>
+
+					<p>URLs where to download the installation source
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>sourcefilecheck: </strong></span>child element [0..*]
+					</p>
+
+					<p>Checks on the source file
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>subunit: </strong></span>child element [0..*]
+					</p>
+
+					<p>Subunits if the installation unit. Subunits:
+- can not be installed specifically before their parent units are installed.
+- will be automatically installed when their parent units are installed.
+- will be automatically deinstalled when their parent units are deinstalled (no confirmation).
+- will be usually installed into the parent units installtion location.
+f you install all units RapidEnv will choose an
+appropriate installation sequence.
+
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>folder: </strong></span>child element [0..*]
+					</p>
+
+					<p>Configurations serve to configure an installation unit in distinct phases.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>icon: </strong></span>child element [0..*]
+					</p>
+
+					<p>Configurations serve to configure an installation unit in distinct phases.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>propertiesfile: </strong></span>child element [0..*]
+					</p>
+
+					<p>Configurations serve to configure an installation unit in distinct phases.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>textfile: </strong></span>child element [0..*]
+					</p>
+
+					<p>Configurations serve to configure an installation unit in distinct phases.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>anttask: </strong></span>child element [0..*]
+					</p>
+
+					<p>Configurations serve to configure an installation unit in distinct phases.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>command: </strong></span>child element [0..*]
+					</p>
+
+					<p>Configurations serve to configure an installation unit in distinct phases.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>xmlfile: </strong></span>child element [0..*]
+					</p>
+
+					<p>Configurations serve to configure an installation unit in distinct phases.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>installcommand: </strong></span>child element [0..1]
+					</p>
+
+					<p>Only valid for and mandatory for install units of mode "execute"
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>deinstallcommand: </strong></span>child element [0..1]
+					</p>
+
+					<p>Only valid for and mandatory for install units of mode "execute"
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>propextension: </strong></span>child element [0..*]
+					</p>
+
+					<p>Defines a path extension defintion coming from this install unit.
+The extension will lead to some migration of the property value during upgrade if it changes.
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="folder"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20961"></a>folder</h2></div></div></div>
+				
+
+				<p>An configuration operation on a single folder 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>installphase: </strong></span>single choice of { preinstall | postinstall | config | predeinstall | postdeinstall }, <span class="emphasis"><em>optional</em></span>, default = "config"
+					</p>
+
+					<p>The phase when the configuration is executed:
+- preinstall    before first or update installation
+- postinstall   after first or update installation only
+- config        after first or update installation or during explicit configuration
+- predeinstall  before removing the installation
+- postdeinstall after removing the installation
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>preinstall:</strong></span>
+before first or update installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postinstall:</strong></span>
+after first or update installation only
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>config:</strong></span>
+after first or update installation or during explicit configuration
+which is automatically done if executing the update command or the config command.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>predeinstall:</strong></span>
+before removing the installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postdeinstall:</strong></span>
+after removing the installation
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration step gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>expressionliteralescaping: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Set this value to true if you want to use expression literal escaping
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>cleanupfilesonconfig: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines a comma separated list of files that will be deleted
+after this configuration has been performed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>path: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The path to the file to configure. The path usually is a relative one.
+If it is relative it is supposed to be relative to the parent installation unit's home directory.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>sourceurl: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines where the file to configure comes from.
+If "sourceurl" is not defined the file to configure is supposed to be already
+existent and will only be changed from its original form.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>deleteafterdeinstall: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Determines if the configuration file should be deleted
+after deinstallation in case it is not under the installation root.
+In the case it is under the installation root it will be deleted anyway.
+Set this value to false if you want to prevent this default behavior.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>newline: </strong></span>single choice of { platform | lf | crlf }, <span class="emphasis"><em>optional</em></span>, default = "platform"
+					</p>
+
+					<p>Defines the newline character(s) to use.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>platform:</strong></span>
+The platform specific newline character.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>lf:</strong></span>
+Simple newline with one single line feed sign.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>crlf:</strong></span>
+Windows specific newline character combination:
+			carriage return + line feed
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>canread: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Determines if the file to configure can be read
+(default = true).
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>canwrite: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Determines if the file to configure can be written
+(default = true).
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>canexecute: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Determines if the file to configure can be executed
+(default = false).
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>copycondition: </strong></span>single choice of { notexist | sourcenewer | diff }, <span class="emphasis"><em>optional</em></span>, default = "sourcenewer"
+					</p>
+
+					<p>The condition when the source is copied over the target:
+notexist:    when the target does not exist
+sourcenewer: when the source is new than the target: allows manual and
+             automatic change aftwerwards but ensures template changes
+			 being processed
+diff:        strict binding to the source file (manual changes are excluded)
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>notexist:</strong></span>
+Copy only if the target file does not exist.
+The file can be changed indiviually after installation.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>sourcenewer:</strong></span>
+Copy only if the source file is newer that the target file.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>diff:</strong></span>
+Copy every time the target file differs from the source file.
+THis ist the strictest rule.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>task: </strong></span>child element [0..*]
+					</p>
+
+					<p>Tasks serve to extend the configuration.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>commandonconfig: </strong></span>child element [0..1]
+					</p>
+
+					<p>Defines a system command that is automatically
+executed whenever a configuration on this file or folder has been performed
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="task"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20B07"></a>task</h2></div></div></div>
+				
+
+				<p>A single configuration step for a RapidEnv installation unit
+configuration. g.
+- copying or deleting a file
+- an atomic change in one file
+- executing a command
+...
+A configuration task always can be checked if it is neccessary
+or already done.
+ 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration task gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="commandonconfig"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20B49"></a>commandonconfig</h2></div></div></div>
+				
+
+				<p>A system command configuration allows you to define
+		the execution of an arbitrary batch script or executable synchronously
+		or asynchronously on operation system level with an arbitray set
+		of arguments. Additionally you can check preconditions on files
+		if the command has to be executed. Postconditions on the return code,
+		stdout and stderror as well as on files can be used to verify
+		command execution success. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>installphase: </strong></span>single choice of { preinstall | postinstall | config | predeinstall | postdeinstall }, <span class="emphasis"><em>optional</em></span>, default = "config"
+					</p>
+
+					<p>The phase when the configuration is executed:
+- preinstall    before first or update installation
+- postinstall   after first or update installation only
+- config        after first or update installation or during explicit configuration
+- predeinstall  before removing the installation
+- postdeinstall after removing the installation
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>preinstall:</strong></span>
+before first or update installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postinstall:</strong></span>
+after first or update installation only
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>config:</strong></span>
+after first or update installation or during explicit configuration
+which is automatically done if executing the update command or the config command.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>predeinstall:</strong></span>
+before removing the installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postdeinstall:</strong></span>
+after removing the installation
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration step gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>expressionliteralescaping: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Set this value to true if you want to use expression literal escaping
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>cleanupfilesonconfig: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines a comma separated list of files that will be deleted
+after this configuration has been performed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>executable: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The Executable or batch file to execute
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>runasbatch: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run under control of a separate command line shell
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>async: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run asynchronously
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>workingdir: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The working directory in which to execute the command.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>silent: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run silently
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagestart: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard output
+before the command is executed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagesuccess: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard output
+after the command has been executed successfully
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagefailure: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard error
+after the command execution ended with errors (return != 0)
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>argument: </strong></span>child element [0..*]
+					</p>
+
+					<p>Command arguments.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>return: </strong></span>child element [0..*]
+					</p>
+
+					<p>Return value conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>stdout: </strong></span>child element [0..*]
+					</p>
+
+					<p>Standard out contents conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>stderr: </strong></span>child element [0..*]
+					</p>
+
+					<p>Standard err contents conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>verifycmd: </strong></span>child element [0..*]
+					</p>
+
+					<p>The verify commands.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>input: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Define input lines if you intend to
+to have automatic user input
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="argument"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20CE6"></a>argument</h2></div></div></div>
+				
+
+				<p>
+ 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>name: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Optionally define a name either in order only to document
+the argument or optionally to extend the argument value.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>value: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The argument value. Can involve the argument name
+using special pseudo property "argument.name"
+e. g with "${argument.name}=((value))"
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>valuetype: </strong></span>single choice of { string | bool | date | file | integer | floating }, <span class="emphasis"><em>optional</em></span>, default = "string"
+					</p>
+
+					<p>The value type of the argument.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>string:</strong></span>
+
+			A string argument. Usually the default for argument choices.
+		
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>bool:</strong></span>
+A boolean argument.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>date:</strong></span>
+A date argument.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>file:</strong></span>
+A file argument.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>integer:</strong></span>
+An integer number argument.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>floating:</strong></span>
+A floating point number argument.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>quoted: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Sometimes it's absolutely neccessary to have an argument
+quoted in the command line string automatically. In some cases however you might
+want to suppress this default behaviour. In these cases set this property to "false"
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="return"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20D7C"></a>return</h2></div></div></div>
+				
+
+				<p>Defines a condition on the return value
+at the end of the system command execution. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>equals: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The return value has to equal a distinct value.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>matches: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The return value has to match the given pattern.
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="stdout"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20DAC"></a>stdout</h2></div></div></div>
+				
+
+				<p>Defines a condition on the standard out contents
+at the end of the system command execution. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>matches: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The standard out output has to match the specified pattern (Java regular expression) from begin to end.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>contains: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The standard out output must contain the specified string.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>containsmatch: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The standard out output has to match the specified pattern (Java regular expression).
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="stderr"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20DEE"></a>stderr</h2></div></div></div>
+				
+
+				<p>Defines a condition on the standard error contents
+at the end of the system command execution. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>matches: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The standard error output has to match the specified pattern (Java regular expression) from begin to end.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>contains: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The standard error output must contain the specified string.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>containsmatch: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The standard error output has to match the specified pattern (Java regular expression).
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="verifycmd"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20E30"></a>verifycmd</h2></div></div></div>
+				
+
+				<p>A system command configuration allows you to define
+		the execution of an arbitrary batch script or executable synchronously
+		or asynchronously on operation system level with an arbitray set
+		of arguments. Additionally you can check preconditions on files
+		if the command has to be executed. Postconditions on the return code,
+		stdout and stderror as well as on files can be used to verify
+		command execution success. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>installphase: </strong></span>single choice of { preinstall | postinstall | config | predeinstall | postdeinstall }, <span class="emphasis"><em>optional</em></span>, default = "config"
+					</p>
+
+					<p>The phase when the configuration is executed:
+- preinstall    before first or update installation
+- postinstall   after first or update installation only
+- config        after first or update installation or during explicit configuration
+- predeinstall  before removing the installation
+- postdeinstall after removing the installation
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>preinstall:</strong></span>
+before first or update installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postinstall:</strong></span>
+after first or update installation only
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>config:</strong></span>
+after first or update installation or during explicit configuration
+which is automatically done if executing the update command or the config command.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>predeinstall:</strong></span>
+before removing the installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postdeinstall:</strong></span>
+after removing the installation
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration step gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>expressionliteralescaping: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Set this value to true if you want to use expression literal escaping
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>cleanupfilesonconfig: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines a comma separated list of files that will be deleted
+after this configuration has been performed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>executable: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The Executable or batch file to execute
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>runasbatch: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run under control of a separate command line shell
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>async: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run asynchronously
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>workingdir: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The working directory in which to execute the command.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>silent: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run silently
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagestart: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard output
+before the command is executed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagesuccess: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard output
+after the command has been executed successfully
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagefailure: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard error
+after the command execution ended with errors (return != 0)
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>argument: </strong></span>child element [0..*]
+					</p>
+
+					<p>Command arguments.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>return: </strong></span>child element [0..*]
+					</p>
+
+					<p>Return value conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>stdout: </strong></span>child element [0..*]
+					</p>
+
+					<p>Standard out contents conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>stderr: </strong></span>child element [0..*]
+					</p>
+
+					<p>Standard err contents conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>verifycmd: </strong></span>child element [0..*]
+					</p>
+
+					<p>The verify commands.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>input: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Define input lines if you intend to
+to have automatic user input
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="icon"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20FCD"></a>icon</h2></div></div></div>
+				
+
+				<p>A shell link icon configuration allows you to define
+		a desktop and / or startmenu icon / shortcut which serves
+		as a convenient mean to start or stop programs or processes
+		of your development environment. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>installphase: </strong></span>single choice of { preinstall | postinstall | config | predeinstall | postdeinstall }, <span class="emphasis"><em>optional</em></span>, default = "config"
+					</p>
+
+					<p>The phase when the configuration is executed:
+- preinstall    before first or update installation
+- postinstall   after first or update installation only
+- config        after first or update installation or during explicit configuration
+- predeinstall  before removing the installation
+- postdeinstall after removing the installation
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>preinstall:</strong></span>
+before first or update installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postinstall:</strong></span>
+after first or update installation only
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>config:</strong></span>
+after first or update installation or during explicit configuration
+which is automatically done if executing the update command or the config command.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>predeinstall:</strong></span>
+before removing the installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postdeinstall:</strong></span>
+after removing the installation
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration step gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>expressionliteralescaping: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Set this value to true if you want to use expression literal escaping
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>cleanupfilesonconfig: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines a comma separated list of files that will be deleted
+after this configuration has been performed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>title: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The title of your icon
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>executable: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The program or shell command to execute.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>executionmode: </strong></span>single choice of { simple | cmd | cmdenv }, <span class="emphasis"><em>optional</em></span>, default = "simple"
+					</p>
+
+					<p>The mode how to execute the executable.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>simple:</strong></span>
+
+			Simply execute the executable.
+		
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>cmd:</strong></span>
+
+			Execute in a command prompt (relevant for Windows).
+		
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>cmdenv:</strong></span>
+
+			Execute in a command prompt (relevant for Windows) and with this RapidEnv project's environment set before.
+		
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>argument: </strong></span>child element [0..*]
+					</p>
+
+					<p>Program or shell command arguments.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>executein: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The directory where to execute the program or shell command
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>iconfile: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The icon file to show
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>showondesktop: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Determines if the icon should show up on the desktop
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>showonstartmenu: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Determines if the icon should show up in the start menu
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="propertiesfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2112E"></a>propertiesfile</h2></div></div></div>
+				
+
+				<p>An configuration operation on a single properties file 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>installphase: </strong></span>single choice of { preinstall | postinstall | config | predeinstall | postdeinstall }, <span class="emphasis"><em>optional</em></span>, default = "config"
+					</p>
+
+					<p>The phase when the configuration is executed:
+- preinstall    before first or update installation
+- postinstall   after first or update installation only
+- config        after first or update installation or during explicit configuration
+- predeinstall  before removing the installation
+- postdeinstall after removing the installation
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>preinstall:</strong></span>
+before first or update installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postinstall:</strong></span>
+after first or update installation only
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>config:</strong></span>
+after first or update installation or during explicit configuration
+which is automatically done if executing the update command or the config command.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>predeinstall:</strong></span>
+before removing the installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postdeinstall:</strong></span>
+after removing the installation
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration step gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>expressionliteralescaping: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Set this value to true if you want to use expression literal escaping
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>cleanupfilesonconfig: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines a comma separated list of files that will be deleted
+after this configuration has been performed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>path: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The path to the file to configure. The path usually is a relative one.
+If it is relative it is supposed to be relative to the parent installation unit's home directory.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>sourceurl: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines where the file to configure comes from.
+If "sourceurl" is not defined the file to configure is supposed to be already
+existent and will only be changed from its original form.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>deleteafterdeinstall: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Determines if the configuration file should be deleted
+after deinstallation in case it is not under the installation root.
+In the case it is under the installation root it will be deleted anyway.
+Set this value to false if you want to prevent this default behavior.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>newline: </strong></span>single choice of { platform | lf | crlf }, <span class="emphasis"><em>optional</em></span>, default = "platform"
+					</p>
+
+					<p>Defines the newline character(s) to use.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>platform:</strong></span>
+The platform specific newline character.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>lf:</strong></span>
+Simple newline with one single line feed sign.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>crlf:</strong></span>
+Windows specific newline character combination:
+			carriage return + line feed
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>canread: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Determines if the file to configure can be read
+(default = true).
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>canwrite: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Determines if the file to configure can be written
+(default = true).
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>canexecute: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Determines if the file to configure can be executed
+(default = false).
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>copycondition: </strong></span>single choice of { notexist | sourcenewer | diff }, <span class="emphasis"><em>optional</em></span>, default = "sourcenewer"
+					</p>
+
+					<p>The condition when the source is copied over the target:
+notexist:    when the target does not exist
+sourcenewer: when the source is new than the target: allows manual and
+             automatic change aftwerwards but ensures template changes
+			 being processed
+diff:        strict binding to the source file (manual changes are excluded)
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>notexist:</strong></span>
+Copy only if the target file does not exist.
+The file can be changed indiviually after installation.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>sourcenewer:</strong></span>
+Copy only if the source file is newer that the target file.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>diff:</strong></span>
+Copy every time the target file differs from the source file.
+THis ist the strictest rule.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>setpropvalue: </strong></span>child element [0..*]
+					</p>
+
+					<p>Tasks serve extend the configuration.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>commandonconfig: </strong></span>child element [0..1]
+					</p>
+
+					<p>Defines a system command that is automatically
+executed whenever a configuration on this file or folder has been performed
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="setpropvalue"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N212D4"></a>setpropvalue</h2></div></div></div>
+				
+
+				<p>Sets an XML node (element or attribute).
+Creates the node if not already present. Caution only use node creation for uniqe elements. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration task gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>section: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The section of the property to set.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>name: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The name of the property to set.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>value: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The property value to set.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>commenttag: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The comment tag.
+Defaults to "RapidEnv project ((project name))".
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="textfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2135E"></a>textfile</h2></div></div></div>
+				
+
+				<p>An configuration operation on a single text file 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>installphase: </strong></span>single choice of { preinstall | postinstall | config | predeinstall | postdeinstall }, <span class="emphasis"><em>optional</em></span>, default = "config"
+					</p>
+
+					<p>The phase when the configuration is executed:
+- preinstall    before first or update installation
+- postinstall   after first or update installation only
+- config        after first or update installation or during explicit configuration
+- predeinstall  before removing the installation
+- postdeinstall after removing the installation
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>preinstall:</strong></span>
+before first or update installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postinstall:</strong></span>
+after first or update installation only
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>config:</strong></span>
+after first or update installation or during explicit configuration
+which is automatically done if executing the update command or the config command.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>predeinstall:</strong></span>
+before removing the installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postdeinstall:</strong></span>
+after removing the installation
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration step gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>expressionliteralescaping: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Set this value to true if you want to use expression literal escaping
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>cleanupfilesonconfig: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines a comma separated list of files that will be deleted
+after this configuration has been performed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>path: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The path to the file to configure. The path usually is a relative one.
+If it is relative it is supposed to be relative to the parent installation unit's home directory.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>sourceurl: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines where the file to configure comes from.
+If "sourceurl" is not defined the file to configure is supposed to be already
+existent and will only be changed from its original form.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>deleteafterdeinstall: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Determines if the configuration file should be deleted
+after deinstallation in case it is not under the installation root.
+In the case it is under the installation root it will be deleted anyway.
+Set this value to false if you want to prevent this default behavior.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>newline: </strong></span>single choice of { platform | lf | crlf }, <span class="emphasis"><em>optional</em></span>, default = "platform"
+					</p>
+
+					<p>Defines the newline character(s) to use.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>platform:</strong></span>
+The platform specific newline character.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>lf:</strong></span>
+Simple newline with one single line feed sign.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>crlf:</strong></span>
+Windows specific newline character combination:
+			carriage return + line feed
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>canread: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Determines if the file to configure can be read
+(default = true).
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>canwrite: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Determines if the file to configure can be written
+(default = true).
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>canexecute: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Determines if the file to configure can be executed
+(default = false).
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>copycondition: </strong></span>single choice of { notexist | sourcenewer | diff }, <span class="emphasis"><em>optional</em></span>, default = "sourcenewer"
+					</p>
+
+					<p>The condition when the source is copied over the target:
+notexist:    when the target does not exist
+sourcenewer: when the source is new than the target: allows manual and
+             automatic change aftwerwards but ensures template changes
+			 being processed
+diff:        strict binding to the source file (manual changes are excluded)
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>notexist:</strong></span>
+Copy only if the target file does not exist.
+The file can be changed indiviually after installation.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>sourcenewer:</strong></span>
+Copy only if the source file is newer that the target file.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>diff:</strong></span>
+Copy every time the target file differs from the source file.
+THis ist the strictest rule.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>replace: </strong></span>child element [0..*]
+					</p>
+
+					<p>Tasks serve extend the configuration.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>delete: </strong></span>child element [0..*]
+					</p>
+
+					<p>Tasks serve extend the configuration.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>insert: </strong></span>child element [0..*]
+					</p>
+
+					<p>Tasks serve extend the configuration.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>commandonconfig: </strong></span>child element [0..1]
+					</p>
+
+					<p>Defines a system command that is automatically
+executed whenever a configuration on this file or folder has been performed
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="replace"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21522"></a>replace</h2></div></div></div>
+				
+
+				<p>Replace the given seach pattern by the given text. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration task gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>regexp: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>Specifies the text to replace
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>replaceby: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>Specifies the text to insert instead of the replaced text.
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="delete"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21588"></a>delete</h2></div></div></div>
+				
+
+				<p>Delete all lines specified by the given search pattern. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration task gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>regexp: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>Specifies the line(s) to delete
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="insert"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N215DC"></a>insert</h2></div></div></div>
+				
+
+				<p>Insert a new line at the end or the beginning of the
+given file. Optionally you can insert the line before or after the first occurence
+of a line specified by the given search pattern. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration task gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>line: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The line that should be inserted.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>mode: </strong></span>single choice of { append | prepend }, <span class="emphasis"><em>optional</em></span>, default = "append"
+					</p>
+
+					<p>append / prepend define if to append the line at
+the end of the file or if to prepend it before the beginnig.
+If regexp is defined the line will be appended after or prepended before
+the first occurrence of this line.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>append:</strong></span>
+Append some (lines of) text in the configuration file.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>prepend:</strong></span>
+Prepend some (lines of) text in the configuration file.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>regexp: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Specifies the line where to insert before (prepend)
+or after (append)
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="anttask"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2166E"></a>anttask</h2></div></div></div>
+				
+
+				<p>An ant task command configuration allows you to define
+		the execution of an arbitrary Ant task with an arbitrary set of
+		named arguments. Like with commands you could check preconditions on files
+		if the ant task has to be executed. Postconditions on the return code,
+		stdout and stderror as well as on files can be used to verify
+		ant task execution success. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>installphase: </strong></span>single choice of { preinstall | postinstall | config | predeinstall | postdeinstall }, <span class="emphasis"><em>optional</em></span>, default = "config"
+					</p>
+
+					<p>The phase when the configuration is executed:
+- preinstall    before first or update installation
+- postinstall   after first or update installation only
+- config        after first or update installation or during explicit configuration
+- predeinstall  before removing the installation
+- postdeinstall after removing the installation
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>preinstall:</strong></span>
+before first or update installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postinstall:</strong></span>
+after first or update installation only
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>config:</strong></span>
+after first or update installation or during explicit configuration
+which is automatically done if executing the update command or the config command.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>predeinstall:</strong></span>
+before removing the installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postdeinstall:</strong></span>
+after removing the installation
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration step gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>expressionliteralescaping: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Set this value to true if you want to use expression literal escaping
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>cleanupfilesonconfig: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines a comma separated list of files that will be deleted
+after this configuration has been performed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>executable: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The Executable or batch file to execute
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>runasbatch: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run under control of a separate command line shell
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>async: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run asynchronously
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>workingdir: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The working directory in which to execute the command.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>silent: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run silently
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagestart: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard output
+before the command is executed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagesuccess: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard output
+after the command has been executed successfully
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagefailure: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard error
+after the command execution ended with errors (return != 0)
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>argument: </strong></span>child element [0..*]
+					</p>
+
+					<p>Command arguments.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>return: </strong></span>child element [0..*]
+					</p>
+
+					<p>Return value conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>stdout: </strong></span>child element [0..*]
+					</p>
+
+					<p>Standard out contents conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>stderr: </strong></span>child element [0..*]
+					</p>
+
+					<p>Standard err contents conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>verifycmd: </strong></span>child element [0..*]
+					</p>
+
+					<p>The verify commands.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>input: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Define input lines if you intend to
+to have automatic user input
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>anttaskname: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The ant task to execute
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="command"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2181D"></a>command</h2></div></div></div>
+				
+
+				<p>A system command configuration allows you to define
+		the execution of an arbitrary batch script or executable synchronously
+		or asynchronously on operation system level with an arbitray set
+		of arguments. Additionally you can check preconditions on files
+		if the command has to be executed. Postconditions on the return code,
+		stdout and stderror as well as on files can be used to verify
+		command execution success. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>installphase: </strong></span>single choice of { preinstall | postinstall | config | predeinstall | postdeinstall }, <span class="emphasis"><em>optional</em></span>, default = "config"
+					</p>
+
+					<p>The phase when the configuration is executed:
+- preinstall    before first or update installation
+- postinstall   after first or update installation only
+- config        after first or update installation or during explicit configuration
+- predeinstall  before removing the installation
+- postdeinstall after removing the installation
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>preinstall:</strong></span>
+before first or update installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postinstall:</strong></span>
+after first or update installation only
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>config:</strong></span>
+after first or update installation or during explicit configuration
+which is automatically done if executing the update command or the config command.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>predeinstall:</strong></span>
+before removing the installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postdeinstall:</strong></span>
+after removing the installation
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration step gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>expressionliteralescaping: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Set this value to true if you want to use expression literal escaping
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>cleanupfilesonconfig: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines a comma separated list of files that will be deleted
+after this configuration has been performed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>executable: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The Executable or batch file to execute
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>runasbatch: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run under control of a separate command line shell
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>async: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run asynchronously
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>workingdir: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The working directory in which to execute the command.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>silent: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run silently
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagestart: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard output
+before the command is executed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagesuccess: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard output
+after the command has been executed successfully
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagefailure: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard error
+after the command execution ended with errors (return != 0)
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>argument: </strong></span>child element [0..*]
+					</p>
+
+					<p>Command arguments.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>return: </strong></span>child element [0..*]
+					</p>
+
+					<p>Return value conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>stdout: </strong></span>child element [0..*]
+					</p>
+
+					<p>Standard out contents conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>stderr: </strong></span>child element [0..*]
+					</p>
+
+					<p>Standard err contents conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>verifycmd: </strong></span>child element [0..*]
+					</p>
+
+					<p>The verify commands.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>input: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Define input lines if you intend to
+to have automatic user input
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="xmlfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N219BA"></a>xmlfile</h2></div></div></div>
+				
+
+				<p>An configuration operation on a single XML file 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>installphase: </strong></span>single choice of { preinstall | postinstall | config | predeinstall | postdeinstall }, <span class="emphasis"><em>optional</em></span>, default = "config"
+					</p>
+
+					<p>The phase when the configuration is executed:
+- preinstall    before first or update installation
+- postinstall   after first or update installation only
+- config        after first or update installation or during explicit configuration
+- predeinstall  before removing the installation
+- postdeinstall after removing the installation
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>preinstall:</strong></span>
+before first or update installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postinstall:</strong></span>
+after first or update installation only
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>config:</strong></span>
+after first or update installation or during explicit configuration
+which is automatically done if executing the update command or the config command.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>predeinstall:</strong></span>
+before removing the installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postdeinstall:</strong></span>
+after removing the installation
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration step gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>expressionliteralescaping: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Set this value to true if you want to use expression literal escaping
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>cleanupfilesonconfig: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines a comma separated list of files that will be deleted
+after this configuration has been performed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>path: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The path to the file to configure. The path usually is a relative one.
+If it is relative it is supposed to be relative to the parent installation unit's home directory.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>sourceurl: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines where the file to configure comes from.
+If "sourceurl" is not defined the file to configure is supposed to be already
+existent and will only be changed from its original form.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>deleteafterdeinstall: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Determines if the configuration file should be deleted
+after deinstallation in case it is not under the installation root.
+In the case it is under the installation root it will be deleted anyway.
+Set this value to false if you want to prevent this default behavior.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>newline: </strong></span>single choice of { platform | lf | crlf }, <span class="emphasis"><em>optional</em></span>, default = "platform"
+					</p>
+
+					<p>Defines the newline character(s) to use.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>platform:</strong></span>
+The platform specific newline character.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>lf:</strong></span>
+Simple newline with one single line feed sign.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>crlf:</strong></span>
+Windows specific newline character combination:
+			carriage return + line feed
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>canread: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Determines if the file to configure can be read
+(default = true).
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>canwrite: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Determines if the file to configure can be written
+(default = true).
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>canexecute: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Determines if the file to configure can be executed
+(default = false).
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>copycondition: </strong></span>single choice of { notexist | sourcenewer | diff }, <span class="emphasis"><em>optional</em></span>, default = "sourcenewer"
+					</p>
+
+					<p>The condition when the source is copied over the target:
+notexist:    when the target does not exist
+sourcenewer: when the source is new than the target: allows manual and
+             automatic change aftwerwards but ensures template changes
+			 being processed
+diff:        strict binding to the source file (manual changes are excluded)
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>notexist:</strong></span>
+Copy only if the target file does not exist.
+The file can be changed indiviually after installation.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>sourcenewer:</strong></span>
+Copy only if the source file is newer that the target file.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>diff:</strong></span>
+Copy every time the target file differs from the source file.
+THis ist the strictest rule.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>deletenode: </strong></span>child element [0..*]
+					</p>
+
+					<p>Tasks serve extend the configuration.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>setnodevalue: </strong></span>child element [0..*]
+					</p>
+
+					<p>Tasks serve extend the configuration.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>commandonconfig: </strong></span>child element [0..1]
+					</p>
+
+					<p>Defines a system command that is automatically
+executed whenever a configuration on this file or folder has been performed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>addeleminnewline: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+					</p>
+
+					<p>Defines if a new element node should be added to a new line
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>addattrinnewline: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Defines if a new attribute node should be added to a new line
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>indent: </strong></span>string, <span class="emphasis"><em>optional</em></span>, default = "\t"
+					</p>
+
+					<p>Defines the indentation string
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="deletenode"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21BA5"></a>deletenode</h2></div></div></div>
+				
+
+				<p>Deletes an XML node (element or attribute) if it exists. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration task gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>path: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The path to the file to the XML node (element or attribute) of which the
+value has to be set.
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="setnodevalue"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21BF9"></a>setnodevalue</h2></div></div></div>
+				
+
+				<p>Sets an XML node (element or attribute).
+Creates the node if not already present. Caution only use node creation for uniqe elements. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration task gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>path: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The path to the file to the XML node (element or attribute) of which the
+value has to be set.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>value: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The node value to set.
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="installcommand"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21C5F"></a>installcommand</h2></div></div></div>
+				
+
+				<p>A system command configuration allows you to define
+		the execution of an arbitrary batch script or executable synchronously
+		or asynchronously on operation system level with an arbitray set
+		of arguments. Additionally you can check preconditions on files
+		if the command has to be executed. Postconditions on the return code,
+		stdout and stderror as well as on files can be used to verify
+		command execution success. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>installphase: </strong></span>single choice of { preinstall | postinstall | config | predeinstall | postdeinstall }, <span class="emphasis"><em>optional</em></span>, default = "config"
+					</p>
+
+					<p>The phase when the configuration is executed:
+- preinstall    before first or update installation
+- postinstall   after first or update installation only
+- config        after first or update installation or during explicit configuration
+- predeinstall  before removing the installation
+- postdeinstall after removing the installation
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>preinstall:</strong></span>
+before first or update installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postinstall:</strong></span>
+after first or update installation only
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>config:</strong></span>
+after first or update installation or during explicit configuration
+which is automatically done if executing the update command or the config command.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>predeinstall:</strong></span>
+before removing the installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postdeinstall:</strong></span>
+after removing the installation
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration step gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>expressionliteralescaping: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Set this value to true if you want to use expression literal escaping
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>cleanupfilesonconfig: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines a comma separated list of files that will be deleted
+after this configuration has been performed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>executable: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The Executable or batch file to execute
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>runasbatch: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run under control of a separate command line shell
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>async: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run asynchronously
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>workingdir: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The working directory in which to execute the command.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>silent: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run silently
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagestart: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard output
+before the command is executed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagesuccess: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard output
+after the command has been executed successfully
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagefailure: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard error
+after the command execution ended with errors (return != 0)
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>argument: </strong></span>child element [0..*]
+					</p>
+
+					<p>Command arguments.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>return: </strong></span>child element [0..*]
+					</p>
+
+					<p>Return value conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>stdout: </strong></span>child element [0..*]
+					</p>
+
+					<p>Standard out contents conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>stderr: </strong></span>child element [0..*]
+					</p>
+
+					<p>Standard err contents conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>verifycmd: </strong></span>child element [0..*]
+					</p>
+
+					<p>The verify commands.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>input: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Define input lines if you intend to
+to have automatic user input
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="deinstallcommand"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21DFC"></a>deinstallcommand</h2></div></div></div>
+				
+
+				<p>A system command configuration allows you to define
+		the execution of an arbitrary batch script or executable synchronously
+		or asynchronously on operation system level with an arbitray set
+		of arguments. Additionally you can check preconditions on files
+		if the command has to be executed. Postconditions on the return code,
+		stdout and stderror as well as on files can be used to verify
+		command execution success. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>installphase: </strong></span>single choice of { preinstall | postinstall | config | predeinstall | postdeinstall }, <span class="emphasis"><em>optional</em></span>, default = "config"
+					</p>
+
+					<p>The phase when the configuration is executed:
+- preinstall    before first or update installation
+- postinstall   after first or update installation only
+- config        after first or update installation or during explicit configuration
+- predeinstall  before removing the installation
+- postdeinstall after removing the installation
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>preinstall:</strong></span>
+before first or update installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postinstall:</strong></span>
+after first or update installation only
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>config:</strong></span>
+after first or update installation or during explicit configuration
+which is automatically done if executing the update command or the config command.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>predeinstall:</strong></span>
+before removing the installation
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>postdeinstall:</strong></span>
+after removing the installation
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>osfamily: </strong></span>single choice of { linux | windows | mac }, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>If this value is defined the configuration step gets a platform specific one.
+If ist is undefined the configuration is valid for all platforms without specific definition.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>linux:</strong></span>
+The Linux open source operating system.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows:</strong></span>
+Microsoft Windows.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>mac:</strong></span>
+Apple Mac OS.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>expressionliteralescaping: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>Set this value to true if you want to use expression literal escaping
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>cleanupfilesonconfig: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Defines a comma separated list of files that will be deleted
+after this configuration has been performed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>executable: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The Executable or batch file to execute
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>runasbatch: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run under control of a separate command line shell
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>async: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run asynchronously
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>workingdir: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>The working directory in which to execute the command.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>silent: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "false"
+					</p>
+
+					<p>The command will run silently
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagestart: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard output
+before the command is executed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagesuccess: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard output
+after the command has been executed successfully
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>messagefailure: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>This message will be printed on standard error
+after the command execution ended with errors (return != 0)
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>argument: </strong></span>child element [0..*]
+					</p>
+
+					<p>Command arguments.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>return: </strong></span>child element [0..*]
+					</p>
+
+					<p>Return value conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>stdout: </strong></span>child element [0..*]
+					</p>
+
+					<p>Standard out contents conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>stderr: </strong></span>child element [0..*]
+					</p>
+
+					<p>Standard err contents conditions.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>verifycmd: </strong></span>child element [0..*]
+					</p>
+
+					<p>The verify commands.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>input: </strong></span>string, <span class="emphasis"><em>optional</em></span>
+					</p>
+
+					<p>Define input lines if you intend to
+to have automatic user input
+					</p>
+				</li></ul></div>
+
+			</div>
+
+			<div class="section" title="propextension"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21F99"></a>propextension</h2></div></div></div>
+				
+
+				<p>A path extension defintion coming from an install unit.
+This extension will lead to some migration of the property value during upgrade if it changes. 
+				</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>propextmode: </strong></span>single choice of { prepend | append | remove }, <span class="emphasis"><em>optional</em></span>, default = "append"
+					</p>
+
+					<p>Defines wether to "prepend" or "append" this path extension.
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>prepend:</strong></span>
+
+			Prepend the path extension.
+		
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>append:</strong></span>
+
+			Append the path extension.
+		
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>remove:</strong></span>
+
+			Remove an unwanted path extension.
+		
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>value: </strong></span>string, <span class="emphasis"><em>mandatory</em></span>
+					</p>
+
+					<p>The environment variable's (default) value.
+Could be platform specific when using the "osfamily" attribute.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>property: </strong></span>comma separated list of [0..1]
+					</p>
+
+					<p>The property to be modified by this extension
+					</p>
+				</li></ul></div>
+
+			</div>
+	</div>
+	<div class="chapter" title="Chapter&nbsp;2.&nbsp;RapidEnv Expression Language Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N21FFD"></a>Chapter&nbsp;2.&nbsp;RapidEnv Expression Language Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#N22002">String Literal</a></span></dt><dt><span class="sect1"><a href="#N2200B">Property Value Expansion</a></span></dt><dt><span class="sect1"><a href="#N22014">Functions</a></span></dt></dl></div>
+		
+		<div class="sect1" title="String Literal"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22002"></a>String Literal</h2></div></div></div>
+			
+			<p>
+				Syntax: '&lt;literal&gt;'
+			</p>
+		</div>
+		<div class="sect1" title="Property Value Expansion"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2200B"></a>Property Value Expansion</h2></div></div></div>
+			
+			<p>
+				Syntax: ${&lt;property name&gt;}
+			</p>
+		</div>
+		<div class="sect1" title="Functions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22014"></a>Functions</h2></div></div></div>
+			
+			<p>
+				Syntax: &lt;function name&gt;(&lt;argument value 1&gt;, &lt;argument value 1&gt;, ...)
+			</p>
+			<p>
+				</p><div class="section" title="architecture"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2201E"></a>architecture</h2></div></div></div>
+					
+					<p>Identifys the processor architecture of the machine used.
+					</p>
+					<p>
+						arguments:
+					</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<p>
+						<span class="bold"><strong>conversionmap (optional): </strong></span>Maps certain operating system (family) names to other strings.
+The map is specified the following way: &lt;osname&gt;=&lt;mapped packaging&gt; [,&lt;osname&gt;=&lt;mapped pckaging&gt;] ...
+e.g. the expression "eclipse-modeling-indigo-''osname('windows=win32,linux=linux-gtk')''architecture('x86=,i386=;x86_64=-x86_64').packaging()"
+will result into following mappings:
+OS: windows, ARCH: x86 (32 Bit) =&gt; eclipse-modeling-indigo-win32.zip
+OS: windows, ARCH: x86_64 (64 Bit) =&gt; eclipse-modeling-indigo-win32-x86_64.zip
+OS: linux, ARCH: i386 (32 Bit) =&gt; eclipse-modeling-indigo-linux-gtk.tar.gz
+OS: linux, ARCH: x86_64 (64 Bit) =&gt; eclipse-modeling-indigo-linux-gtk-x86_64.tar.gz
+						</p>
+					</li><li class="listitem">
+						<p>
+
+						<span class="bold"><strong>return: </strong></span>An identifier for the processor architecture of the machine used.
+						</p>
+					</li></ul></div>
+
+					</div><p>
+
+				</p><div class="section" title="environment"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22041"></a>environment</h2></div></div></div>
+					
+					<p>Retrieve the value of the given environment variable.
+					</p>
+					<p>
+						arguments:
+					</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<p>
+						<span class="bold"><strong>environmentVariableName: </strong></span>The environment variable name.
+						</p>
+					</li><li class="listitem">
+						<p>
+
+						<span class="bold"><strong>return: </strong></span>The environment variable name.
+						</p>
+					</li></ul></div>
+
+					</div><p>
+
+				</p><div class="section" title="filecontents"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22064"></a>filecontents</h2></div></div></div>
+					
+					<p>Give the contents of the specified text file in one single string.
+					</p>
+					<p>
+						arguments:
+					</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<p>
+						<span class="bold"><strong>path: </strong></span>Specifies the file to read.
+						</p>
+					</li><li class="listitem">
+						<p>
+						<span class="bold"><strong>charsToEscape (optional): </strong></span>Every character in the given string will get a backslash prepended.
+						</p>
+					</li><li class="listitem">
+						<p>
+						<span class="bold"><strong>linefeedControl (optional): </strong></span>Specifies how to handle line feeds:
+preserve: take the line feed from the file
+platform: always use the platform specific line feed
+normalize: always use \n as line feed
+						</p>
+					</li><li class="listitem">
+						<p>
+
+						<span class="bold"><strong>return: </strong></span>The contents of the file specified.
+						</p>
+					</li></ul></div>
+
+					</div><p>
+
+				</p><div class="section" title="homedir"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2209B"></a>homedir</h2></div></div></div>
+					
+					<p>Determine the home directory of the specified
+or enclosing install unit.
+					</p>
+					<p>
+						arguments:
+					</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<p>
+						<span class="bold"><strong>installUnitName (optional): </strong></span>The name of the install unit for which to specifiy
+the home directory. If you do not specify an install unit but use this
+function in the context of an enclosing install unit definition this
+install unit will be taken automatically.
+						</p>
+					</li><li class="listitem">
+						<p>
+						<span class="bold"><strong>version (optional): </strong></span>By means of this optional parameter you can define
+			a version different to the current one.
+						</p>
+					</li><li class="listitem">
+						<p>
+
+						<span class="bold"><strong>return: </strong></span>The path of the home directory of the specified
+or enclosing install unit.
+						</p>
+					</li></ul></div>
+
+					</div><p>
+
+				</p><div class="section" title="hostname"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N220C8"></a>hostname</h2></div></div></div>
+					
+					<p>Determine the host name of the machine used.
+					</p>
+					<p>
+						arguments:
+					</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<p>
+
+						<span class="bold"><strong>return: </strong></span>The host name of the machine used.
+						</p>
+					</li></ul></div>
+
+					</div><p>
+
+				</p><div class="section" title="osname"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N220E1"></a>osname</h2></div></div></div>
+					
+					<p>Determine the operating system (family) name of the underlying node.
+Currently the following operating systems (families) are recognized:
+linux, windows, mac
+					</p>
+					<p>
+						arguments:
+					</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<p>
+						<span class="bold"><strong>conversionmap (optional): </strong></span>Maps certain operating system (family) names to other strings.
+The map is specified the following way: &lt;osname&gt;=&lt;mapped packaging&gt; [,&lt;osname&gt;=&lt;mapped pckaging&gt;] ...
+e.g. the expression "eclipse-modeling-indigo-''osname('windows=win32,linux=linux-gtk')''architecture('x86=,i386=;x86_64=-x86_64').packaging()"
+will result into following mappings:
+OS: windows, ARCH: x86 (32 Bit) =&gt; eclipse-modeling-indigo-win32.zip
+OS: windows, ARCH: x86_64 (64 Bit) =&gt; eclipse-modeling-indigo-win32-x86_64.zip
+OS: linux, ARCH: i386 (32 Bit) =&gt; eclipse-modeling-indigo-linux-gtk.tar.gz
+OS: linux, ARCH: x86_64 (64 Bit) =&gt; eclipse-modeling-indigo-linux-gtk-x86_64.tar.gz
+						</p>
+					</li><li class="listitem">
+						<p>
+
+						<span class="bold"><strong>return: </strong></span>The operation system (family) of the underlying node.
+						</p>
+					</li></ul></div>
+
+					</div><p>
+
+				</p><div class="section" title="packaging"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22104"></a>packaging</h2></div></div></div>
+					
+					<p>Determine the operating system (family) specific packaging.
+					</p>
+					<p>
+						arguments:
+					</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<p>
+						<span class="bold"><strong>conversionmap (optional): </strong></span>Maps certain operating system (family) names to other packaging than the default packaging.
+The map is specified the following way: &lt;osname&gt;=&lt;mapped packaging&gt; [,&lt;osname&gt;=&lt;mapped pckaging&gt;] ...
+e.g. the expression "eclipse-modeling-indigo-''osname('windows=win32,linux=linux-gtk')''architecture('x86=,i386=;x86_64=-x86_64').packaging()"
+will result into following mappings:
+OS: windows, ARCH: x86 (32 Bit) =&gt; eclipse-modeling-indigo-win32.zip
+OS: windows, ARCH: x86_64 (64 Bit) =&gt; eclipse-modeling-indigo-win32-x86_64.zip
+OS: linux, ARCH: i386 (32 Bit) =&gt; eclipse-modeling-indigo-linux-gtk.tar.gz
+OS: linux, ARCH: x86_64 (64 Bit) =&gt; eclipse-modeling-indigo-linux-gtk-x86_64.tar.gz
+						</p>
+					</li><li class="listitem">
+						<p>
+
+						<span class="bold"><strong>return: </strong></span>The operating system (family) specific packaging to be used.
+						</p>
+					</li></ul></div>
+
+					</div><p>
+
+				</p><div class="section" title="pathconvert"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22127"></a>pathconvert</h2></div></div></div>
+					
+					<p>Determine platform independently either a platform independent
+or a platform specific path. This function simply replaces all '/' and '\' separator
+characters with the specified or the platform specific separator.
+To determine a platform independent path you can specify a certain separator
+character (usually '/'). To determine a platform specific path just do not specify a certain
+separator. The platform's separator the is taken by default.
+					</p>
+					<p>
+						arguments:
+					</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<p>
+						<span class="bold"><strong>path: </strong></span>The path string to convert.
+						</p>
+					</li><li class="listitem">
+						<p>
+						<span class="bold"><strong>separator (optional): </strong></span>The separator character to use - e. g. '/'.
+						</p>
+					</li><li class="listitem">
+						<p>
+
+						<span class="bold"><strong>return: </strong></span>The converted path
+						</p>
+					</li></ul></div>
+
+					</div><p>
+
+				</p><div class="section" title="pathconvertc"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22154"></a>pathconvertc</h2></div></div></div>
+					
+					<p>Determine a platform specific and canonical (absolute and normalized) path.
+					</p>
+					<p>
+						arguments:
+					</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<p>
+						<span class="bold"><strong>path: </strong></span>The path string to convert.
+						</p>
+					</li><li class="listitem">
+						<p>
+
+						<span class="bold"><strong>return: </strong></span>The converted path
+						</p>
+					</li></ul></div>
+
+					</div><p>
+
+				</p><div class="section" title="replace"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22177"></a>replace</h2></div></div></div>
+					
+					<p>Text replacement using Java regular expressions.
+					</p>
+					<p>
+						arguments:
+					</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<p>
+						<span class="bold"><strong>text: </strong></span>The text to process.
+						</p>
+					</li><li class="listitem">
+						<p>
+						<span class="bold"><strong>pattern: </strong></span>The pattern to search for.
+						</p>
+					</li><li class="listitem">
+						<p>
+						<span class="bold"><strong>replacement: </strong></span>The replacement.
+						</p>
+					</li><li class="listitem">
+						<p>
+
+						<span class="bold"><strong>return: </strong></span>The processed text.
+						</p>
+					</li></ul></div>
+
+					</div><p>
+
+				</p><div class="section" title="substractextensions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N221AE"></a>substractextensions</h2></div></div></div>
+					
+					<p>Very special function need for recursive definitions of path properties with extensions.
+It causes extenstions to be substracted from a path property before it ia expanded again.
+					</p>
+					<p>
+						arguments:
+					</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<p>
+						<span class="bold"><strong>pathofpaths: </strong></span>The path string to convert.
+						</p>
+					</li><li class="listitem">
+						<p>
+
+						<span class="bold"><strong>return: </strong></span>The path with extensions of the enclosing property substracted.
+						</p>
+					</li></ul></div>
+
+					</div><p>
+
+				</p><div class="section" title="userhome"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N221D1"></a>userhome</h2></div></div></div>
+					
+					<p>Determine the current user's home directory.
+					</p>
+					<p>
+						arguments:
+					</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<p>
+
+						<span class="bold"><strong>return: </strong></span>The current user's home directory.
+						</p>
+					</li></ul></div>
+
+					</div><p>
+
+				</p><div class="section" title="username"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N221EA"></a>username</h2></div></div></div>
+					
+					<p>Determine the account name of operating system user currently logged in.
+					</p>
+					<p>
+						arguments:
+					</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<p>
+
+						<span class="bold"><strong>return: </strong></span>The account name of operating system user currently logged in.
+						</p>
+					</li></ul></div>
+
+					</div><p>
+
+				</p><div class="section" title="version"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22203"></a>version</h2></div></div></div>
+					
+					<p>Determine the (scheduled) version of the specified
+or enclosing install unit.
+					</p>
+					<p>
+						arguments:
+					</p>
+
+					<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<p>
+						<span class="bold"><strong>installUnitName (optional): </strong></span>The name of the install unit for which to specifiy
+the (scheduled) version. If you do not specify an install unit but use this
+function in the context of an enclosing install unit definition this
+install unit will be taken automatically.
+						</p>
+					</li><li class="listitem">
+						<p>
+
+						<span class="bold"><strong>return: </strong></span>The scheduled version of the specified
+or enclosing install unit as string.
+						</p>
+					</li></ul></div>
+
+					</div><p>
+
+			</p>
+		</div>
+	</div>
+	<div class="chapter" title="Chapter&nbsp;3.&nbsp;RapidEnv Command Line Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N22229"></a>Chapter&nbsp;3.&nbsp;RapidEnv Command Line Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#N2222E">Usage</a></span></dt><dt><span class="sect1"><a href="#N22237">Commands</a></span></dt><dt><span class="sect1"><a href="#N2229A">Options</a></span></dt></dl></div>
+		
+		<div class="sect1" title="Usage"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2222E"></a>Usage</h2></div></div></div>
+			
+			<p>renv [-&lt;option&gt; ...] [&lt;command&gt;] [&lt;install unit&gt; ...]</p>
+		</div>
+		<div class="sect1" title="Commands"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22237"></a>Commands</h2></div></div></div>
+			
+			<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>boot, b: </strong></span>
+boot the environment.
+This command usually is issued automatically if the environment is not yet set up.
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>config, c: </strong></span>
+update configuration(s) of the given installation unit(s)
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>deinstall, d: </strong></span>
+uninstall the given installation unit(s) if installed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>hashvalue, a: </strong></span>
+print the hash value of the given file using the given hash algorithm
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>help, h: </strong></span>
+print command help
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>install, i: </strong></span>
+install the given installation unit(s) if not installed
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>stat, s: </strong></span>
+print the installation and configuration status of the given installation unit(s)
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>update, u: </strong></span>
+update version(s) and configuration(s) of the given installation unit(s)
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>version, v: </strong></span>
+print RapidEnv version
+					</p>
+				</li></ul></div>
+		</div>
+
+		<div class="sect1" title="Options"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2229A"></a>Options</h2></div></div></div>
+			
+			<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+					<p>
+<span class="bold"><strong>debug, d: </strong></span>
+debug log level
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>env, e: </strong></span>
+the folder or file containing the project environment settings file.
+If it is a folder the settings files is assumed to be 'env.xml'
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>force, f: </strong></span>
+forces update regardless if something is uptodate or not
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>verbose, v: </strong></span>
+verbose log level
+					</p>
+				</li><li class="listitem">
+					<p>
+<span class="bold"><strong>yes, y: </strong></span>
+batch (yes) run mode without user interaction.
+			If you use this option the "boot", "update", or "configuration"
+			will run without user interaction which causes personal properties to get the default values.
+			Yes / No questions (do you really want to...?) will be automatically answered with "Yes".
+					</p>
+				</li></ul></div>
+		</div>
+	</div>
+</div></body></html>
