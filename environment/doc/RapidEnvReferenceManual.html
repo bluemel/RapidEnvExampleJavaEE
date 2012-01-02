@@ -1,7 +1,7 @@
 <html><head><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>RapidEnv Reference Manual Martin Bl&uuml;mel</title><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" title="RapidEnv Reference Manual Martin Bl&uuml;mel"><div class="titlepage"><div><div><h1 class="title"><a name="N2000B"></a>
 		RapidEnv Reference Manual
 		<div class="author"><h3 class="author">Martin Bl&uuml;mel</h3></div>
-	</h1></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="preface"><a href="#N20018"></a></span></dt><dt><span class="chapter"><a href="#N20020">1. RapidEnv Configuration Language Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#N20025">project</a></span></dt><dt><span class="section"><a href="#N200BB">property</a></span></dt><dt><span class="section"><a href="#N20219">specificvalue</a></span></dt><dt><span class="section"><a href="#N2025B">environment</a></span></dt><dt><span class="section"><a href="#N202AF">extension</a></span></dt><dt><span class="section"><a href="#N20303">installunit</a></span></dt><dt><span class="section"><a href="#N205B2">download</a></span></dt><dt><span class="section"><a href="#N20632">sourcefilecheck</a></span></dt><dt><span class="section"><a href="#N206B2">subunit</a></span></dt><dt><span class="section"><a href="#N20961">folder</a></span></dt><dt><span class="section"><a href="#N20B07">task</a></span></dt><dt><span class="section"><a href="#N20B49">commandonconfig</a></span></dt><dt><span class="section"><a href="#N20CE6">argument</a></span></dt><dt><span class="section"><a href="#N20D7C">return</a></span></dt><dt><span class="section"><a href="#N20DAC">stdout</a></span></dt><dt><span class="section"><a href="#N20DEE">stderr</a></span></dt><dt><span class="section"><a href="#N20E30">verifycmd</a></span></dt><dt><span class="section"><a href="#N20FCD">icon</a></span></dt><dt><span class="section"><a href="#N2112E">propertiesfile</a></span></dt><dt><span class="section"><a href="#N212D4">setpropvalue</a></span></dt><dt><span class="section"><a href="#N2135E">textfile</a></span></dt><dt><span class="section"><a href="#N21522">replace</a></span></dt><dt><span class="section"><a href="#N21588">delete</a></span></dt><dt><span class="section"><a href="#N215DC">insert</a></span></dt><dt><span class="section"><a href="#N2166E">anttask</a></span></dt><dt><span class="section"><a href="#N2181D">command</a></span></dt><dt><span class="section"><a href="#N219BA">xmlfile</a></span></dt><dt><span class="section"><a href="#N21BA5">deletenode</a></span></dt><dt><span class="section"><a href="#N21BF9">setnodevalue</a></span></dt><dt><span class="section"><a href="#N21C5F">installcommand</a></span></dt><dt><span class="section"><a href="#N21DFC">deinstallcommand</a></span></dt><dt><span class="section"><a href="#N21F99">propextension</a></span></dt></dl></dd><dt><span class="chapter"><a href="#N21FFD">2. RapidEnv Expression Language Reference</a></span></dt><dd><dl><dt><span class="sect1"><a href="#N22002">String Literal</a></span></dt><dt><span class="sect1"><a href="#N2200B">Property Value Expansion</a></span></dt><dt><span class="sect1"><a href="#N22014">Functions</a></span></dt></dl></dd><dt><span class="chapter"><a href="#N22229">3. RapidEnv Command Line Reference</a></span></dt><dd><dl><dt><span class="sect1"><a href="#N2222E">Usage</a></span></dt><dt><span class="sect1"><a href="#N22237">Commands</a></span></dt><dt><span class="sect1"><a href="#N2229A">Options</a></span></dt></dl></dd></dl></div>
+	</h1></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="preface"><a href="#N20018"></a></span></dt><dt><span class="chapter"><a href="#N20020">1. RapidEnv Configuration Language Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#N20025">project</a></span></dt><dt><span class="section"><a href="#N200BB">property</a></span></dt><dt><span class="section"><a href="#N20219">specificvalue</a></span></dt><dt><span class="section"><a href="#N2025B">environment</a></span></dt><dt><span class="section"><a href="#N202AF">extension</a></span></dt><dt><span class="section"><a href="#N20303">installunit</a></span></dt><dt><span class="section"><a href="#N205E8">download</a></span></dt><dt><span class="section"><a href="#N20668">sourcefilecheck</a></span></dt><dt><span class="section"><a href="#N206E8">subunit</a></span></dt><dt><span class="section"><a href="#N209CD">folder</a></span></dt><dt><span class="section"><a href="#N20B73">task</a></span></dt><dt><span class="section"><a href="#N20BB5">commandonconfig</a></span></dt><dt><span class="section"><a href="#N20D52">argument</a></span></dt><dt><span class="section"><a href="#N20DE8">return</a></span></dt><dt><span class="section"><a href="#N20E18">stdout</a></span></dt><dt><span class="section"><a href="#N20E5A">stderr</a></span></dt><dt><span class="section"><a href="#N20E9C">verifycmd</a></span></dt><dt><span class="section"><a href="#N21039">icon</a></span></dt><dt><span class="section"><a href="#N2119A">propertiesfile</a></span></dt><dt><span class="section"><a href="#N21340">setpropvalue</a></span></dt><dt><span class="section"><a href="#N213CA">textfile</a></span></dt><dt><span class="section"><a href="#N2158E">replace</a></span></dt><dt><span class="section"><a href="#N215F4">delete</a></span></dt><dt><span class="section"><a href="#N21648">insert</a></span></dt><dt><span class="section"><a href="#N216DA">anttask</a></span></dt><dt><span class="section"><a href="#N21889">command</a></span></dt><dt><span class="section"><a href="#N21A26">xmlfile</a></span></dt><dt><span class="section"><a href="#N21C11">deletenode</a></span></dt><dt><span class="section"><a href="#N21C65">setnodevalue</a></span></dt><dt><span class="section"><a href="#N21CCB">installcommand</a></span></dt><dt><span class="section"><a href="#N21E68">deinstallcommand</a></span></dt><dt><span class="section"><a href="#N22005">propextension</a></span></dt></dl></dd><dt><span class="chapter"><a href="#N22069">2. RapidEnv Expression Language Reference</a></span></dt><dd><dl><dt><span class="sect1"><a href="#N2206E">String Literal</a></span></dt><dt><span class="sect1"><a href="#N22077">Property Value Expansion</a></span></dt><dt><span class="sect1"><a href="#N22080">Functions</a></span></dt></dl></dd><dt><span class="chapter"><a href="#N22295">3. RapidEnv Command Line Reference</a></span></dt><dd><dl><dt><span class="sect1"><a href="#N2229A">Usage</a></span></dt><dt><span class="sect1"><a href="#N222A3">Commands</a></span></dt><dt><span class="sect1"><a href="#N22306">Options</a></span></dt></dl></dd></dl></div>
 	
 	<div class="preface"><div class="titlepage"></div>
 		<p>
@@ -10,7 +10,7 @@
 		</p>
 
 	</div>
-	<div class="chapter" title="Chapter&nbsp;1.&nbsp;RapidEnv Configuration Language Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N20020"></a>Chapter&nbsp;1.&nbsp;RapidEnv Configuration Language Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#N20025">project</a></span></dt><dt><span class="section"><a href="#N200BB">property</a></span></dt><dt><span class="section"><a href="#N20219">specificvalue</a></span></dt><dt><span class="section"><a href="#N2025B">environment</a></span></dt><dt><span class="section"><a href="#N202AF">extension</a></span></dt><dt><span class="section"><a href="#N20303">installunit</a></span></dt><dt><span class="section"><a href="#N205B2">download</a></span></dt><dt><span class="section"><a href="#N20632">sourcefilecheck</a></span></dt><dt><span class="section"><a href="#N206B2">subunit</a></span></dt><dt><span class="section"><a href="#N20961">folder</a></span></dt><dt><span class="section"><a href="#N20B07">task</a></span></dt><dt><span class="section"><a href="#N20B49">commandonconfig</a></span></dt><dt><span class="section"><a href="#N20CE6">argument</a></span></dt><dt><span class="section"><a href="#N20D7C">return</a></span></dt><dt><span class="section"><a href="#N20DAC">stdout</a></span></dt><dt><span class="section"><a href="#N20DEE">stderr</a></span></dt><dt><span class="section"><a href="#N20E30">verifycmd</a></span></dt><dt><span class="section"><a href="#N20FCD">icon</a></span></dt><dt><span class="section"><a href="#N2112E">propertiesfile</a></span></dt><dt><span class="section"><a href="#N212D4">setpropvalue</a></span></dt><dt><span class="section"><a href="#N2135E">textfile</a></span></dt><dt><span class="section"><a href="#N21522">replace</a></span></dt><dt><span class="section"><a href="#N21588">delete</a></span></dt><dt><span class="section"><a href="#N215DC">insert</a></span></dt><dt><span class="section"><a href="#N2166E">anttask</a></span></dt><dt><span class="section"><a href="#N2181D">command</a></span></dt><dt><span class="section"><a href="#N219BA">xmlfile</a></span></dt><dt><span class="section"><a href="#N21BA5">deletenode</a></span></dt><dt><span class="section"><a href="#N21BF9">setnodevalue</a></span></dt><dt><span class="section"><a href="#N21C5F">installcommand</a></span></dt><dt><span class="section"><a href="#N21DFC">deinstallcommand</a></span></dt><dt><span class="section"><a href="#N21F99">propextension</a></span></dt></dl></div>
+	<div class="chapter" title="Chapter&nbsp;1.&nbsp;RapidEnv Configuration Language Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N20020"></a>Chapter&nbsp;1.&nbsp;RapidEnv Configuration Language Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#N20025">project</a></span></dt><dt><span class="section"><a href="#N200BB">property</a></span></dt><dt><span class="section"><a href="#N20219">specificvalue</a></span></dt><dt><span class="section"><a href="#N2025B">environment</a></span></dt><dt><span class="section"><a href="#N202AF">extension</a></span></dt><dt><span class="section"><a href="#N20303">installunit</a></span></dt><dt><span class="section"><a href="#N205E8">download</a></span></dt><dt><span class="section"><a href="#N20668">sourcefilecheck</a></span></dt><dt><span class="section"><a href="#N206E8">subunit</a></span></dt><dt><span class="section"><a href="#N209CD">folder</a></span></dt><dt><span class="section"><a href="#N20B73">task</a></span></dt><dt><span class="section"><a href="#N20BB5">commandonconfig</a></span></dt><dt><span class="section"><a href="#N20D52">argument</a></span></dt><dt><span class="section"><a href="#N20DE8">return</a></span></dt><dt><span class="section"><a href="#N20E18">stdout</a></span></dt><dt><span class="section"><a href="#N20E5A">stderr</a></span></dt><dt><span class="section"><a href="#N20E9C">verifycmd</a></span></dt><dt><span class="section"><a href="#N21039">icon</a></span></dt><dt><span class="section"><a href="#N2119A">propertiesfile</a></span></dt><dt><span class="section"><a href="#N21340">setpropvalue</a></span></dt><dt><span class="section"><a href="#N213CA">textfile</a></span></dt><dt><span class="section"><a href="#N2158E">replace</a></span></dt><dt><span class="section"><a href="#N215F4">delete</a></span></dt><dt><span class="section"><a href="#N21648">insert</a></span></dt><dt><span class="section"><a href="#N216DA">anttask</a></span></dt><dt><span class="section"><a href="#N21889">command</a></span></dt><dt><span class="section"><a href="#N21A26">xmlfile</a></span></dt><dt><span class="section"><a href="#N21C11">deletenode</a></span></dt><dt><span class="section"><a href="#N21C65">setnodevalue</a></span></dt><dt><span class="section"><a href="#N21CCB">installcommand</a></span></dt><dt><span class="section"><a href="#N21E68">deinstallcommand</a></span></dt><dt><span class="section"><a href="#N22005">propextension</a></span></dt></dl></div>
 		
 
 			<div class="section" title="project"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20025"></a>project</h2></div></div></div>
@@ -540,6 +540,34 @@ In this case you simply specify the source file name separately.
 					</p>
 				</li><li class="listitem">
 					<p>
+<span class="bold"><strong>downloadmode: </strong></span>single choice of { automatic | manual | never }, <span class="emphasis"><em>optional</em></span>, default = "automatic"
+					</p>
+
+					<p>Describes how to load the installation unit's file(s) (installer).
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>automatic:</strong></span>
+Automatic download
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>manual:</strong></span>
+Manual download
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>never:</strong></span>
+No download at all
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
 <span class="bold"><strong>homedir: </strong></span>string, <span class="emphasis"><em>optional</em></span>
 					</p>
 
@@ -826,7 +854,7 @@ The extension will lead to some migration of the property value during upgrade i
 
 			</div>
 
-			<div class="section" title="download"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N205B2"></a>download</h2></div></div></div>
+			<div class="section" title="download"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N205E8"></a>download</h2></div></div></div>
 				
 
 				<p>Defines a download for one single file. 
@@ -895,7 +923,7 @@ You have to download the file manually e. g. for license reasons.
 
 			</div>
 
-			<div class="section" title="sourcefilecheck"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20632"></a>sourcefilecheck</h2></div></div></div>
+			<div class="section" title="sourcefilecheck"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20668"></a>sourcefilecheck</h2></div></div></div>
 				
 
 				<p>Defines a hash value check on a file. 
@@ -964,7 +992,7 @@ SHA1 hash algorithm
 
 			</div>
 
-			<div class="section" title="subunit"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N206B2"></a>subunit</h2></div></div></div>
+			<div class="section" title="subunit"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N206E8"></a>subunit</h2></div></div></div>
 				
 
 				<p>An installation unit is an installable and configurable unit
@@ -1060,6 +1088,34 @@ In this case you simply specify the source file name separately.
 					</p>
 				</li><li class="listitem">
 					<p>
+<span class="bold"><strong>downloadmode: </strong></span>single choice of { automatic | manual | never }, <span class="emphasis"><em>optional</em></span>, default = "automatic"
+					</p>
+
+					<p>Describes how to load the installation unit's file(s) (installer).
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>automatic:</strong></span>
+Automatic download
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>manual:</strong></span>
+Manual download
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>never:</strong></span>
+No download at all
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
 <span class="bold"><strong>homedir: </strong></span>string, <span class="emphasis"><em>optional</em></span>
 					</p>
 
@@ -1346,7 +1402,7 @@ The extension will lead to some migration of the property value during upgrade i
 
 			</div>
 
-			<div class="section" title="folder"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20961"></a>folder</h2></div></div></div>
+			<div class="section" title="folder"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N209CD"></a>folder</h2></div></div></div>
 				
 
 				<p>An configuration operation on a single folder 
@@ -1574,7 +1630,7 @@ executed whenever a configuration on this file or folder has been performed
 
 			</div>
 
-			<div class="section" title="task"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20B07"></a>task</h2></div></div></div>
+			<div class="section" title="task"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20B73"></a>task</h2></div></div></div>
 				
 
 				<p>A single configuration step for a RapidEnv installation unit
@@ -1621,7 +1677,7 @@ Apple Mac OS.
 
 			</div>
 
-			<div class="section" title="commandonconfig"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20B49"></a>commandonconfig</h2></div></div></div>
+			<div class="section" title="commandonconfig"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20BB5"></a>commandonconfig</h2></div></div></div>
 				
 
 				<p>A system command configuration allows you to define
@@ -1827,7 +1883,7 @@ to have automatic user input
 
 			</div>
 
-			<div class="section" title="argument"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20CE6"></a>argument</h2></div></div></div>
+			<div class="section" title="argument"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20D52"></a>argument</h2></div></div></div>
 				
 
 				<p>
@@ -1909,7 +1965,7 @@ want to suppress this default behaviour. In these cases set this property to "fa
 
 			</div>
 
-			<div class="section" title="return"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20D7C"></a>return</h2></div></div></div>
+			<div class="section" title="return"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20DE8"></a>return</h2></div></div></div>
 				
 
 				<p>Defines a condition on the return value
@@ -1934,7 +1990,7 @@ at the end of the system command execution.
 
 			</div>
 
-			<div class="section" title="stdout"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20DAC"></a>stdout</h2></div></div></div>
+			<div class="section" title="stdout"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20E18"></a>stdout</h2></div></div></div>
 				
 
 				<p>Defines a condition on the standard out contents
@@ -1966,7 +2022,7 @@ at the end of the system command execution.
 
 			</div>
 
-			<div class="section" title="stderr"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20DEE"></a>stderr</h2></div></div></div>
+			<div class="section" title="stderr"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20E5A"></a>stderr</h2></div></div></div>
 				
 
 				<p>Defines a condition on the standard error contents
@@ -1998,7 +2054,7 @@ at the end of the system command execution.
 
 			</div>
 
-			<div class="section" title="verifycmd"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20E30"></a>verifycmd</h2></div></div></div>
+			<div class="section" title="verifycmd"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20E9C"></a>verifycmd</h2></div></div></div>
 				
 
 				<p>A system command configuration allows you to define
@@ -2204,7 +2260,7 @@ to have automatic user input
 
 			</div>
 
-			<div class="section" title="icon"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20FCD"></a>icon</h2></div></div></div>
+			<div class="section" title="icon"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21039"></a>icon</h2></div></div></div>
 				
 
 				<p>A shell link icon configuration allows you to define
@@ -2388,7 +2444,7 @@ after this configuration has been performed
 
 			</div>
 
-			<div class="section" title="propertiesfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2112E"></a>propertiesfile</h2></div></div></div>
+			<div class="section" title="propertiesfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2119A"></a>propertiesfile</h2></div></div></div>
 				
 
 				<p>An configuration operation on a single properties file 
@@ -2616,7 +2672,7 @@ executed whenever a configuration on this file or folder has been performed
 
 			</div>
 
-			<div class="section" title="setpropvalue"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N212D4"></a>setpropvalue</h2></div></div></div>
+			<div class="section" title="setpropvalue"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21340"></a>setpropvalue</h2></div></div></div>
 				
 
 				<p>Sets an XML node (element or attribute).
@@ -2685,7 +2741,7 @@ Defaults to "RapidEnv project ((project name))".
 
 			</div>
 
-			<div class="section" title="textfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2135E"></a>textfile</h2></div></div></div>
+			<div class="section" title="textfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N213CA"></a>textfile</h2></div></div></div>
 				
 
 				<p>An configuration operation on a single text file 
@@ -2927,7 +2983,7 @@ executed whenever a configuration on this file or folder has been performed
 
 			</div>
 
-			<div class="section" title="replace"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21522"></a>replace</h2></div></div></div>
+			<div class="section" title="replace"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2158E"></a>replace</h2></div></div></div>
 				
 
 				<p>Replace the given seach pattern by the given text. 
@@ -2980,7 +3036,7 @@ Apple Mac OS.
 
 			</div>
 
-			<div class="section" title="delete"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21588"></a>delete</h2></div></div></div>
+			<div class="section" title="delete"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N215F4"></a>delete</h2></div></div></div>
 				
 
 				<p>Delete all lines specified by the given search pattern. 
@@ -3026,7 +3082,7 @@ Apple Mac OS.
 
 			</div>
 
-			<div class="section" title="insert"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N215DC"></a>insert</h2></div></div></div>
+			<div class="section" title="insert"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21648"></a>insert</h2></div></div></div>
 				
 
 				<p>Insert a new line at the end or the beginning of the
@@ -3108,7 +3164,7 @@ or after (append)
 
 			</div>
 
-			<div class="section" title="anttask"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2166E"></a>anttask</h2></div></div></div>
+			<div class="section" title="anttask"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N216DA"></a>anttask</h2></div></div></div>
 				
 
 				<p>An ant task command configuration allows you to define
@@ -3320,7 +3376,7 @@ to have automatic user input
 
 			</div>
 
-			<div class="section" title="command"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2181D"></a>command</h2></div></div></div>
+			<div class="section" title="command"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21889"></a>command</h2></div></div></div>
 				
 
 				<p>A system command configuration allows you to define
@@ -3526,7 +3582,7 @@ to have automatic user input
 
 			</div>
 
-			<div class="section" title="xmlfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N219BA"></a>xmlfile</h2></div></div></div>
+			<div class="section" title="xmlfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21A26"></a>xmlfile</h2></div></div></div>
 				
 
 				<p>An configuration operation on a single XML file 
@@ -3782,7 +3838,7 @@ executed whenever a configuration on this file or folder has been performed
 
 			</div>
 
-			<div class="section" title="deletenode"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21BA5"></a>deletenode</h2></div></div></div>
+			<div class="section" title="deletenode"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21C11"></a>deletenode</h2></div></div></div>
 				
 
 				<p>Deletes an XML node (element or attribute) if it exists. 
@@ -3829,7 +3885,7 @@ value has to be set.
 
 			</div>
 
-			<div class="section" title="setnodevalue"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21BF9"></a>setnodevalue</h2></div></div></div>
+			<div class="section" title="setnodevalue"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21C65"></a>setnodevalue</h2></div></div></div>
 				
 
 				<p>Sets an XML node (element or attribute).
@@ -3884,7 +3940,7 @@ value has to be set.
 
 			</div>
 
-			<div class="section" title="installcommand"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21C5F"></a>installcommand</h2></div></div></div>
+			<div class="section" title="installcommand"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21CCB"></a>installcommand</h2></div></div></div>
 				
 
 				<p>A system command configuration allows you to define
@@ -4090,7 +4146,7 @@ to have automatic user input
 
 			</div>
 
-			<div class="section" title="deinstallcommand"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21DFC"></a>deinstallcommand</h2></div></div></div>
+			<div class="section" title="deinstallcommand"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21E68"></a>deinstallcommand</h2></div></div></div>
 				
 
 				<p>A system command configuration allows you to define
@@ -4296,7 +4352,7 @@ to have automatic user input
 
 			</div>
 
-			<div class="section" title="propextension"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21F99"></a>propextension</h2></div></div></div>
+			<div class="section" title="propextension"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22005"></a>propextension</h2></div></div></div>
 				
 
 				<p>A path extension defintion coming from an install unit.
@@ -4356,27 +4412,27 @@ Could be platform specific when using the "osfamily" attribute.
 
 			</div>
 	</div>
-	<div class="chapter" title="Chapter&nbsp;2.&nbsp;RapidEnv Expression Language Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N21FFD"></a>Chapter&nbsp;2.&nbsp;RapidEnv Expression Language Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#N22002">String Literal</a></span></dt><dt><span class="sect1"><a href="#N2200B">Property Value Expansion</a></span></dt><dt><span class="sect1"><a href="#N22014">Functions</a></span></dt></dl></div>
+	<div class="chapter" title="Chapter&nbsp;2.&nbsp;RapidEnv Expression Language Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N22069"></a>Chapter&nbsp;2.&nbsp;RapidEnv Expression Language Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#N2206E">String Literal</a></span></dt><dt><span class="sect1"><a href="#N22077">Property Value Expansion</a></span></dt><dt><span class="sect1"><a href="#N22080">Functions</a></span></dt></dl></div>
 		
-		<div class="sect1" title="String Literal"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22002"></a>String Literal</h2></div></div></div>
+		<div class="sect1" title="String Literal"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2206E"></a>String Literal</h2></div></div></div>
 			
 			<p>
 				Syntax: '&lt;literal&gt;'
 			</p>
 		</div>
-		<div class="sect1" title="Property Value Expansion"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2200B"></a>Property Value Expansion</h2></div></div></div>
+		<div class="sect1" title="Property Value Expansion"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22077"></a>Property Value Expansion</h2></div></div></div>
 			
 			<p>
 				Syntax: ${&lt;property name&gt;}
 			</p>
 		</div>
-		<div class="sect1" title="Functions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22014"></a>Functions</h2></div></div></div>
+		<div class="sect1" title="Functions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22080"></a>Functions</h2></div></div></div>
 			
 			<p>
 				Syntax: &lt;function name&gt;(&lt;argument value 1&gt;, &lt;argument value 1&gt;, ...)
 			</p>
 			<p>
-				</p><div class="section" title="architecture"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2201E"></a>architecture</h2></div></div></div>
+				</p><div class="section" title="architecture"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2208A"></a>architecture</h2></div></div></div>
 					
 					<p>Identifys the processor architecture of the machine used.
 					</p>
@@ -4404,7 +4460,7 @@ OS: linux, ARCH: x86_64 (64 Bit) =&gt; eclipse-modeling-indigo-linux-gtk-x86_64.
 
 					</div><p>
 
-				</p><div class="section" title="environment"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22041"></a>environment</h2></div></div></div>
+				</p><div class="section" title="environment"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N220AD"></a>environment</h2></div></div></div>
 					
 					<p>Retrieve the value of the given environment variable.
 					</p>
@@ -4425,7 +4481,7 @@ OS: linux, ARCH: x86_64 (64 Bit) =&gt; eclipse-modeling-indigo-linux-gtk-x86_64.
 
 					</div><p>
 
-				</p><div class="section" title="filecontents"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22064"></a>filecontents</h2></div></div></div>
+				</p><div class="section" title="filecontents"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N220D0"></a>filecontents</h2></div></div></div>
 					
 					<p>Give the contents of the specified text file in one single string.
 					</p>
@@ -4457,7 +4513,7 @@ normalize: always use \n as line feed
 
 					</div><p>
 
-				</p><div class="section" title="homedir"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2209B"></a>homedir</h2></div></div></div>
+				</p><div class="section" title="homedir"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22107"></a>homedir</h2></div></div></div>
 					
 					<p>Determine the home directory of the specified
 or enclosing install unit.
@@ -4488,7 +4544,7 @@ or enclosing install unit.
 
 					</div><p>
 
-				</p><div class="section" title="hostname"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N220C8"></a>hostname</h2></div></div></div>
+				</p><div class="section" title="hostname"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22134"></a>hostname</h2></div></div></div>
 					
 					<p>Determine the host name of the machine used.
 					</p>
@@ -4505,7 +4561,7 @@ or enclosing install unit.
 
 					</div><p>
 
-				</p><div class="section" title="osname"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N220E1"></a>osname</h2></div></div></div>
+				</p><div class="section" title="osname"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2214D"></a>osname</h2></div></div></div>
 					
 					<p>Determine the operating system (family) name of the underlying node.
 Currently the following operating systems (families) are recognized:
@@ -4535,7 +4591,7 @@ OS: linux, ARCH: x86_64 (64 Bit) =&gt; eclipse-modeling-indigo-linux-gtk-x86_64.
 
 					</div><p>
 
-				</p><div class="section" title="packaging"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22104"></a>packaging</h2></div></div></div>
+				</p><div class="section" title="packaging"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22170"></a>packaging</h2></div></div></div>
 					
 					<p>Determine the operating system (family) specific packaging.
 					</p>
@@ -4563,7 +4619,7 @@ OS: linux, ARCH: x86_64 (64 Bit) =&gt; eclipse-modeling-indigo-linux-gtk-x86_64.
 
 					</div><p>
 
-				</p><div class="section" title="pathconvert"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22127"></a>pathconvert</h2></div></div></div>
+				</p><div class="section" title="pathconvert"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22193"></a>pathconvert</h2></div></div></div>
 					
 					<p>Determine platform independently either a platform independent
 or a platform specific path. This function simply replaces all '/' and '\' separator
@@ -4593,7 +4649,7 @@ separator. The platform's separator the is taken by default.
 
 					</div><p>
 
-				</p><div class="section" title="pathconvertc"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22154"></a>pathconvertc</h2></div></div></div>
+				</p><div class="section" title="pathconvertc"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N221C0"></a>pathconvertc</h2></div></div></div>
 					
 					<p>Determine a platform specific and canonical (absolute and normalized) path.
 					</p>
@@ -4614,7 +4670,7 @@ separator. The platform's separator the is taken by default.
 
 					</div><p>
 
-				</p><div class="section" title="replace"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22177"></a>replace</h2></div></div></div>
+				</p><div class="section" title="replace"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N221E3"></a>replace</h2></div></div></div>
 					
 					<p>Text replacement using Java regular expressions.
 					</p>
@@ -4643,7 +4699,7 @@ separator. The platform's separator the is taken by default.
 
 					</div><p>
 
-				</p><div class="section" title="substractextensions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N221AE"></a>substractextensions</h2></div></div></div>
+				</p><div class="section" title="substractextensions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2221A"></a>substractextensions</h2></div></div></div>
 					
 					<p>Very special function need for recursive definitions of path properties with extensions.
 It causes extenstions to be substracted from a path property before it ia expanded again.
@@ -4665,7 +4721,7 @@ It causes extenstions to be substracted from a path property before it ia expand
 
 					</div><p>
 
-				</p><div class="section" title="userhome"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N221D1"></a>userhome</h2></div></div></div>
+				</p><div class="section" title="userhome"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2223D"></a>userhome</h2></div></div></div>
 					
 					<p>Determine the current user's home directory.
 					</p>
@@ -4682,7 +4738,7 @@ It causes extenstions to be substracted from a path property before it ia expand
 
 					</div><p>
 
-				</p><div class="section" title="username"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N221EA"></a>username</h2></div></div></div>
+				</p><div class="section" title="username"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22256"></a>username</h2></div></div></div>
 					
 					<p>Determine the account name of operating system user currently logged in.
 					</p>
@@ -4699,7 +4755,7 @@ It causes extenstions to be substracted from a path property before it ia expand
 
 					</div><p>
 
-				</p><div class="section" title="version"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22203"></a>version</h2></div></div></div>
+				</p><div class="section" title="version"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2226F"></a>version</h2></div></div></div>
 					
 					<p>Determine the (scheduled) version of the specified
 or enclosing install unit.
@@ -4728,13 +4784,13 @@ or enclosing install unit as string.
 			</p>
 		</div>
 	</div>
-	<div class="chapter" title="Chapter&nbsp;3.&nbsp;RapidEnv Command Line Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N22229"></a>Chapter&nbsp;3.&nbsp;RapidEnv Command Line Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#N2222E">Usage</a></span></dt><dt><span class="sect1"><a href="#N22237">Commands</a></span></dt><dt><span class="sect1"><a href="#N2229A">Options</a></span></dt></dl></div>
+	<div class="chapter" title="Chapter&nbsp;3.&nbsp;RapidEnv Command Line Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N22295"></a>Chapter&nbsp;3.&nbsp;RapidEnv Command Line Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#N2229A">Usage</a></span></dt><dt><span class="sect1"><a href="#N222A3">Commands</a></span></dt><dt><span class="sect1"><a href="#N22306">Options</a></span></dt></dl></div>
 		
-		<div class="sect1" title="Usage"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2222E"></a>Usage</h2></div></div></div>
+		<div class="sect1" title="Usage"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2229A"></a>Usage</h2></div></div></div>
 			
 			<p>renv [-&lt;option&gt; ...] [&lt;command&gt;] [&lt;install unit&gt; ...]</p>
 		</div>
-		<div class="sect1" title="Commands"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22237"></a>Commands</h2></div></div></div>
+		<div class="sect1" title="Commands"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N222A3"></a>Commands</h2></div></div></div>
 			
 			<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 					<p>
@@ -4785,7 +4841,7 @@ print RapidEnv version
 				</li></ul></div>
 		</div>
 
-		<div class="sect1" title="Options"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2229A"></a>Options</h2></div></div></div>
+		<div class="sect1" title="Options"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22306"></a>Options</h2></div></div></div>
 			
 			<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 					<p>
