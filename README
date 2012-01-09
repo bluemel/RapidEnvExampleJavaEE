@@ -4,6 +4,25 @@ RapidEnv Example Java EE
 This is an example environment for a Jave EE development environment
 with JBoss, Maven and Eclipse.
 
+Highlights:
+
+* out of one single configuration file (environment/env.xml, size < 50 kB)
+  a small but poweful Java tool (size < 5 MB) you get installed and set
+  up a complex development einvironment (size around 1000 MB) without
+  any or with only a few user interactions in about half an hour.
+
+* development environment specific operating system environment variables
+  are controlled completely locally without polluting the global environment.
+
+* Desktop and start menu icons are provided to start and stop or launch
+  the components of the development environment.
+
+* Due to the strict separation it is easily possible to have more
+  than one development environmen of
+  - different development projects
+  - different branches of one and the same development project
+  without severe side effects between them.
+
 The RapidEnv environement setup and maintenance tool will set up
 a standard development environment consisting in the following
 software:
@@ -23,7 +42,8 @@ software:
 - jboss
   JBoss Application Server
   Version: 6.0.0.Final
-  License: 
+  License: GNU Lesser General Public License 2.1
+           http://www.gnu.de/documents/lgpl-2.1.de.html
 
 - eclipse
   Eclipse Helios IDE for Java EE developers
@@ -31,11 +51,16 @@ software:
   License: Eclipse Public License Version 1.0
            http://www.eclipse.org/legal/epl-v10.html
            and others (see *)
+  ...
 
   - plugin jbosstools 3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329
-    License:
+    License: GNU Lesser General Public License 2.1
+           http://www.gnu.de/documents/lgpl-2.1.de.html
+    License: Eclipse Public License Version 1.0
+           http://www.eclipse.org/legal/epl-v10.html
+    ...
 
-PLEAS READ AND ACCEPT ALL LICENSE TERMS AND CONDITIONS PRIOR TO DOWNLOADING,
+PLEASE READ AND ACCEPT ALL LICENSE TERMS AND CONDITIONS PRIOR TO DOWNLOADING,
 INSTALLING AND USING THE SOFTWARE.
 
 * Please note:
@@ -56,6 +81,9 @@ RapidEnv currently basically works under Windows and Linux.
 It has been tested so far with:
 - Windows XP
 - OpenSUSE Linux 11.4
+
+A Java Runtime Environment (Version 1.6.x) has to be
+installed in order to run the RapidEnv command line tool "renv".
 
 
 To do:
