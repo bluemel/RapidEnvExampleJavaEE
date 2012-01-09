@@ -7,7 +7,7 @@ with JBoss, Maven and Eclipse.
 Highlights:
 
 * out of one single configuration file (environment/env.xml, size < 50 kB)
-  a small but poweful Java tool (size < 5 MB) you get installed and set
+  a small but powerful Java tool (size < 5 MB) helps you to install and set
   up a complex development einvironment (size around 1000 MB) without
   any or with only a few user interactions in about half an hour.
 
@@ -18,10 +18,11 @@ Highlights:
   the components of the development environment.
 
 * Due to the strict separation it is easily possible to have more
-  than one development environmen of
+  than one development environment of
   - different development projects
   - different branches of one and the same development project
-  without severe side effects between them.
+  on one and the same machine without severe side effects or encroachment
+  between them.
 
 The RapidEnv environement setup and maintenance tool will set up
 a standard development environment consisting in the following
@@ -29,9 +30,9 @@ software:
 
 - jdk
   Java SE Development Kit (incuding Java Runtime Environment)
-  Version: 1.6.0_23
-  License: Eclipse Public License Version 1.0
-           http://www.eclipse.org/legal/epl-v10.html
+  Version: 1.6.0_26
+  License: Oracle Binary Code License Agreement for Java SE and JavaFX Technologies
+           http://www.oracle.com/technetwork/java/javase/downloads/java-se-archive-license-1382604.html
 
 - maven
   Maven build system
@@ -44,13 +45,14 @@ software:
   Version: 6.0.0.Final
   License: GNU Lesser General Public License 2.1
            http://www.gnu.de/documents/lgpl-2.1.de.html
+           and others (see *)
 
 - eclipse
-  Eclipse Helios IDE for Java EE developers
+  Eclipse Helios IDE for Java EE developers SR2
   Version: 3.6.2
   License: Eclipse Public License Version 1.0
            http://www.eclipse.org/legal/epl-v10.html
-           and others (see *)
+           and others (see **)
   ...
 
   - plugin jbosstools 3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329
@@ -63,8 +65,32 @@ software:
 PLEASE READ AND ACCEPT ALL LICENSE TERMS AND CONDITIONS PRIOR TO DOWNLOADING,
 INSTALLING AND USING THE SOFTWARE.
 
-* Please note:
-According to the "Eclipse Foundation Software User Agreement"
+* JBoss itself uses a lot of components with their own licenses
+  including but not limited to:
+  - Antlr License
+  - ASL, Version 1.1
+  - ASL, Version 2.0
+  - ASM License
+  - Apache License, Versions 1.0 and 2.0
+  - BSD (style) License
+  - Bouncy Castle Licence
+  - Common Development And Distribution License (CDDL), Version 1.0
+  - Common Public License, Version 1.0
+  - Creative Commons Attribution License, Version 2.5
+  - Dom4j License
+  - GNU Lesser General Public License (LGPL), Version 2.1
+  - GNU General Public License (GPL), Version 3
+  - GPLv2+CE
+  - Jaxen License
+  - JDOM Licnesem, Version 1.0
+  - MIT License
+  - MPL 1.1
+  - Oswego License
+  - Tanuki Software license
+  Please refer to $JBOSS_HOME/docs/licenses/licenses.xml for a
+  comprehensive overview.
+
+** According to the "Eclipse Foundation Software User Agreement"
 (see http://www.eclipse.org/legal/epl/notice.php)
 IT IS YOUR OBLIGATION TO READ AND ACCEPT ALL LICENSE TERMS AND CONDITIONS
 OF ECLIPSE FEAURES AND PLUGINS THAT COME WITH ECLIPSE PRIOR TO USE OF THE
@@ -76,6 +102,8 @@ govern that particular Content.
 
 System Requirements:
 ====================
+
+2 GB of Space on your harddisk
 
 RapidEnv currently basically works under Windows and Linux.
 It has been tested so far with:
@@ -93,5 +121,13 @@ To do:
   in folder RapidEnvExampleJavaEE/environment/bin
 
 - start RapidEnv by entering command:
-  - Windows: renv -yes
-  - Linux:   . renv -yes
+
+  - Windows> renv -yes
+
+  - Linux>   . renv -yes
+             Prepending . is essential to influence the
+             environment settings of the current shell window.
+
+    On Linux additional ineractions might be neccessary because
+    the JDK installation / deinstallation requires root user
+    rights.
