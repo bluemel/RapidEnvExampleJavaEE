@@ -1,4 +1,69 @@
-This is an exampole project structure:
+RapidEnv Example Java EE
+========================
 
-jboss tools update site:
-http://downloads.sourceforge.net/project/jboss/JBossTools/JBossTools3.2.x/jbosstools-3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329.zip?r=http%3A%2F%2Fwww.jboss.org%2Ftools%2Fdownload%2Fstable%2F3_2_GA&amp;ts=1322340366&amp;use_mirror=dfn
+This is an example environment for a Jave EE development environment
+with JBoss, Maven and Eclipse.
+
+The RapidEnv environement setup and maintenance tool will set up
+a standard development environment consisting in the following
+software:
+
+- jdk
+  Java SE Development Kit (incuding Java Runtime Environment)
+  Version: 1.6.0_23
+  License: Eclipse Public License Version 1.0
+           http://www.eclipse.org/legal/epl-v10.html
+
+- maven
+  Maven build system
+  Version: 3.0.3
+  License: Apache Software License 2.0
+           http://www.apache.org/licenses/LICENSE-2.0
+
+- jboss
+  JBoss Application Server
+  Version: 6.0.0.Final
+  License: 
+
+- eclipse
+  Eclipse Helios IDE for Java EE developers
+  Version: 3.6.2
+  License: Eclipse Public License Version 1.0
+           http://www.eclipse.org/legal/epl-v10.html
+           and others (see *)
+
+  - plugin jbosstools 3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329
+    License:
+
+PLEAS READ AND ACCEPT ALL LICENSE TERMS AND CONDITIONS PRIOR TO DOWNLOADING,
+INSTALLING AND USING THE SOFTWARE.
+
+* Please note:
+According to the "Eclipse Foundation Software User Agreement"
+(see http://www.eclipse.org/legal/epl/notice.php)
+IT IS YOUR OBLIGATION TO READ AND ACCEPT ALL LICENSE TERMS AND CONDITIONS
+OF ECLIPSE FEAURES AND PLUGINS THAT COME WITH ECLIPSE PRIOR TO USE OF THE
+CONTENT.
+If no About, Feature License, or Feature Update License is provided,
+please contact the Eclipse Foundation to determine what terms and conditions
+govern that particular Content.
+
+
+System Requirements:
+====================
+
+RapidEnv currently basically works under Windows and Linux.
+It has been tested so far with:
+- Windows XP
+- OpenSUSE Linux 11.4
+
+
+To do:
+======
+
+- Open a Windows command prompt or Unix shell or terminal window
+  in folder RapidEnvExampleJavaEE/environment/bin
+
+- start RapidEnv by entering command:
+  - Windows: renv -yes
+  - Linux:   . renv -yes
