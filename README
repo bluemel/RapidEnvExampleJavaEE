@@ -128,6 +128,6 @@ To do:
              Prepending . is essential to influence the
              environment settings of the current shell window.
 
-    On Linux additional ineractions might be neccessary because
+    On Linux additional interactions might be neccessary because
     the JDK installation / deinstallation requires root user
     rights.
