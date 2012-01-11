@@ -1,14 +1,15 @@
 RapidEnv Example Java EE
 ========================
 
-This is an example environment for a Jave EE development environment
-with JBoss, Maven and Eclipse that demonstrates the power of RapidEnv.
+This is an example of a Jave EE development environment
+with JBoss, Maven and Eclipse that demonstrates the power
+of automated installation, configuration and update by RapidEnv.
 
 
-Highlights of RapidEnv:
------------------------
+Highlights:
+-----------
 
-* out of one single configuration file (environment/env.xml, size < 50 kB)
+* based on one single configuration file (environment/env.xml, size < 50 kB)
   the small but powerful Java tool RapidEnv (size < 5 MB) helps you to install
   and set up a complex development einvironment (size around 1000 MB) without
   any or with only a few user interactions.
@@ -27,17 +28,136 @@ The RapidEnv environement setup and maintenance tool will set up
 a standard development environment consisting in the following
 software:
 - jdk      Java SE Development Kit (including Java Runtime Environment)
+           version 1.6.0_26 (upgrade to 1.7.0_2)
 - maven    Maven build system
+           version 3.0.3
 - jboss    JBoss Application Server
-- eclipse  Eclipse Helios IDE for Java EE developers SR2
-  - plugin jbosstools     JBoss integration into Eclipse
+           version 6.0.0.Final, (upgrade to 7.0.2.Final)
+- eclipse  Eclipse IDE for Java EE developers SR2
+           version 3.6.2 / Helios SR2, 3.7.1 (upgrade to 3.7.1 / Indigo SR1)
+  - plugin jbosstools   JBoss integration into Eclipse
+                        Version 3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329
 
-Initially the following versions are installed
-- jdk      1.6.0_26
-- maven    3.0.3
-- jboss    6.0.0.Final
-- eclipse  3.6.2
-  - plugin jbosstools 3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329
+System Requirements:
+--------------------
+
+2 GB of Space on your harddiskhttps://github.com/downloads/bluemel/RapidEnvExampleJavaEE/RapidEnvExampleJavaEE-0.9.1.zip
+
+RapidEnv currently basically works under Windows and Linux.
+It has been tested so far with:
+- Windows XP
+- OpenSUSE Linux 11.4
+
+A Java Runtime Environment (Version 1.6.x) has to be
+installed in order to run the RapidEnv command line tool "renv".
+
+
+Download and install the example:
+---------------------------------
+
+The GIT way:
+
+  If you have installed the GIT version controly system you
+
+- Open a Windows command prompt or Unix terminal window and
+  go to the folder where you want the example to be installed
+
+- type command
+  git clone git@github.com:bluemel/RapidEnv.git
+
+
+Without version control:
+
+   Simply download and unpack example archive
+   https://github.com/downloads/bluemel/RapidEnvExampleJavaEE/RapidEnvExampleJavaEE-0.9.1.zip
+
+
+Use Cases:
+----------
+
+  1) Use Case: Setup
+     Initial development environment setup
+     ----------------------------------------
+
+  - Open a Windows command prompt or Unix terminal window
+    in folder RapidEnvExampleJavaEE/environment/bin
+
+  - start RapidEnv by entering command:
+    - Windows> renv -yes
+    - Linux>   . renv -yes
+      Prepending . on Linux is essential to influence the
+      environment settings of the current shell window.
+
+    This will install the development environment without
+    any user interaction in 15 - 30 minutes depending of the
+    speed of your internet connection and harddisk.
+
+    On Linux typing the root user's password once might be
+    necessary after 1 to 2 minutes because the JDK installation
+    requires root user rights.
+
+  Celebrate:
+    * Development environment specific command prompt
+    * Output of renv command
+    * Environment set
+    * Start and stop command for jboss
+    * Desktop and start menu icons
+    * Eclipse with configured JBoss integration (JBoss Tools plugin)
+
+
+  2) Use Case: Upgrade 
+     Version upgrade of different parts of the development envrionment
+     -----------------------------------------------------------------
+
+   !!! Please Note: this Use Case is currently under construction and
+       may not work yet completely !!!
+
+   - edit environment configuration file
+     RapidEnvExampleJavaEE/environment/env.xml
+
+     - configure upgrade of jdk from version 1.6.0_26 to 1.7.0_2
+       - 
+
+   - Open development environment specific Windows command prompt
+    or Unix terminal window using
+    - Windows Explorex context menu entry
+    - or KDE Dolphin "Actions" menu entry
+    - or Gnome Nautilus "Scripts" menu entry
+      "RapidEnvJavaEE Command Prompt main"
+
+  - start RapidEnv by entering command:
+    - Windows> renv update
+    - Linux>   . renv update
+
+  Celebrate:
+    * Environment changed
+    * New versions installed and runnable
+
+
+  3) Teardown
+     Removal of the complete development environment
+     -----------------------------------------------
+
+  - Open development environment specific Windows command prompt
+    or Unix terminal window using
+    - Windows Explorer context menu entry
+      "RapidEnvJavaEE Command Prompt main"
+    - Linux KDE Dolphin "Actions" menu entry
+      "Open Terminal RapidEnvJavaEE main"
+    - Linux Gnome Nautilus "Scripts" menu entry
+      "Open Terminal RapidEnvJavaEE main"
+
+  - start RapidEnv by entering command:
+    - Windows> renv deinstall
+    - Linux>   . renv deinstall
+
+  - remove folder RapidEnvExampleJavaEE from the
+    file system.
+
+  Celebrate:
+    * your development environment has completely been
+      wiped out without any trace left including
+      file manager, desktop and start menu entries.
 
 
 License issues:
@@ -53,7 +173,7 @@ maintained by RapidEnv:
 
 - jdk
   Java SE Development Kit (incuding Java Runtime Environment)
-  Version: 1.6.0_26
+  Version: 1.6.0_26 (1.7.0_2)
   License: Oracle Binary Code License Agreement for Java SE and JavaFX Technologies
            http://www.oracle.com/technetwork/java/javase/downloads/java-se-archive-license-1382604.html
 
@@ -65,14 +185,14 @@ maintained by RapidEnv:
 
 - jboss
   JBoss Application Server
-  Version: 6.0.0.Final
+  Version: 6.0.0.Final (7.0.2.Final)
   License: GNU Lesser General Public License 2.1
            http://www.gnu.de/documents/lgpl-2.1.de.html
            and others (see *)
 
 - eclipse
-  Eclipse Helios IDE for Java EE developers SR2
-  Version: 3.6.2
+  Eclipse Helios (Indigo) IDE for Java EE developers SR2 (SR1)
+  Version: 3.6.2 (3.7.1)
   License: Eclipse Public License Version 1.0
            http://www.eclipse.org/legal/epl-v10.html
            and others (see **)
@@ -121,119 +241,3 @@ CONTENT.
 If no About, Feature License, or Feature Update License is provided,
 please contact the Eclipse Foundation to determine what terms and conditions
 govern that particular Content.
-
-
-System Requirements:
---------------------
-
-2 GB of Space on your harddiskhttps://github.com/downloads/bluemel/RapidEnvExampleJavaEE/RapidEnvExampleJavaEE-0.9.1.zip
-
-RapidEnv currently basically works under Windows and Linux.
-It has been tested so far with:
-- Windows XP
-- OpenSUSE Linux 11.4
-
-A Java Runtime Environment (Version 1.6.x) has to be
-installed in order to run the RapidEnv command line tool "renv".
-
-
-Dowload and install the example:
---------------------------------
-
-The GIT way:
-
-  If you have installed the GIT version controly system you
-
-- Open a Windows command prompt or Unix terminal window and
-  go to the folder where you want the example to be installed
-
-- type command
-  git clone git@github.com:bluemel/RapidEnv.git
-
-
-Without version control:
-
-   Simply download and unpack example archive
-   https://github.com/downloads/bluemel/RapidEnvExampleJavaEE/RapidEnvExampleJavaEE-0.9.1.zip
-
-
-Use Cases:
-----------
-
-  1) Initial development environment setup
-  ----------------------------------------
-
-  - Open a Windows command prompt or Unix terminal window
-    in folder RapidEnvExampleJavaEE/environment/bin
-
-  - start RapidEnv by entering command:
-    - Windows> renv -yes
-    - Linux>   . renv -yes
-      Prepending . on Linux is essential to influence the
-      environment settings of the current shell window.
-
-    This will install the development environment without
-    any user interaction in 15 - 30 minutes depending of the
-    speed of your internet connection and harddisk.
-
-    On Linux typing the root user's password once might be
-    necessary after 1 to 2 minutes because the JDK installation
-    requires root user rights.
-
-  Celebrate:
-    * Development environment specific command prompt
-    * Output of renv command
-    * Environment set
-    * Start and stop command for jboss
-    * Desktop and start menu icons
-    * Eclipse with configured JBoss integration (JBoss Tools plugin)
-
-
-  2) Version upgrade of different parts of the development envrionment
-  --------------------------------------------------------------------
-
-  - edit environment configuration file
-    RapidEnvExampleJavaEE/environment/env.xml
-
-    - enter new version for install unit jdk
-
-    - enter new version for install unit eclipse
-
-
-  - Open development environment specific Windows command prompt
-    or Unix terminal window using
-    - Windows Explorex context menu entry
-    - or KDE Dolphin "Actions" menu entry
-    - or Gnome Nautilus "Scripts" menu entry
-      "RapidEnvJavaEE Command Prompt main"
-
-  - start RapidEnv by entering command:
-    - Windows> renv update
-    - Linux>   . renv update
-
-  Celebrate:
-    * Environment changed
-    * New JBoss version
-    * New Eclipse version
-
-
-  3) Removal of the complete development environment
-  --------------------------------------------------
-
-  - Open development environment specific Windows command prompt
-    or Unix terminal window using
-    - Windows Explorex context menu entry
-    - or KDE Dolphin "Actions" menu entry
-    - or Gnome Nautilus "Scripts" menu entry
-      "RapidEnvJavaEE Command Prompt main"
-
-  - start RapidEnv by entering command:
-    - Windows> renv deinstall
-    - Linux>   . renv deinstall
-
-  - remove folder RapidEnvExampleJavaEE
-
-  Celebrate:
-    * your development environment has completely been
-      wiped out without any trace left including
-      file manager, desktop and start menu entries.
