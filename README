@@ -116,7 +116,28 @@ Use Cases:
      RapidEnvExampleJavaEE/environment/env.xml
 
      - configure upgrade of jdk from version 1.6.0_26 to 1.7.0_2
-       - 
+	...
+	<installunit name="jdk"
+		version="1.7.0_2"
+	...
+		<sourcefilecheck
+			osfamily="windows"
+			hashalgorithm="MD5"
+			hashvalue="7b0bb440d5659faeadda44b3ebd63841"
+			/>
+		<sourcefilecheck
+			osfamily="linux"
+			hashalgorithm="MD5"
+			hashvalue="?"
+			/>
+	...
+		<property name="uversion" category="common"
+			value="7u2"
+			/>
+		<property name="buildnumber" category="common"
+			value="b06"
+			/>
+	...
 
    - Open development environment specific Windows command prompt
     or Unix terminal window using
