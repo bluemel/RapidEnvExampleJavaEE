@@ -122,25 +122,25 @@ uniquely defines a development environment on your machine.</description>
 		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	-->
 	<installunit name="jdk"
-		version="1.6.0_26"
+		version="1.7.0_2"
 		sourceurl="http://download.oracle.com/otn-pub/java/jdk/${jdk.uversion}-${jdk.buildnumber}/jdk-${jdk.uversion}-''osname()-''architecture('x86=i586;i386=i586-rpm;x86_64=-x86_64').''packaging('windows=exe;linux=bin')"
 		>
 		<sourcefilecheck
 			osfamily="windows"
 			hashalgorithm="MD5"
-			hashvalue="8832d79ba8bed47bf247e36aa3881423"
+			hashvalue="7b0bb440d5659faeadda44b3ebd63841"
 			/>
 		<sourcefilecheck
 			osfamily="linux"
 			hashalgorithm="MD5"
-			hashvalue="e9e08153c09d385cd5379b80b4b95661"
+			hashvalue="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 			/>
 		<propextension property="cmd.path" propextmode="prepend" value="homedir()/bin"/>
 		<property name="uversion" category="common"
-			value="6u26"
+			value="7u2"
 			/>
 		<property name="buildnumber" category="common"
-			value="b06"
+			value="b13"
 			/>
 		<property name="home" category="common"
 			value="homedir()"
@@ -359,14 +359,14 @@ uniquely defines a development environment on your machine.</description>
 		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	-->
 	<installunit name="jboss"
-		version="6.0.0.Final"
+		version="7.0.2.Final"
 		depends="jdk"
-		sourcefile="jboss-as-distribution-''version().zip"
-		sourceurl="http://downloads.sourceforge.net/project/jboss/JBoss/JBoss-''version()/jboss-as-distribution-''version().zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fjboss%2Ffiles%2FJBoss%2FJBoss-6.0.0.Final%2F&amp;ts=1322341475&amp;use_mirror=dfn"
+		sourcefile="jboss-as-web-''version().zip"
+		sourceurl="http://download.jboss.org/jbossas/7.0/jboss-as-''version()/jboss-as-web-''version().zip"
 		>
 		<sourcefilecheck
 			hashalgorithm="MD5"
-			hashvalue="81ed7c2c274881963467c11f204eedfc"
+			hashvalue="eb2d9f58d030fcb4d9a255a9ba6052c2"
 			/>
 
 		<property name="home" category="common"
@@ -380,22 +380,22 @@ uniquely defines a development environment on your machine.</description>
 			/>
 		<propextension property="cmd.path" propextmode="prepend" value="homedir()/bin"/>
 
-		<!-- JBoss 6 start / stop commands on Windows -->
+		<!-- JBoss 7 start / stop commands on Windows -->
 		<textfile path="homedir()/bin/jboss_start.cmd"
 			osfamily="windows">
 			<insert line="set NOPAUSE=yes"
 				mode="prepend"/>
-			<insert line="start &quot;JBoss ''version()&quot; ''homedir()\bin\run.bat"
+			<insert line="start &quot;JBoss ''version()&quot; ''homedir()\bin\standalone.bat"
 				mode="append"/>
 		</textfile>
 		<textfile path="homedir()/bin/jboss_stop.cmd"
 			osfamily="windows">
 			<insert line="set NOPAUSE=yes"
 				mode="prepend"/>
-			<insert line="homedir()\bin\shutdown.bat -S"
+			<insert line="homedir()\bin\jboss-admin.bat --connect command=:shutdown"
 				mode="append"/>
 		</textfile>
-		<textfile path="homedir()/bin/run.bat"
+		<textfile path="homedir()/bin/standalone.bat"
 			osfamily="windows">
 			<insert line="exit 0" mode="append"/>
 		</textfile>
@@ -485,7 +485,7 @@ uniquely defines a development environment on your machine.</description>
 		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	-->
 	<installunit name="eclipse"
-		version="3.6.2"
+		version="3.7.1"
 		depends="jdk,jboss,maven"
 		sourcefile="${eclipse.sourcefile}"
 		sourceurl="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/${eclipse.distname}/${eclipse.servicerelease}/${eclipse.sourcefile}&amp;url=http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/technology/epp/downloads/release/${eclipse.distname}/${eclipse.servicerelease}/${eclipse.sourcefile}&amp;mirror_id=17"
@@ -494,20 +494,20 @@ uniquely defines a development environment on your machine.</description>
 		<sourcefilecheck
 			osfamily="windows"
 			hashalgorithm="MD5"
-			hashvalue="a6dbc03031ce0b5ff821da89aa997de3"
+			hashvalue="48647f4b3b2bb559fbcd8a428dc7a638"
 			/>
 		<sourcefilecheck
 			osfamily="linux"
 			hashalgorithm="MD5"
-			hashvalue="5952cd8b01e36dd4646ebd3faad28a6d"
+			hashvalue="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 			/>
 
 		<!-- Specific properties -->
 		<property name="distname" category="common"
-			value="helios"
+			value="indigo"
 		/>
 		<property name="servicerelease" category="common"
-			value="SR2"
+			value="SR1"
 		/>
 		<property name="sourcefile" category="common"
 			valuetype="string" value="eclipse-jee-${eclipse.distname}-${eclipse.servicerelease}-''osname('windows=win32;linux=linux-gtk')''architecture('x86=;i386=;x86_64=-x86_64').''packaging('windows=zip;linux=tar.gz')"
@@ -629,14 +629,14 @@ uniquely defines a development environment on your machine.</description>
 			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		-->
 		<subunit name="jbosstools"
-			version="3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329"
+			version="3.3.0.M5.aggregate-Update-2011-12-14_19-42-13-H61"
 			sourcefile="jbosstools-''version().zip"
-			sourceurl="http://downloads.sourceforge.net/project/jboss/JBossTools/JBossTools3.2.x/jbosstools-''version().zip?r=http%3A%2F%2Fwww.jboss.org%2Ftools%2Fdownload%2Fstable%2F3_2_GA&amp;ts=1322340366&amp;use_mirror=dfn"
+			sourceurl="http://downloads.sourceforge.net/project/jboss/JBossTools/JBossTools3.3.0.x/jbosstools-3.3.0.M5.aggregate-Update-2011-12-14_19-42-13-H61.zip?r=http%3A%2F%2Fwww.jboss.org%2Ftools%2Fdownload%2Fdev.html&amp;ts=1326784317&amp;use_mirror=dfn"
 			homedir="extensions/jbosstools/''version()"
 			>
 			<sourcefilecheck
 				hashalgorithm="MD5"
-				hashvalue="55e272470aaa9aed26c88b9a13d38c19"
+				hashvalue="ce6de1b9accc8b2c31ed000705e247c6"
 				/>
 
 			<!-- install via link in dropins to unpacked site zip file -->
@@ -667,16 +667,16 @@ uniquely defines a development environment on your machine.</description>
 				deleteafterdeinstall="false"
 				>
 				<setnodevalue
-					path="//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 6.0 Runtime Server']/@factoryID"
+					path="//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 7.0 Runtime Server']/@factoryID"
 					value="org.eclipse.wst.server.ui.editor.input.factory"
 				/>
 				<setnodevalue
-					path="//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 6.0 Runtime Server']/@tooltip"
-					value="JBoss 6.0 Runtime Server"
+					path="//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 7.0 Runtime Server']/@tooltip"
+					value="JBoss 7.0 Runtime Server"
 				/>
 				<setnodevalue
-					path="//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 6.0 Runtime Server']/persistable/@server-id"
-					value="JBoss 6.0 Runtime Server123456789"
+					path="//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 7.0 Runtime Server']/persistable/@server-id"
+					value="JBoss 7.0 Runtime Server123456789"
 				/>
 			</xmlfile>
 			<propertiesfile
@@ -686,11 +686,11 @@ uniquely defines a development environment on your machine.</description>
 				>
 				<setpropvalue
 					name="org.jboss.ide.eclipse.as.ui.defaultWebServer"
-					value="JBoss 6.0 Runtime Server123456789"
+					value="JBoss 7.0 Runtime Server123456789"
 					/>
 				<setpropvalue
 					name="org.jboss.ide.eclipse.as.ui.wizards.LAST_SERVER_CREATED"
-					value="JBoss 6.0 Runtime Server123456789"
+					value="JBoss 7.0 Runtime Server123456789"
 					/>
 			</propertiesfile>
 

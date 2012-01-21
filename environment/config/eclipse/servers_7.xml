@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+	<server auto-publish-time="1"
+		id="JBoss 7.0 Runtime Server123456789"
+		runtime-id="JBoss 7.0 Runtime"
+		name="JBoss 7.0 Runtime Server"
+		hostname="localhost"
+		org.jboss.ide.eclipse.as.core.server.deployDirectory="server/default/deploy"
+		org.jboss.ide.eclipse.as.core.server.deployDirectoryType="server"
+		org.jboss.ide.eclipse.as.core.server.tempDeployDirectory="server/default/tmp/jbosstoolsTemp"
+		org.jboss.ide.eclipse.as.core.server.userName="admin"
+		org.jboss.ide.eclipse.as.core.server.password="admin"
+		org.jboss.ide.eclipse.as.core.server.webPort="8080"
+		org.jboss.ide.eclipse.as.core.server.webPortAutoDetect="true"
+		org.jboss.ide.eclipse.as.core.server.attributes.startupPollerKey="org.jboss.ide.eclipse.as.core.server.JBoss7ManagerServicePoller"
+		server-type="org.jboss.ide.eclipse.as.70"
+		server-type-id="org.jboss.ide.eclipse.as.70"
+		start-timeout="450"
+		stop-timeout="450"
+		timestamp="1"
+		/>
+</servers>

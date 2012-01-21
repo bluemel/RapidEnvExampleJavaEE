@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
 	<server auto-publish-time="1"
-		id="JBoss 6.0 Runtime Server1320073606750"
+		id="JBoss 6.0 Runtime Server123456789"
 		runtime-id="JBoss 6.0 Runtime"
 		name="JBoss 6.0 Runtime Server"
 		hostname="localhost"
 		org.jboss.ide.eclipse.as.core.server.deployDirectory="server/default/deploy"
 		org.jboss.ide.eclipse.as.core.server.deployDirectoryType="server"
-		org.jboss.ide.eclipse.as.core.server.password="admin"
 		org.jboss.ide.eclipse.as.core.server.tempDeployDirectory="server/default/tmp/jbosstoolsTemp"
+		org.jboss.ide.eclipse.as.core.server.password="admin"
 		org.jboss.ide.eclipse.as.core.server.userName="admin"
 		server-type="org.jboss.ide.eclipse.as.60"
 		server-type-id="org.jboss.ide.eclipse.as.60"
