@@ -310,13 +310,13 @@ uniquely defines a development environment on your machine.</description>
 		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	-->
 	<installunit name="maven"
-		version="3.0.3"
+		version="3.0.4"
 		depends="jdk"
-		sourceurl="http://mirror.netcologne.de/apache.org/maven/binaries/apache-maven-''version()-bin.zip"
+		sourceurl="http://archive.apache.org/dist/maven/binaries/apache-maven-''version()-bin.zip"
 		>
 		<sourcefilecheck
 			hashalgorithm="MD5"
-			hashvalue="e9d7eb43b0cdb504f513e0c32ed0e71a"
+			hashvalue="2a8974fd1546ef5f11ad9cccb3cabf88"
 			/>
 		<propextension property="cmd.path" propextmode="prepend" value="homedir()/bin"/>
 		<property name="home" category="common"

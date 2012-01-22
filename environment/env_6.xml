@@ -312,7 +312,7 @@ uniquely defines a development environment on your machine.</description>
 	<installunit name="maven"
 		version="3.0.3"
 		depends="jdk"
-		sourceurl="http://mirror.netcologne.de/apache.org/maven/binaries/apache-maven-''version()-bin.zip"
+		sourceurl="http://archive.apache.org/dist/maven/binaries/apache-maven-''version()-bin.zip"
 		>
 		<sourcefilecheck
 			hashalgorithm="MD5"
