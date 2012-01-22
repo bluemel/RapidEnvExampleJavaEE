@@ -107,9 +107,9 @@ uniquely defines a development environment on your machine.</description>
 		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		Java Development Kit
 
-		version 1.6.0_26:
-		  MD5 hashvalue windows: 8832d79ba8bed47bf247e36aa3881423
-		  MD5 hashvalue linux:   e9e08153c09d385cd5379b80b4b95661
+		version 1.6.0_30:
+		  MD5 hashvalue windows: ?
+		  MD5 hashvalue linux:   ?
 		  property uversion: 6u26
 		  property buildnumber: b06
 
@@ -126,8 +126,8 @@ uniquely defines a development environment on your machine.</description>
 	-->
 	<installunit name="jdk"
 		version="1.7.0_2"
-		sourcefile="jdk-${jdk.uversion}-''osname()-''architecture('x86=i586;i386=i586-rpm;x86_64=-x86_64').''packaging('windows=exe;linux=bin')"
-		sourceurl="http://www.oracle.com/technetwork/java/javase/downloads/jdk-${jdk.uversion}-download-1377129.html"
+		sourcefile="jdk-7u2-''osname()-''architecture('x86=i586;i386=i586-rpm;x86_64=-x86_64').''packaging('windows=exe;linux=bin')"
+		sourceurl="http://www.oracle.com/technetwork/java/javase/downloads/jdk-7u2-download-1377129.html"
 		downloadmode="manual"
 		>
 		<sourcefilecheck
