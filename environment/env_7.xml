@@ -119,10 +119,16 @@ uniquely defines a development environment on your machine.</description>
 		  property uversion: 7u2
 		  property buildnumber: b13
 		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		Unfortunately caused by Oracle's strict download policies source URL
+		http://download.oracle.com/otn-pub/java/jdk/${jdk.uversion}-${jdk.buildnumber}/jdk-${jdk.uversion}-''osname()-''architecture('x86=i586;i386=i586-rpm;x86_64=-x86_64').''packaging('windows=exe;linux=bin')
+		turned out not to work out very stable. You should give it a try from time to time
+		and otherwise stick to the manual download
 	-->
 	<installunit name="jdk"
 		version="1.7.0_2"
-		sourceurl="http://download.oracle.com/otn-pub/java/jdk/${jdk.uversion}-${jdk.buildnumber}/jdk-${jdk.uversion}-''osname()-''architecture('x86=i586;i386=i586-rpm;x86_64=-x86_64').''packaging('windows=exe;linux=bin')"
+		sourcefile="jdk-${jdk.uversion}-''osname()-''architecture('x86=i586;i386=i586-rpm;x86_64=-x86_64').''packaging('windows=exe;linux=bin')"
+		sourceurl="http://www.oracle.com/technetwork/java/javase/downloads/jdk-${jdk.uversion}-download-1377129.html"
+		downloadmode="manual"
 		>
 		<sourcefilecheck
 			osfamily="windows"

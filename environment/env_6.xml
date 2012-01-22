@@ -119,10 +119,16 @@ uniquely defines a development environment on your machine.</description>
 		  property uversion: 7u2
 		  property buildnumber: b13
 		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+		Unfortunately caused by Oracle's strict download policies source URL
+		http://download.oracle.com/otn-pub/java/jdk/${jdk.uversion}-${jdk.buildnumber}/jdk-${jdk.uversion}-''osname()-''architecture('x86=i586;i386=i586-rpm;x86_64=-x86_64').''packaging('windows=exe;linux=bin')
+		turned out not to work out very stable. You should give it a try from time to time
+		and otherwise stick to the manual download
 	-->
 	<installunit name="jdk"
-		version="1.6.0_26"
-		sourceurl="http://download.oracle.com/otn-pub/java/jdk/${jdk.uversion}-${jdk.buildnumber}/jdk-${jdk.uversion}-''osname()-''architecture('x86=i586;i386=i586-rpm;x86_64=-x86_64').''packaging('windows=exe;linux=bin')"
+		version="1.6.0_30"
+		sourcefile="jdk-${jdk.uversion}-''osname()-''architecture('x86=i586;i386=i586-rpm;x86_64=-x86_64').''packaging('windows=exe;linux=bin')"
+		sourceurl="http://www.oracle.com/technetwork/java/javase/downloads/jdk-${jdk.uversion}-download-1377139.html"
+		downloadmode="manual"
 		>
 		<sourcefilecheck
 			osfamily="windows"
@@ -136,10 +142,10 @@ uniquely defines a development environment on your machine.</description>
 			/>
 		<propextension property="cmd.path" propextmode="prepend" value="homedir()/bin"/>
 		<property name="uversion" category="common"
-			value="6u26"
+			value="6u30"
 			/>
 		<property name="buildnumber" category="common"
-			value="b06"
+			value="b12"
 			/>
 		<property name="home" category="common"
 			value="homedir()"
