@@ -38,6 +38,7 @@ software:
   - plugin jbosstools   JBoss integration into Eclipse
                         Version 3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329
 
+
 System Requirements:
 --------------------
 
@@ -75,6 +76,31 @@ Without version control:
 Use Cases:
 ----------
 
+  - Preparation:
+
+    Unfortunately caused by Oracle's strict download policies I had mixed expierences
+    trying to automate the JDK installer download (sometimes it worked but very often not).
+    So in order to work quickly through the rest of the examples I propose to download the
+    two JDKs used here manually.
+
+    - JDK 1.6.0_30
+      Download web site:
+        http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u30-download-1377139.html
+      File
+        Windows x86, 32 bits: jdk-6u30-windows-i586.exe
+        Linux x86, 32 bits:   jdk-6u30-linux-i586.bin
+      Local folder:
+        RapidEnvExampleJavaEE/toolsrepo/jdk/1.6.0_30
+
+    - JDK 1.7.0_2
+      Download web site:
+        http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u30-download-1377139.html
+      File
+        Windows x86, 32 bits: jdk-7u2-windows-i586.exe
+        Linux x86, 32 bits:   jdk-7u2-linux-i586.bin
+      Local folder:
+        RapidEnvExampleJavaEE/toolsrepo/jdk/1.7.0_2
+
 
   1) Use Case: Setup
      Initial development environment setup
@@ -97,6 +123,12 @@ Use Cases:
     necessary after 1 to 2 minutes because the JDK installation
     requires root user rights.
 
+    Please note: if you did not download the JDK installers
+    beforehand RapidEnv will stop the download procedure
+    open a Browser and ask you to download the JDK installer(s)
+    manually. In this case you simple continue the environment
+    set up after successfull download by typing: renv -yes
+
   Watch the results:
 
     * Development environment specific command prompt / terminal window:
@@ -115,16 +147,16 @@ Use Cases:
       output should look like this:
         ...
         Install units:
-          = jdk 1.6.0_26
+          = jdk 1.6.0_30
           = maven 3.0.3
           = jboss 6.0.0.Final
           = eclipse 3.6.2
           = eclipse/jbosstools 3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329
 
-    * JDK 1.6.0_26:
+    * JDK 1.6.0_30:
       Type command "java -version" in order to verify the correct environment set up.
       Expected output:
-        java version "1.6.0_26"
+        java version "1.6.0_30"
         ...
 
     * Maven 3.0.3:
@@ -161,113 +193,16 @@ Use Cases:
      Version upgrade of different parts of the development envrionment
      -----------------------------------------------------------------
 
-   !!! Please Note: this Use Case is currently under construction and
-       may not work yet completely !!!
+   Basically in order to upgrade the components of your development environment
+   to new versions you have to
+   - change some settings in your environment configuration file
+   - execute the RapidEnv update command
 
-   - edit environment configuration file
-     RapidEnvExampleJavaEE/environment/env.xml
-
-     - configure upgrade of install unit "jdk"
-       from version 1.6.0_26 to version 1.7.0_2
-       by the following changes:
-
-       - version
-         --> "1.7.0_2"
-
-       - value of property "uversion"
-         --> "7u2"
-       - value of property "buildnumber"
-         ---> "b13"
-
-       - MD5 hashvalues of the source file checks:
-         windows:
-         ---> "7b0bb440d5659faeadda44b3ebd63841"
-         linux:
-         ---> "?????? <to be detemined> ???????"
-
-     - configure upgrade of install unit "jboss"
-       from version 6.0.0.Final to version 7.0.2.Final
-       by the following changes:
-
-       - version
-         --> "7.0.2.Final"
-
-       - sourcefile
-         --> jboss-as-web-''version().zip
-
-       - sourceurl
-         --> http://download.jboss.org/jbossas/7.0/jboss-as-''version()/jboss-as-web-''version().zip
-
-       - MD5 hashvalue of the source file check:
-         ---> "eb2d9f58d030fcb4d9a255a9ba6052c2"
-
-       - configure JBoss 7 start commands on Windows / Linux
-         by commenting in / out the associated XML blocks
-         !!! please note replace the "XX" by "--" (a tribute to working with XML comments)
-         <insert line="homedir()\bin\jboss-admin.bat XXconnect command=:shutdown"
-         --->
-         <insert line="homedir()\bin\jboss-admin.bat --connect command=:shutdown" 
-
-     - configure upgrade of install unit "eclipse"
-       from version 3.2.6 to version 3.7.1
-       by the following changes:
-
-       - version
-         --> "3.7.1"
-
-       - MD5 hashvalues of the source file checks:
-         windows:
-         ---> "48647f4b3b2bb559fbcd8a428dc7a638"
-         linux:
-         ---> "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-
-       - property "distname"
-         ---> value="indigo"
-
-       - property name="servicerelease"
-         ---> value="SR1"
-
-     - configure upgrade of sub install unit "eclipse/jbosstools"
-       from version 3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329
-       to version 3.3.0.M5.aggregate-Update-2011-12-14_19-42-13-H61
-       by the following changes:
-
-       - version
-         --> "3.3.0.M5.aggregate-Update-2011-12-14_19-42-13-H61"
-
-       - sourceurl
-         --> "http://downloads.sourceforge.net/project/jboss/JBossTools/JBossTools3.3.0.x/jbosstools-3.3.0.M5.aggregate-Update-2011-12-14_19-42-13-H61.zip?r=http%3A%2F%2Fwww.jboss.org%2Ftools%2Fdownload%2Fdev.html&amp;ts=1326784317&amp;use_mirror=dfn"
-
-       - MD5 hashvalue of the source file check:
-         ---> "ce6de1b9accc8b2c31ed000705e247c6"
-
-       - XML file ${eclipse.workspace}/.metadata/.plugins/org.eclipse.ui.workbench/workbench.xml
-
-         - setnodevale
-           ---> path = "//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 7.0 Runtime Server']/@factoryID"
-
-         - setnodevalue:
-           ---> path = "//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 7.0 Runtime Server']/@tooltip"
-           ---> value = "JBoss 7.0 Runtime Server"
-
-         - setnodevalue:
-           ---> path = "//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 7.0 Runtime Server']/@tooltip"
-           ---> value = "JBoss 7.0 Runtime Server1320073606750"
-
-         - setnodevalue
-           ---> path = "//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 7.0 Runtime Server']/persistable/@server-id"
-           ---> value = "JBoss 7.0 Runtime Server1320073606750"
-
-       - Properties file ${eclipse.workspace}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.jboss.ide.eclipse.as.ui.prefs"
-
-         - setpropvalue name="org.jboss.ide.eclipse.as.ui.defaultWebServer"
-           ---> value="JBoss 7.0 Runtime Server1320073606750"
-
-         - setpropvalue name="org.jboss.ide.eclipse.as.ui.wizards.LAST_SERVER_CREATED"
-           ---> value="JBoss 7.0 Runtime Server1320073606750"
-
-         - setpropvalue (replace rg.jboss.ide.eclipse.as.ui.preferences.runtime.last.type.org.jboss.ide.eclipse.as.runtime.60)
-           ---> name="org.jboss.ide.eclipse.as.ui.preferences.runtime.last.type.org.jboss.ide.eclipse.as.runtime.70"
+   in order to ease the changing of the environment configuration settings
+   I've prepared some files:
+   - RapidEnvExampleJavaEE/environment/env_7.xml
+   - RapidEnvExampleJavaEE/environment/config/eclipse/runtimes_7.xml
+   - RapidEnvExampleJavaEE/environment/config/eclipse/servers_7.xml
 
    - Open development environment specific Windows command prompt
     or Unix terminal window using
@@ -276,13 +211,56 @@ Use Cases:
     - or Gnome Nautilus "Scripts" menu entry
       "RapidEnvJavaEE Command Prompt main"
 
+  - activate the new configuration by exectuing:
+    Windows> cd RapidEnvExampleJavaEE\environment\config
+    Windows> setEnvConfig7.cmd
+
   - start RapidEnv by entering command:
     - Windows> renv update
     - Linux>   . renv update
 
-  Celebrate:
-    * Environment changed
-    * New versions installed and runnable
+  Watch the results:
+
+    * Output of renv command:
+      Whenever you type the "renv" command (which is now automatically
+      in your current command path) you will see the properties and installation
+      units of your development environment. The end of the renv command's
+      output should look like this:
+        ...
+        Install units:
+          = jdk 1.7.0_2
+          = maven 3.0.4
+          = jboss 7.0.2.Final
+          = eclipse 3.7.1
+          = eclipse/jbosstools 3.3.0.M5.aggregate-Update-2011-12-14_19-42-13-H61
+
+    * JDK 1.7.0_2:
+      Type command "java -version" in order to verify the correct environment set up.
+      Expected output:
+        java version "1.7.0_2"
+        ...
+
+    * Maven 3.0.4:
+      Type command "mvn -version" in order to verify the correct environment set up.
+      Expected output:
+        Apache Maven 3.0.4 (???)
+        Maven home: <root folder>\RapidEnvExampleJavaEE\tools\maven\3.0.4
+        ...
+
+    * JBoss 7.0.2.Final "Arc":
+      For JBoss we configured an extra start command "jboss_start" wich will start
+      JBoss with an extra associated terminal window. After JBoss has started up
+      successfully it should print out a message similar to the following one:
+      JBossAS [7.0.2.Final "Arc"] Started in 10s:999m
+      Command "jboss_stop" will shut down JBoss and close the associated terminal window.
+
+    * Desktop and start menu icons:
+      Will still work like before
+
+    * Eclipse with configured JBoss integration (JBoss Tools plugin):
+      Using icon "Start JBoss 7.0 Runtime Server" you can start JBoss while
+      the server process will write its output into the Eclipse COnsole view.
+      Please try also the associated "Shutdown ..." toolbar icon.
 
 
   3) Teardown
@@ -324,19 +302,19 @@ maintained by RapidEnv:
 
 - jdk
   Java SE Development Kit (incuding Java Runtime Environment)
-  Version: 1.6.0_26 (1.7.0_2)
+  Version: 1.6.0_30 (1.7.0_2)
   License: Oracle Binary Code License Agreement for Java SE and JavaFX Technologies
            http://www.oracle.com/technetwork/java/javase/downloads/java-se-archive-license-1382604.html
 
 - maven
   Maven build system
-  Version: 3.0.3
+  Version: 3.0.3 (3.0.4)
   License: Apache Software License 2.0
            http://www.apache.org/licenses/LICENSE-2.0
 
 - jboss
   JBoss Application Server
-  Version: 6.0.0.Final (7.0.2.Final)
+  Version: 6.0.0.Final "Neo" (7.0.2.Final "Arc")
   License: GNU Lesser General Public License 2.1
            http://www.gnu.de/documents/lgpl-2.1.de.html
            and others (see *)
