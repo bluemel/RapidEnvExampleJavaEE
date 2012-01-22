@@ -5,7 +5,6 @@
 	name="RapidEnvExampleJavaEE"
 	tag="${renvexamplejavaee.tag}"
 	installsourceurl="file:''pathconvert(${renvexamplejavaee.tools.repo}, '/')"
-	installrepolocal="file:''pathconvert(${renvexamplejavaee.tools.repo}, '/')"
 	installtargetdir="${renvexamplejavaee.tools.home}"
 	>
 
@@ -643,6 +642,34 @@ uniquely defines a development environment on your machine.</description>
 			<propertiesfile path="../../../dropins/jbosstools-''version().link">
 				<setpropvalue name="path" value="pathconvert(homedir(), '/')"/>
 			</propertiesfile>
+
+			<!--
+				migrate from JBoss 6 to 7 by deleting Eclipse workspace files:
+				.metadata/.plugins/org.eclipse.wst.server.core/servers.xml
+				.metadata/.plugins/org.eclipse.wst.server.core/publish.xml
+				.metadata/.plugins/org.eclipse.wst.server.core/publish/publish0.dat
+			-->
+			<anttask anttaskname="delete"
+				installphase="preinstall"
+				>
+				<argument name="file" valuetype="file"
+					value="${eclipse.workspace}/.metadata/.plugins/org.eclipse.wst.server.core/servers.xml"
+					/>
+			</anttask>
+			<anttask anttaskname="delete"
+				installphase="preinstall"
+				>
+				<argument name="file" valuetype="file"
+					value="${eclipse.workspace}/.metadata/.plugins/org.eclipse.wst.server.core/publish.xml"
+					/>
+			</anttask>
+			<anttask anttaskname="delete"
+				installphase="preinstall"
+				>
+				<argument name="file" valuetype="file"
+					value="${eclipse.workspace}/.metadata/.plugins/org.eclipse.wst.server.core/publish/publish0.dat"
+					/>
+			</anttask>
 
 			<!-- WST and JBoss Tools plugin settings -->
 			<propertiesfile
