@@ -17,8 +17,8 @@ Highlights:
 * development environment specific operating system environment variables
   are controlled completely locally without polluting the global environment.
 
-* Desktop and start menu icons are provided to start and stop or launch
-  the components of the development environment.
+* desktop and start menu icons are provided to start and stop the components
+  Sof the development environment.
 
 
 Software installed:
@@ -48,15 +48,21 @@ software:
 System Requirements:
 --------------------
 
-2 GB of Space on your harddisk
+2 GB of Space on your harddisk. This includes not only the
+development environment but also the local repository for
+installer (archive) files.S
 
-RapidEnv currently basically works under Windows and Linux.
+At the moment RapidEnv basically works under Windows and Linux.
 It has been tested so far with:
 - Windows XP
 - OpenSUSE Linux 11.4
 
 A Java Runtime Environment (Version 1.6.x) has to be
 installed in order to run the RapidEnv command line tool "renv".
+Simply open a command prompt or terminal window and type
+"java -version". You should be able to execute this command with
+reasonable output showing a sufficient version in order to
+be able to run the command line tool.
 
 
 Download and install the example:
@@ -77,8 +83,9 @@ Without version control:
    download and unpack example archive
    https://github.com/downloads/bluemel/RapidEnvExampleJavaEE/RapidEnvExampleJavaEE-0.9.2.zip
 
-   or simply download all sources of repository RapidEnvExampleJavaEE
-   using the ZIP button (download this  repository a zip file)
+   or simply download the latest version of all sources of
+   repository RapidEnvExampleJavaEE using the ZIP button
+   (download this repository a zip file).
 
 
 Use Cases:
@@ -112,16 +119,16 @@ Use Cases:
 
   1) Use Case: Setup
      Initial development environment setup
-     ----------------------------------------
+     -------------------------------------
 
-  - Open a Windows command prompt or Unix terminal window
+  - open a Windows command prompt or Unix terminal window
     in folder RapidEnvExampleJavaEE/environment/bin
 
   - start RapidEnv by entering command:
     - Windows> renv -yes
-    - Linux>   . renv -yes
+    - Linux> . renv -yes
       Prepending . on Linux is essential to influence the
-      environment settings of the current shell window.
+      environment settings of the current terminal window.
 
     This will install the development environment without
     any user interaction in 15 - 30 minutes depending of the
@@ -131,16 +138,24 @@ Use Cases:
     necessary after 1 to 2 minutes because the JDK installation
     requires root user rights.
 
-    Please note: if you did not download the JDK installers
+    Please note: if you have not downloaded the JDK installers
     beforehand RapidEnv will stop the download procedure
     open a Browser and ask you to download the JDK installer(s)
     manually. In this case you simply continue the environment
     set up after successfull download by typing:
     - Windows> renv install
-    - Linux>   . renv install
+    - Linux> . renv install
 
+    Please note also: in order to achive an optimal tradeoff
+    between comfort and flexibility the JDK installation is
+    only done temporary. A zip file containing the whole installation
+    will be built automatically and the whole installation will
+    be removed afterwards. This policy will fail in case a JDK
+    of the same version already installed on your machine.
+    In this case currently you would have to deinstall this JDK
+    (at least temporarily) or to build the zip file on your own.
 
-  Watch the results:
+  - watch the results:
 
     * Development environment specific command prompt / terminal window:
       Under Windows your Windows Explorer context menu now contains
@@ -230,7 +245,7 @@ Use Cases:
     - Windows> renv update
     - Linux>   . renv update
 
-  Watch the results:
+  - watch the results:
 
     * Output of renv command:
       Whenever you type the "renv" command (which is now automatically
@@ -294,7 +309,7 @@ Use Cases:
   - remove folder RapidEnvExampleJavaEE from the
     file system.
 
-  Watch the results:
+  - watch the results:
 
     * your development environment has completely been
       wiped out without any trace left including
