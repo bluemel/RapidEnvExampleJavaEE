@@ -108,17 +108,21 @@ uniquely defines a development environment on your machine.</description>
 		Java Development Kit
 
 		version 1.6.0_30:
-		  MD5 hashvalue windows: ?
+		  MD5 hashvalue windows: 8832d79ba8bed47bf247e36aa3881423
 		  MD5 hashvalue linux:   ?
 		  property uversion: 6u26
-		  property buildnumber: b06
+		  property buildnumber: b12
+		  sourceurl: http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u30-download-1377139.html
 
 		version 1.7.0_2:
 		  MD5 hashvalue windows: 7b0bb440d5659faeadda44b3ebd63841
 		  MD5 hashvalue linux:   ?
 		  property uversion: 7u2
 		  property buildnumber: b13
+		  sourceurl: http://www.oracle.com/technetwork/java/javase/downloads/jdk-7u2-download-1377129.html
+
 		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 		Unfortunately caused by Oracle's strict download policies source URL
 		http://download.oracle.com/otn-pub/java/jdk/${jdk.uversion}-${jdk.buildnumber}/jdk-${jdk.uversion}-''osname()-''architecture('x86=i586;i386=i586-rpm;x86_64=-x86_64').''packaging('windows=exe;linux=bin')
 		turned out not to work out very stable. You should give it a try from time to time
@@ -126,7 +130,7 @@ uniquely defines a development environment on your machine.</description>
 	-->
 	<installunit name="jdk"
 		version="1.7.0_2"
-		sourcefile="jdk-7u2-''osname()-''architecture('x86=i586;i386=i586-rpm;x86_64=-x86_64').''packaging('windows=exe;linux=bin')"
+		sourcefile="jdk-${jdk.uversion}-''osname()-''architecture('x86=i586;i386=i586-rpm;x86_64=-x86_64').''packaging('windows=exe;linux=bin')"
 		sourceurl="http://www.oracle.com/technetwork/java/javase/downloads/jdk-7u2-download-1377129.html"
 		downloadmode="manual"
 		>
@@ -287,7 +291,7 @@ uniquely defines a development environment on your machine.</description>
 				<argument value="/usr/java/jdk''version()"/>
 				<return equals="2"/>
 			</verifycmd>
-			<messagestart>  - uninstalling Oracle JDK 1.7.0_2 using (the official) windows installer...</messagestart>
+			<messagestart>  - uninstalling Oracle JDK using (the official) windows installer...</messagestart>
 			<argument value="rpm"/>
 			<argument value="-e"/>
 			<argument value="jdk"/>
