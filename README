@@ -18,7 +18,7 @@ Highlights:
   are controlled completely locally without polluting the global environment.
 
 * desktop and start menu icons are provided to start and stop the components
-  Sof the development environment.
+  of the development environment.
 
 
 Software installed:
@@ -81,7 +81,7 @@ The GIT way:
 Without version control:
 
    download and unpack example archive
-   https://github.com/downloads/bluemel/RapidEnvExampleJavaEE/RapidEnvExampleJavaEE-0.9.2.zip
+   https://github.com/downloads/bluemel/RapidEnvExampleJavaEE/RapidEnvExampleJavaEE-0.9.3.zip
 
    or simply download the latest version of all sources of
    repository RapidEnvExampleJavaEE using the ZIP button
