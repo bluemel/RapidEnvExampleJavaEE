@@ -15,5 +15,7 @@
 		start-timeout="450"
 		stop-timeout="450"
 		timestamp="1"
-		/>
+		>
+			<list key="modules" value0="jeesandboxexample::org.eclipse.jst.jee.server:jeesandboxexample::jst.web::3.0"/>
+		</server>
 </servers>

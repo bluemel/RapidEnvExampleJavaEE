@@ -21,8 +21,6 @@ import org.rapdibeans.rapidenv.jeesandboxexample.model.Teacher;
 import org.rapdibeans.rapidenv.jeesandboxexample.qualifier.DataRepository;
 import org.rapdibeans.rapidenv.jeesandboxexample.qualifier.StudentAdded;
 import org.rapdibeans.rapidenv.jeesandboxexample.qualifier.StudentRemoved;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Implements the {@link SchoolDao} as a {@link Stateless} EJB to take advantage
@@ -33,8 +31,6 @@ import org.slf4j.LoggerFactory;
  */
 @Stateless
 public class SchoolJpaDao implements SchoolDao {
-
-	private static Logger log = LoggerFactory.getLogger(SchoolJpaDao.class);
 
 	@DataRepository
 	@Inject
@@ -88,7 +84,6 @@ public class SchoolJpaDao implements SchoolDao {
 	@Override
 	public List<Student> searchStudents(SearchCriteria criteria,
 			int firstResult, int pageSize) {
-		log.debug("Searching students with criteria {}", criteria);
 		Map<String, Object> params = new HashMap<String, Object>();
 		List<String> clauses = new ArrayList<String>();
 		String sql = "select distinct s from Student s left JOIN s.enrolled c left join c.teacher t";
