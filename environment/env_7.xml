@@ -903,7 +903,7 @@ uniquely defines a development environment on your machine.</description>
 				<argument value="pathconvert(homedir('eclipse'), '/')"/>
 			</command>
 
-			<!--  --> Maven Eclipse plugin settings -->
+			<!-- Maven Eclipse plugin settings -->
 			<propertiesfile
 				path="${eclipse.workspace}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.maven.ide.eclipse.prefs"
 				deleteafterdeinstall="false"
