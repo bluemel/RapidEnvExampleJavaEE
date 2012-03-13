@@ -21,7 +21,8 @@ public class DataRepositoryProducer {
 	
 	private EntityManager entityManager;
 	
-	@Produces @DataRepository @ConversationScoped
+	//@Produces @DataRepository @ConversationScoped
+	@Produces @DataRepository
 	public EntityManager getEntityManager() {
 		return entityManager;
 	}
