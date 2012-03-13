@@ -5,16 +5,23 @@
 		runtime-id="JBoss 7.0 Runtime"
 		name="JBoss 7.0 Runtime Server"
 		hostname="localhost"
-		org.jboss.ide.eclipse.as.core.server.deployDirectoryType="server"
-		org.jboss.ide.eclipse.as.core.server.userName="admin"
-		org.jboss.ide.eclipse.as.core.server.password="admin"
-		org.jboss.ide.eclipse.as.core.server.webPort="8080"
-		org.jboss.ide.eclipse.as.core.server.webPortAutoDetect="true"
-		org.jboss.ide.eclipse.as.core.server.attributes.startupPollerKey="org.jboss.ide.eclipse.as.core.server.JBoss7ManagerServicePoller"
 		server-type="org.jboss.ide.eclipse.as.70"
 		server-type-id="org.jboss.ide.eclipse.as.70"
 		start-timeout="450"
 		stop-timeout="450"
 		timestamp="1"
-		/>
+		org.jboss.ide.eclipse.as.core.server.userName="admin"
+		org.jboss.ide.eclipse.as.core.server.password="admin"
+		org.jboss.ide.eclipse.as.core.server.deployDirectoryType="server"
+		>
+		<list key="modules" value0="jeesandboxexample::org.eclipse.jst.jee.server:jeesandboxexample::jst.web::3.0"/>
+	</server>
 </servers>
+<!--
+		org.jboss.ide.eclipse.as.core.server.deployDirectory="server/default/deploy"
+		org.jboss.ide.eclipse.as.core.server.tempDeployDirectory="server/default/tmp/jbosstoolsTemp"
+
+		org.jboss.ide.eclipse.as.core.server.webPort="8080"
+		org.jboss.ide.eclipse.as.core.server.webPortAutoDetect="true"
+		org.jboss.ide.eclipse.as.core.server.attributes.startupPollerKey="org.jboss.ide.eclipse.as.core.server.JBoss7ManagerServicePoller"
+-->

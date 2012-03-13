@@ -75,6 +75,18 @@ uniquely defines a development environment on your machine.</description>
 		<description>The eclipse workspace for this project</description>
 	</property>
 
+	<property name="http.proxy.host" category="personal"
+		value="">
+		<description>HTTP proxy host:</description>
+		<environment name="HTTP_PROXY_HOST"/>
+	</property>
+
+	<property name="http.proxy.port" category="personal"
+		value="">
+		<description>HTTP proxy port:</description>
+		<environment name="HTTP_PROXY_PORT"/>
+	</property>
+
 	<property name="rapid.env.browser" category="personal"
 		valuetype="file" mustExist="true">
 		<description>The command to start the Internet browser of your choice:</description>
@@ -149,7 +161,7 @@ uniquely defines a development environment on your machine.</description>
 			value="6u30"
 			/>
 		<property name="buildnumber" category="common"
-			value="b06"
+			value="b12"
 			/>
 		<property name="home" category="common"
 			value="homedir()"
@@ -476,6 +488,22 @@ uniquely defines a development environment on your machine.</description>
 
 	</installunit>
 
+	<installunit name="rapidenv-eclipseheadless" version="1.0.0"
+		sourceurl="http://www.muenchen-surf.de/bluemel/software/rapidbeans/releases/latest/rapidenv-eclipseheadless-1.0.0.zip"
+		removerootdirs="true"
+		>
+<!--  prepare for Linux
+		<command osfamily="linux"
+			installphase="postinstall"
+			workingdir="homedir()"
+			executable="chmod"
+			>
+			<argument value="a+x"/>
+			<argument value="eclipse"/>
+		</command>
+-->
+	</installunit>
+
 	<!--
 		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		Eclipse IDE
@@ -561,7 +589,7 @@ uniquely defines a development environment on your machine.</description>
 			iconfile="${renvexamplejavaee.home}/environment/config/eclipse/eclipse.ico">
 			<argument value="/C"/>
 			<argument value="call"/>
-			<argument value="renv"/>
+			<argument value="${renvexamplejavaee.home}/environment/profile/renv_''username()_''hostname().cmd"/>
 			<argument value="&amp;"/>
 			<argument value="start"/>
 			<argument quoted="true" value="Eclipse RapidBeans"/>
@@ -572,7 +600,7 @@ uniquely defines a development environment on your machine.</description>
 		<icon osfamily="linux"
 			title="RapidEnv Example JEE Eclipse ${renvexamplejavaee.tag}"
 			executionmode="simple"
-			executable="homedir('eclipse')/starteclipse"
+			executable="${renvexamplejavaee.home}/environment/profile/renv_''username()_''hostname().sh &amp; homedir('eclipse')/starteclipse"
 			executein="homedir('eclipse')"
 			iconfile="${renvexamplejavaee.home}/environment/config/eclipse/eclipse.png"
 			/>
@@ -623,6 +651,42 @@ uniquely defines a development environment on your machine.</description>
 			<setpropvalue name="org.eclipse.jdt.core.classpathVariable.M2_REPO"
 				value="replace(pathconvert(${maven.repo}, '/'), ':', '\\:')"/>
 		</propertiesfile>
+
+		<!-- configure projects -->
+		<folder
+			path="${eclipse.workspace}/.metadata/.plugins/org.eclipse.core.resources/.projects/environment"
+			canexecute="true"
+			>
+			<commandonconfig
+				osfamily="windows" installphase="config"
+				workingdir="${renvexamplejavaee.tools.home}/rapidenv-eclipseheadless/''version('rapidenv-eclipseheadless')"
+				executable="${renvexamplejavaee.tools.home}/rapidenv-eclipseheadless/''version('rapidenv-eclipseheadless')/eclipse.exe">
+				<argument value="-nosplash"/>
+				<argument value="-data"/>
+				<argument value="${eclipse.workspace}"/>
+				<argument value="-application"/>
+				<argument value="org.rapidbeans.rapidenv.eclipseheadless.cmdlineapp"/>
+				<argument value="project_import"/>
+				<argument value="${renvexamplejavaee.home}/environment"/>
+			</commandonconfig>
+		</folder>
+		<folder
+			path="${eclipse.workspace}/.metadata/.plugins/org.eclipse.core.resources/.projects/jeesandboxexample"
+			canexecute="true"
+			>
+			<commandonconfig
+				osfamily="windows" installphase="config"
+				workingdir="${renvexamplejavaee.tools.home}/rapidenv-eclipseheadless/''version('rapidenv-eclipseheadless')"
+				executable="${renvexamplejavaee.tools.home}/rapidenv-eclipseheadless/''version('rapidenv-eclipseheadless')/eclipse.exe">
+				<argument value="-nosplash"/>
+				<argument value="-data"/>
+				<argument value="${eclipse.workspace}"/>
+				<argument value="-application"/>
+				<argument value="org.rapidbeans.rapidenv.eclipseheadless.cmdlineapp"/>
+				<argument value="project_import"/>
+				<argument value="${renvexamplejavaee.home}/jeesandboxexample"/>
+			</commandonconfig>
+		</folder>
 
 		<!--
 			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -705,12 +769,10 @@ uniquely defines a development environment on your machine.</description>
 
 		</subunit>
 
-<!--
 		<subunit name="m2e"
 			version="0.12.1.20110112-1712"
 			homedir="extensions/m2e/''version()"
 			sourceurl="file:${renvexamplejavaee.env}/config/eclipse/extensions/m2e/m2e-0.12.1.20110112-1712.zip"
-			installcontrol="optional"
 			>
 			<command
 				osfamily="windows"
@@ -813,7 +875,7 @@ uniquely defines a development environment on your machine.</description>
 				<argument value="pathconvert(homedir('eclipse'), '/')"/>
 			</command>
 
-			<! Maven Eclipse plugin settings >
+			<!-- Maven Eclipse plugin settings -->
 			<propertiesfile
 				path="${eclipse.workspace}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.maven.ide.eclipse.prefs"
 				deleteafterdeinstall="false"
@@ -829,13 +891,11 @@ uniquely defines a development environment on your machine.</description>
 			version="0.12.0.20110421-1500"
 			sourceurl="http://m2eclipse.sonatype.org/sites/archives/m2e-extras-20110510/wtp/''version()/org.maven.ide.eclipse.wtp.feature-''version()-site.zip"
 			homedir="extensions/m2e-wtp/''version()"
-			installcontrol="optional"
 			>
 			<propertiesfile path="../../../dropins/m2e-wtp.link">
 				<setpropvalue name="path" value="pathconvert(homedir(), '/')"/>
 			</propertiesfile>
 		</subunit>
--->
 
 	</installunit>
 
