@@ -238,7 +238,7 @@ Use Cases:
         Using icon "Start JBoss 6.0 Runtime Server" you can start JBoss while
         the server process will write its output into the Eclipse Console view.
 
-	* in order to ru the example from Eclipse it should be enought to
+	* in order to run the example from Eclipse it should be enought to
 	  - start JBoss from Eclipse
 	  - start the web application in the browser of your choice:
 	    http://localhost:8080/jeesandboxexample
