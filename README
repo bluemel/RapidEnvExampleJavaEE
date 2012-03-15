@@ -44,6 +44,10 @@ software:
                         Version 3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329
                         (upgrade to version 3.3.0.M5.aggregate-Update-2011-12-14_19-42-13-H61)
 
+  - plugins m2e and m2e-wtp Maven integration into Eclipse
+                         versions 0.12.1.20110112-1712 and 0.12.0.20110421-1500
+						 (no upgrade so far)
+
 
 System Requirements:
 --------------------
@@ -172,18 +176,22 @@ Use Cases:
       units of your development environment. The end of the renv command's
       output should look like this:
         ...
-        Install units:
-          = jdk 1.6.0_30
-          = maven 3.0.3
-          = jboss 6.0.0.Final
-          = eclipse 3.6.2
-          = eclipse/jbosstools 3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329
-
+      Install units:
+        = jdk 1.6.0_30
+        = maven 3.0.3
+        = jboss 6.0.0.Final
+        = rapidenv-eclipseheadless 1.0.0
+        = eclipse 3.6.2
+        = eclipse/jbosstools 3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329
+        = eclipse/m2e 0.12.1.20110112-1712
+        = eclipse/m2e-wtp 0.12.0.20110421-1500
+  
     * JDK 1.6.0_30:
       Type command "java -version" in order to verify the correct environment set up.
       Expected output:
         java version "1.6.0_30"
-        ...
+        Java(TM) SE Runtime Environment (build 1.6.0_30-b12)
+        Java HotSpot(TM) Client VM (build 20.5-b03, mixed mode)
 
     * Maven 3.0.3:
       Type command "mvn -version" in order to verify the correct environment set up.
@@ -209,11 +217,35 @@ Use Cases:
 
     * Eclipse with configured JBoss integration (JBoss Tools plugin):
       Once you've started Eclipse using the specific desktop icon you will
-      discover specfic tool bar icons added by the JBoss Tools plugin.
-      Using icon "Start JBoss 6.0 Runtime Server" you can start JBoss while
-      the server process will write its output into the Eclipse COnsole view.
-      Please try also the associated "Shutdown ..." toolbar icon.
+      discover:
 
+	  - the welcome screen: Eclipse Java EE IDE for Web Developers
+	  
+	  - a pop up dialog askig for confimation for data transfer JBoss Tools specific
+	    data to the JBoss Tools development team (answer what fits you best)
+
+      - the first time you run Eclipse you'll see the progress bar showing some
+	    activity with message "Update indexes". Opening the Progress window
+		you schould see the percentage of the degree of filling for the
+		"index" .index/nexus-maven-repository-index.gz which will contain all
+		required Maven plugins. The whole download and index process in order
+		to serve as an internal Maven repository can take up to 25 Minutes.
+		Better let this M2E Eclipse Maven integration action and all other
+		build actions finish before continuing. If all was installed correctly
+		our example web application should be alread built and ready for take off.
+	
+	  - specfic Eclipse tool bar icons added by the JBoss Tools plugin.
+        Using icon "Start JBoss 6.0 Runtime Server" you can start JBoss while
+        the server process will write its output into the Eclipse Console view.
+
+	* in order to ru the example from Eclipse it should be enought to
+	  - start JBoss from Eclipse
+	  - start the web application in the browser of your choice:
+	    http://localhost:8080/jeesandboxexample
+
+	If the jeesandboxeample UI appears you have successfully run the first use case
+	but may take you time to play around a little bit with the application and
+	it's develpment environment.
 
   2) Use Case: Upgrade 
      Version upgrade of different parts of the development envrionment
@@ -287,7 +319,8 @@ Use Cases:
       Using icon "Start JBoss 7.0 Runtime Server" you can start JBoss while
       the server process will write its output into the Eclipse COnsole view.
       Please try also the associated "Shutdown ..." toolbar icon.
-
+	 
+	 TODO: describe the start of the migarated Web Application
 
   3) Teardown
      Removal of the complete development environment

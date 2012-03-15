@@ -445,7 +445,7 @@ uniquely defines a development environment on your machine.</description>
 			iconfile="${renvexamplejavaee.home}/environment/config/jboss/jbossStart.ico">
 			<argument value="/C"/>
 			<argument value="call"/>
-			<argument value="renv"/>
+			<argument value="${renvexamplejavaee.home}/environment/profile/renv_''username()_''hostname().cmd"/>
 			<argument value="&amp;"/>
 			<argument value="jboss_start"/>
 		</icon>
@@ -456,7 +456,7 @@ uniquely defines a development environment on your machine.</description>
 			iconfile="${renvexamplejavaee.home}/environment/config/jboss/jbossStop.ico">
 			<argument value="/C"/>
 			<argument value="call"/>
-			<argument value="renv"/>
+			<argument value="${renvexamplejavaee.home}/environment/profile/renv_''username()_''hostname().cmd"/>
 			<argument value="&amp;"/>
 			<argument value="jboss_stop"/>
 		</icon>
