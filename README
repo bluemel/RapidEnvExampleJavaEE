@@ -142,7 +142,7 @@ Use Cases:
     necessary after 1 to 2 minutes because the JDK installation
     requires root user rights.
 
-    Please note: if you have not downloaded the JDK installers
+    Please note: if you have not downloaded the JDK installer
     beforehand RapidEnv will stop the download procedure
     open a Browser and ask you to download the JDK installer(s)
     manually. In this case you simply continue the environment
@@ -201,89 +201,114 @@ Use Cases:
         ...
 
     * JBoss 6.0.0.Final "Neo":
-      For JBoss we configured an extra start command "jboss_start" wich will start
-      JBoss with an extra associated terminal window. After JBoss has started up
+      For JBoss there is an extra start command "jboss_start" which will start
+      JBoss with it's own associated console window. After JBoss has started up
       successfully it should print out a message similar to the following one:
       JBossAS [6.0.0.Final "Neo"] Started in 22s:953m
       Command "jboss_stop" will shut down JBoss and close the associated terminal window.
 
     * Desktop and start menu icons:
-      After successfull installation of the develpment environment your desktop
+      After successfull installation of the development environment your desktop
       should contain the following desktop / start menu icons:
-      - RapidEnv Example JEE JBoss start main: starts JBoss with a terminal output window
+      - RapidEnv Example JEE JBoss start main: starts JBoss with a console window
       - RapidEnv Example JEE JBoss stop main: stops JBoss
       - RapidEnv Example JEE Eclipse main: starts Eclipse
       Under Windows you'll find the same shortcuts also under the start menu.
 
-    * Eclipse with configured JBoss integration (JBoss Tools plugin):
-      Once you've started Eclipse using the specific desktop icon you will
-      discover:
+    * Eclipse with configured JBoss (JBoss Tools plugin) and Maven (m2ecipse plugin)
+	  integration:
+
+      Once you've started Eclipse the first time you should see:
 
 	  - the welcome screen: Eclipse Java EE IDE for Web Developers
 	  
 	  - a pop up dialog askig for confimation for data transfer JBoss Tools specific
 	    data to the JBoss Tools development team (answer what fits you best)
 
-      - the first time you run Eclipse you'll see the progress bar showing some
+      - automatic build actions going on in Eclipses Progress view:
+	    The first time you run Eclipse you'll see the Progress view showing some
 	    activity with message "Update indexes". Opening the Progress window
 		you schould see the percentage of the degree of filling for the
-		"index" .index/nexus-maven-repository-index.gz which will contain all
-		required Maven plugins. The whole download and index process in order
-		to serve as an internal Maven repository can take up to 25 Minutes.
-		Better let this M2E Eclipse Maven integration action and all other
-		build actions finish before continuing. If all was installed correctly
-		our example web application should be alread built and ready for take off.
+		"index" file .index/nexus-maven-repository-index.gz built together and
+		used by the m2eclipse Eclipse Maven integration pugin. Unfortunately
+		the whole download and index process can take up to 20 minutes.
+		Better let this indexing action and all other build actions finish
+		before continuing. If all has been built correctly our JEE example
+		web application should be alread built and deployed / published and
+		ready for take off.
 	
-	  - specfic Eclipse tool bar icons added by the JBoss Tools plugin.
+	  - specific Eclipse tool bar icons added by the JBoss Tools plugin:
         Using icon "Start JBoss 6.0 Runtime Server" you can start JBoss while
         the server process will write its output into the Eclipse Console view.
 
-	* in order to run the example from Eclipse it should be enought to
-	  - start JBoss from Eclipse
+	* in order to run the example from Eclipse it should be enough to
+	  - start JBoss from Eclipse's toolbar (wait for the well known "started" message)
 	  - start the web application in the browser of your choice:
 	    http://localhost:8080/jeesandboxexample
 
-	If the jeesandboxeample UI appears you have successfully run the first use case
-	but may take you time to play around a little bit with the application and
-	it's develpment environment.
+	If the jeesandboxeample UI appears you have already run the first use case
+	successfully but you may take your time to play around a little bit with
+	the application and its development environment.
+
 
   2) Use Case: Upgrade 
      Version upgrade of different parts of the development envrionment
      -----------------------------------------------------------------
 
-   Basically in order to upgrade the components of your development environment
-   to new versions you have to
+   In order to upgrade the components of your development environment
+   to new versions you have usually to
    - change some settings in your environment configuration file
    - execute the RapidEnv update command
 
-   in order to ease the changing of the environment configuration settings
-   I've prepared some files:
-   - RapidEnvExampleJavaEE/environment/env_7.xml
-   - RapidEnvExampleJavaEE/environment/config/eclipse/runtimes_7.xml
-   - RapidEnvExampleJavaEE/environment/config/eclipse/servers_7.xml
+   In order to demonstrate larger changes of the development environment I've prepared
+   some files that can be activated via one single command execution.
 
    - Open development environment specific Windows command prompt
-    or Unix terminal window using
-    - Windows Explorex context menu entry
+    or Unix terminal window in folder ~\RapidEnvExampleJavaEE\environment\config
+	using
+    - Windows Explorer context menu entry
     - or KDE Dolphin "Actions" menu entry
     - or Gnome Nautilus "Scripts" menu entry
       "RapidEnvJavaEE Command Prompt main"
 
-  - activate the new configuration by exectuing:
-    Windows> cd RapidEnvExampleJavaEE\environment\config
-    Windows> setEnvConfig7.cmd
+  - activate the new configuration by executing command:
+    setEnvConfig7.cmd
+
+    Let's make a short interrupt for a brief discussion of the modification we did
+	(feel free to use Git / Git GUI to review the changes):
+    - the largest changes of course can be found in the environment definition
+	  ~\RapidEnvExampleJavaEE\environment\env.xml. Mainly version numbers but also
+	  checksums, source URLs, and some configurations are affected.
+	- besides that we need also some small modifications in project jeesandboxexample
+	  (.classpath, .settings/org.eclipse.wst.common.project.facet.core.xml,
+	  src/main/resources/META-INF/persistence.xml - new default data source).
 
   - start RapidEnv by entering command:
     - Windows> renv update
     - Linux>   . renv update
 
+	    This will install the development environment without
+    any user interaction in 15 - 30 minutes depending of the
+    speed of your internet connection and harddisk.
+
+    On Linux typing the root user's password once might be
+    necessary after 1 to 2 minutes because the JDK installation
+    requires root user rights.
+
+    Please note: if you have not downloaded the JDK installer
+    beforehand RapidEnv will stop the download procedure
+    open a Browser and ask you to download the JDK installer(s)
+    manually. In this case you simply continue the environment
+    set up after successfull download by typing again:
+    - Windows> renv update
+    - Linux> . renv update
+
   - watch the results:
 
     * Output of renv command:
-      Whenever you type the "renv" command (which is now automatically
-      in your current command path) you will see the properties and installation
-      units of your development environment. The end of the renv command's
-      output should look like this:
+      When you type the "renv" command you will see the update properties and
+	  installation units of your development environment. The end of the
+	  renv command's output should look like this:
         ...
         Install units:
           = jdk 1.7.0_2
@@ -322,6 +347,7 @@ Use Cases:
 	 
 	 TODO: describe the start of the migarated Web Application
 
+
   3) Teardown
      Removal of the complete development environment
      -----------------------------------------------
@@ -338,6 +364,7 @@ Use Cases:
   - start RapidEnv by entering command:
     - Windows> renv deinstall
     - Linux>   . renv deinstall
+	Answer the confirmation query with "y".
 
   - remove folder RapidEnvExampleJavaEE from the
     file system.
@@ -346,8 +373,8 @@ Use Cases:
 
     * your development environment has completely been
       wiped out without any trace left including
-      file manager, desktop and start menu entries
-      and desktop icons.
+      file manager pop up menu entry, desktop and
+	  start menu entries as well as desktop icons.
 
 
 License issues:
@@ -395,6 +422,9 @@ maintained by RapidEnv:
     License: Eclipse Public License Version 1.0
            http://www.eclipse.org/legal/epl-v10.html
     ...
+
+  - plugin m2eclipse 0.12.1.20110112-1712
+    License: ???
 
 PLEASE READ AND ACCEPT ALL LICENSE TERMS AND CONDITIONS PRIOR TO DOWNLOADING,
 INSTALLING AND USING THE SOFTWARE.
