@@ -46,7 +46,7 @@ software:
 
   - plugins m2e and m2e-wtp Maven integration into Eclipse
                          versions 0.12.1.20110112-1712 and 0.12.0.20110421-1500
-						 (no upgrade so far)
+                         (no upgrade so far)
 
 
 System Requirements:
@@ -216,39 +216,39 @@ Use Cases:
       Under Windows you'll find the same shortcuts also under the start menu.
 
     * Eclipse with configured JBoss (JBoss Tools plugin) and Maven (m2ecipse plugin)
-	  integration:
+      integration:
 
       Once you've started Eclipse the first time you should see:
 
-	  - the welcome screen: Eclipse Java EE IDE for Web Developers
-	  
-	  - a pop up dialog askig for confimation for data transfer JBoss Tools specific
-	    data to the JBoss Tools development team (answer what fits you best)
+      - the welcome screen: Eclipse Java EE IDE for Web Developers
+      
+      - a pop up dialog askig for confimation for data transfer JBoss Tools specific
+        data to the JBoss Tools development team (answer what fits you best)
 
       - automatic build actions going on in Eclipses Progress view:
-	    The first time you run Eclipse you'll see the Progress view showing some
-	    activity with message "Update indexes". Opening the Progress window
-		you schould see the percentage of the degree of filling for the
-		"index" file .index/nexus-maven-repository-index.gz built together and
-		used by the m2eclipse Eclipse Maven integration pugin. Unfortunately
-		the whole download and index process can take up to 20 minutes.
-		Better let this indexing action and all other build actions finish
-		before continuing. If all has been built correctly our JEE example
-		web application should be alread built and deployed / published and
-		ready for take off.
-	
-	  - specific Eclipse tool bar icons added by the JBoss Tools plugin:
+        The first time you run Eclipse you'll see the Progress view showing some
+        activity with message "Update indexes". Opening the Progress window
+        you schould see the percentage of the degree of filling for the
+        "index" file .index/nexus-maven-repository-index.gz built together and
+        used by the m2eclipse Eclipse Maven integration pugin. Unfortunately
+        the whole download and index process can take up to 20 minutes.
+        Better let this indexing action and all other build actions finish
+        before continuing. If all has been built correctly our JEE example
+        web application should be alread built and deployed / published and
+        ready for take off.
+    
+      - specific Eclipse tool bar icons added by the JBoss Tools plugin:
         Using icon "Start JBoss 6.0 Runtime Server" you can start JBoss while
         the server process will write its output into the Eclipse Console view.
 
-	* in order to run the example from Eclipse it should be enough to
-	  - start JBoss from Eclipse's toolbar (wait for the well known "started" message)
-	  - start the web application in the browser of your choice:
-	    http://localhost:8080/jeesandboxexample
+    * in order to run the example from Eclipse it should be enough to
+      - start JBoss from Eclipse's toolbar (wait for the well known "started" message)
+      - start the web application in the browser of your choice:
+        http://localhost:8080/jeesandboxexample
 
-	If the jeesandboxeample UI appears you have already run the first use case
-	successfully but you may take your time to play around a little bit with
-	the application and its development environment.
+    If the jeesandboxeample UI appears you have already run the first use case
+    successfully but you may take your time to play around a little bit with
+    the application and its development environment.
 
 
   2) Use Case: Upgrade 
@@ -265,7 +265,7 @@ Use Cases:
 
    - Open development environment specific Windows command prompt
     or Unix terminal window in folder ~\RapidEnvExampleJavaEE\environment\config
-	using
+    using
     - Windows Explorer context menu entry
     - or KDE Dolphin "Actions" menu entry
     - or Gnome Nautilus "Scripts" menu entry
@@ -275,19 +275,19 @@ Use Cases:
     setEnvConfig7.cmd
 
     Let's make a short interrupt for a brief discussion of the modification we did
-	(feel free to use Git / Git GUI to review the changes):
+    (feel free to use Git / Git GUI to review the changes):
     - the largest changes of course can be found in the environment definition
-	  ~\RapidEnvExampleJavaEE\environment\env.xml. Mainly version numbers but also
-	  checksums, source URLs, and some configurations are affected.
-	- besides that we need also some small modifications in project jeesandboxexample
-	  (.classpath, .settings/org.eclipse.wst.common.project.facet.core.xml,
-	  src/main/resources/META-INF/persistence.xml - new default data source).
+      ~\RapidEnvExampleJavaEE\environment\env.xml. Mainly version numbers but also
+      checksums, source URLs, and some configurations are affected.
+    - besides that we need also some small modifications in project jeesandboxexample
+      (.classpath, .settings/org.eclipse.wst.common.project.facet.core.xml,
+      src/main/resources/META-INF/persistence.xml - new default data source).
 
   - start RapidEnv by entering command:
     - Windows> renv update
     - Linux>   . renv update
 
-	    This will install the development environment without
+        This will install the development environment without
     any user interaction in 15 - 30 minutes depending of the
     speed of your internet connection and harddisk.
 
@@ -307,21 +307,25 @@ Use Cases:
 
     * Output of renv command:
       When you type the "renv" command you will see the update properties and
-	  installation units of your development environment. The end of the
-	  renv command's output should look like this:
+      installation units of your development environment. The end of the
+      renv command's output should look like this:
         ...
         Install units:
           = jdk 1.7.0_2
           = maven 3.0.4
           = jboss 7.0.2.Final
+          = rapidenv-eclipseheadless 1.0.0
           = eclipse 3.7.1
           = eclipse/jbosstools 3.3.0.M5.aggregate-Update-2011-12-14_19-42-13-H61
+          = eclipse/m2e 0.12.1.20110112-1712
+          = eclipse/m2e-wtp 0.12.0.20110421-1500
 
     * JDK 1.7.0_2:
       Type command "java -version" in order to verify the correct environment set up.
       Expected output:
-        java version "1.7.0_2"
-        ...
+        java version "1.7.0_02"
+        Java(TM) SE Runtime Environment (build 1.7.0_02-b13)
+        Java HotSpot(TM) Client VM (build 22.0-b10, mixed mode)
 
     * Maven 3.0.4:
       Type command "mvn -version" in order to verify the correct environment set up.
@@ -331,22 +335,55 @@ Use Cases:
         ...
 
     * JBoss 7.0.2.Final "Arc":
-      For JBoss we configured an extra start command "jboss_start" wich will start
-      JBoss with an extra associated terminal window. After JBoss has started up
-      successfully it should print out a message similar to the following one:
-      JBossAS [7.0.2.Final "Arc"] Started in 10s:999m
+      For JBoss again the extra start command "jboss_start" will start the updated
+      JBoss version with an extra associated terminal window. After JBoss has
+      started up successfully it should print out a message similar to the following one:
+        08:36:05,671 INFO  [org.jboss.as] (Controller Boot Thread)
+            JBoss AS 7.0.2.Final "Arc" started in 34218ms
+            - Started 93 of 148 services (55 services are passive or on-demand)
       Command "jboss_stop" will shut down JBoss and close the associated terminal window.
 
     * Desktop and start menu icons:
       Will still work like before
 
-    * Eclipse with configured JBoss integration (JBoss Tools plugin):
-      Using icon "Start JBoss 7.0 Runtime Server" you can start JBoss while
-      the server process will write its output into the Eclipse COnsole view.
-      Please try also the associated "Shutdown ..." toolbar icon.
-	 
-	 TODO: describe the start of the migarated Web Application
+    * Eclipse with configured JBoss (JBoss Tools plugin) and Maven (m2ecipse plugin)
+      integration:
 
+      Start Eclipse again using the Eclipse start icon titled
+      "RapidEnv Example JEE Eclipse main". The splash screen should now idicate "INDIGO"
+      (the name of the Eclipse 3.7.x release) instead of "HELIOS" before.
+
+      Once you've started Eclipse the first time you should see:
+
+      - again the pop up dialog asking for confimation for data transfer JBoss Tools specific
+        data to the JBoss Tools development team (answer what fits you best)
+
+      - Since source files and settigs files have been modified you have to refresh
+	    the jeesandboxexample project.
+
+      - automatic build actions going on in Eclipses Progress view:
+        Since the "index" file .index/nexus-maven-repository-index.gz is stored
+		in you local Maven repository its already there and has not to be built up
+		again. So expect the build actions to come to an end much quicker.
+        Nevertheless I'd again recommend to let all build actions finish
+        before continuing (should take longer than 3 Minutes). If all has been built
+		correctly our JEE example web application should be alread built and
+		deployed / published and ready for take off.
+        'Starting JBoss 7.0 Runtime Server' has encountered a problem.
+		Server JBoss 7.0 Runtime Server failed to start.
+    
+      - specific Eclipse tool bar icons added by the JBoss Tools plugin:
+        Using icon "Start JBoss 7.0 Runtime Server" you can start JBoss while
+        the server process will write its output into the Eclipse Console view.
+
+    * in order to run the example from Eclipse it should be enough to
+      - start JBoss from Eclipse's toolbar (wait for the well known "started" message)
+      - start the web application in the browser of your choice:
+        http://localhost:8080/jeesandboxexample
+
+    If the jeesandboxeample UI appears you have already run the first use case
+    successfully but you may take your time to play around a little bit with
+    the application and its development environment.
 
   3) Teardown
      Removal of the complete development environment
@@ -364,7 +401,7 @@ Use Cases:
   - start RapidEnv by entering command:
     - Windows> renv deinstall
     - Linux>   . renv deinstall
-	Answer the confirmation query with "y".
+    Answer the confirmation query with "y".
 
   - remove folder RapidEnvExampleJavaEE from the
     file system.
@@ -374,7 +411,7 @@ Use Cases:
     * your development environment has completely been
       wiped out without any trace left including
       file manager pop up menu entry, desktop and
-	  start menu entries as well as desktop icons.
+      start menu entries as well as desktop icons.
 
 
 License issues:
