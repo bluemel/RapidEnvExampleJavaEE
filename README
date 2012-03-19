@@ -358,19 +358,17 @@ Use Cases:
       - again the pop up dialog asking for confimation for data transfer JBoss Tools specific
         data to the JBoss Tools development team (answer what fits you best)
 
-      - Since source files and settigs files have been modified you have to refresh
-	    the jeesandboxexample project.
+      - aince source files and settigs files have been modified you should refresh
+        the jeesandboxexample project.
 
       - automatic build actions going on in Eclipses Progress view:
         Since the "index" file .index/nexus-maven-repository-index.gz is stored
-		in you local Maven repository its already there and has not to be built up
-		again. So expect the build actions to come to an end much quicker.
+        in you local Maven repository its already there and has not to be built up
+        again. So expect the build actions to come to an end much quicker.
         Nevertheless I'd again recommend to let all build actions finish
         before continuing (should take longer than 3 Minutes). If all has been built
-		correctly our JEE example web application should be alread built and
-		deployed / published and ready for take off.
-        'Starting JBoss 7.0 Runtime Server' has encountered a problem.
-		Server JBoss 7.0 Runtime Server failed to start.
+        correctly our JEE example web application should be alread built and
+        deployed / published and ready for take off.
     
       - specific Eclipse tool bar icons added by the JBoss Tools plugin:
         Using icon "Start JBoss 7.0 Runtime Server" you can start JBoss while
@@ -381,9 +379,32 @@ Use Cases:
       - start the web application in the browser of your choice:
         http://localhost:8080/jeesandboxexample
 
-    If the jeesandboxeample UI appears you have already run the first use case
-    successfully but you may take your time to play around a little bit with
-    the application and its development environment.
+    If the jeesandboxeample UI appears you have also run the second use case
+    successfully. Especially the faster startup and shutdown behaviour of
+    JBoss 7 (Arc) is impressing compared to JBoss 6 (Neo).
+
+    Small troubleshooting:
+
+    - during your first tries to start Arc from Eclipse the start may fail
+      with the following error message
+        'Starting JBoss 7.0 Runtime Server' has encountered a problem.
+        Server JBoss 7.0 Runtime Server failed to start.
+
+    - another effect I've already observed from time to time weas some interpretation
+      problem of setting file org.eclipse.wst.common.project.facet.core.prefs.xml
+
+    In both cases I'd recommend to do the following:
+
+    - assure that you have refreshed the project. In case of doubt refresh it again.
+
+    - rebiuld the project by cleaning it in Eclipse
+
+    - restart Eclipse
+
+    - a third problem that might happen altough the project has been built properly
+      might be that the jeesandbox app does not start up. Try a full publish from the
+      Eclipse "Server" view in this case.
+
 
   3) Teardown
      Removal of the complete development environment
