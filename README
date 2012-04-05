@@ -29,7 +29,7 @@ a standard development environment consisting in the following
 software:
 
 - jdk      Java SE Development Kit (including Java Runtime Environment)
-           version 1.6.0_30 (upgrade to 1.7.0_2)
+           version 1.6.0_30 (upgrade to 1.7.0_3)
 
 - maven    Maven build system
            version 3.0.3 (upgrade to 3.0.4)
@@ -38,7 +38,7 @@ software:
            version 6.0.0.Final, (upgrade to 7.0.2.Final)
 
 - eclipse  Eclipse IDE for Java EE developers SR2
-           version 3.6.2 / Helios SR2, 3.7.1 (upgrade to 3.7.1 / Indigo SR1)
+           version 3.6.2 / Helios SR2, 3.7.1 (upgrade to 3.7.2 / Indigo SR2)
 
   - plugin jbosstools   JBoss integration into Eclipse
                         Version 3.2.0.GA.aggregate-Update-2011-02-16_18-30-44-H329
@@ -84,10 +84,7 @@ The GIT way:
 
 Without version control:
 
-   download and unpack example archive
-   https://github.com/downloads/bluemel/RapidEnvExampleJavaEE/RapidEnvExampleJavaEE-0.9.3.zip
-
-   or simply download the latest version of all sources of
+   simply download the latest version of all sources of
    repository RapidEnvExampleJavaEE using the ZIP button
    (download this repository a zip file).
 
@@ -111,14 +108,14 @@ Use Cases:
       Local folder:
         RapidEnvExampleJavaEE/toolsrepo/jdk/1.6.0_30
 
-    - JDK 1.7.0_2
+    - JDK 1.7.0_3
       Download web site:
-        http://www.oracle.com/technetwork/java/javase/downloads/jdk-7u2-download-1377129.html
+        http://www.oracle.com/technetwork/java/javase/downloads/jdk-7u3-download-1501626.html
       File
         Windows x86, 32 bits: jdk-7u2-windows-i586.exe
         Linux x86, 32 bits:   jdk-7u2-linux-i586.bin
       Local folder:
-        RapidEnvExampleJavaEE/toolsrepo/jdk/1.7.0_2
+        RapidEnvExampleJavaEE/toolsrepo/jdk/1.7.0_3
 
 
   1) Use Case: Setup
@@ -215,7 +212,7 @@ Use Cases:
       - RapidEnv Example JEE Eclipse main: starts Eclipse
       Under Windows you'll find the same shortcuts also under the start menu.
 
-    * Eclipse with configured JBoss (JBoss Tools plugin) and Maven (m2ecipse plugin)
+    * Eclipse Helios with configured JBoss (JBoss Tools plugin) and Maven (m2ecipse plugin)
       integration:
 
       Once you've started Eclipse the first time you should see:
@@ -311,7 +308,7 @@ Use Cases:
       renv command's output should look like this:
         ...
         Install units:
-          = jdk 1.7.0_2
+          = jdk 1.7.0_3
           = maven 3.0.4
           = jboss 7.0.2.Final
           = rapidenv-eclipseheadless 1.0.0
@@ -320,12 +317,12 @@ Use Cases:
           = eclipse/m2e 0.12.1.20110112-1712
           = eclipse/m2e-wtp 0.12.0.20110421-1500
 
-    * JDK 1.7.0_2:
+    * JDK 1.7.0_3:
       Type command "java -version" in order to verify the correct environment set up.
       Expected output:
         java version "1.7.0_02"
-        Java(TM) SE Runtime Environment (build 1.7.0_02-b13)
-        Java HotSpot(TM) Client VM (build 22.0-b10, mixed mode)
+        Java(TM) SE Runtime Environment (build 1.7.0_03-b05)
+        Java HotSpot(TM) Client VM (build 22.1-b02, mixed mode)
 
     * Maven 3.0.4:
       Type command "mvn -version" in order to verify the correct environment set up.
@@ -346,7 +343,7 @@ Use Cases:
     * Desktop and start menu icons:
       Will still work like before
 
-    * Eclipse with configured JBoss (JBoss Tools plugin) and Maven (m2ecipse plugin)
+    * Eclipse Indigo with configured JBoss (JBoss Tools plugin) and Maven (m2ecipse plugin)
       integration:
 
       Start Eclipse again using the Eclipse start icon titled
@@ -449,7 +446,7 @@ maintained by RapidEnv:
 
 - jdk
   Java SE Development Kit (incuding Java Runtime Environment)
-  Version: 1.6.0_30 (1.7.0_2)
+  Version: 1.6.0_30 (1.7.0_3)
   License: Oracle Binary Code License Agreement for Java SE and JavaFX Technologies
            http://www.oracle.com/technetwork/java/javase/downloads/java-se-archive-license-1382604.html
 
@@ -468,7 +465,7 @@ maintained by RapidEnv:
 
 - eclipse
   Eclipse Helios (Indigo) IDE for Java EE developers SR2 (SR1)
-  Version: 3.6.2 (3.7.1)
+  Version: 3.6.2 (3.7.2)
   License: Eclipse Public License Version 1.0
            http://www.eclipse.org/legal/epl-v10.html
            and others (see **)

@@ -126,12 +126,12 @@ uniquely defines a development environment on your machine.</description>
 		  property buildnumber: b12
 		  sourceurl: http://www.oracle.com/technetwork/java/javase/downloads/jdk-6u30-download-1377139.html
 
-		version 1.7.0_2:
-		  MD5 hashvalue windows: 7b0bb440d5659faeadda44b3ebd63841
+		version 1.7.0_3:
+		  MD5 hashvalue windows: 3add5d17bdbde1596b9963c5b6345698
 		  MD5 hashvalue linux:   ?
-		  property uversion: 7u2
+		  property uversion: 7u3
 		  property buildnumber: b13
-		  sourceurl: http://www.oracle.com/technetwork/java/javase/downloads/jdk-7u2-download-1377129.html
+		  sourceurl: http://www.oracle.com/technetwork/java/javase/downloads/jdk-7u3-download-1501626.html
 
 		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -141,15 +141,15 @@ uniquely defines a development environment on your machine.</description>
 		and otherwise stick to the manual download
 	-->
 	<installunit name="jdk"
-		version="1.7.0_2"
+		version="1.7.0_3"
 		sourcefile="jdk-${jdk.uversion}-''osname()-''architecture('x86=i586;i386=i586-rpm;x86_64=-x86_64').''packaging('windows=exe;linux=bin')"
-		sourceurl="http://www.oracle.com/technetwork/java/javase/downloads/jdk-7u2-download-1377129.html"
+		sourceurl="http://www.oracle.com/technetwork/java/javase/downloads/jdk-7u3-download-1501626.html"
 		downloadmode="manual"
 		>
 		<sourcefilecheck
 			osfamily="windows"
 			hashalgorithm="MD5"
-			hashvalue="7b0bb440d5659faeadda44b3ebd63841"
+			hashvalue="3add5d17bdbde1596b9963c5b6345698"
 			/>
 		<sourcefilecheck
 			osfamily="linux"
@@ -158,10 +158,10 @@ uniquely defines a development environment on your machine.</description>
 			/>
 		<propextension property="cmd.path" propextmode="prepend" value="homedir()/bin"/>
 		<property name="uversion" category="common"
-			value="7u2"
+			value="7u3"
 			/>
 		<property name="buildnumber" category="common"
-			value="b13"
+			value="b05"
 			/>
 		<property name="home" category="common"
 			value="homedir()"
@@ -290,7 +290,7 @@ uniquely defines a development environment on your machine.</description>
 			<argument value="msiexec.exe"/>
 			<argument value="/qn"/>
 			<argument value="/x"/>
-			<argument value="{32A3A4F4-B792-11D6-A78A-00B0D0170020}"/>
+			<argument value="{32A3A4F4-B792-11D6-A78A-00B0D0170030}"/>
 		</command>
 		<command
 			osfamily="linux"
@@ -514,15 +514,15 @@ uniquely defines a development environment on your machine.</description>
 		  hashvalue MD5 windows: a6dbc03031ce0b5ff821da89aa997de3
 		  hashvalue MD5 linux:   5952cd8b01e36dd4646ebd3faad28a6d
 
-		version 3.7.1
+		version 3.7.2
 		  property eclipse.distname: indigo
-		  property eclipse.servicerelelease: SR1
-		  hashvalue MD5 windows: 48647f4b3b2bb559fbcd8a428dc7a638
+		  property eclipse.servicerelelease: SR2
+		  hashvalue MD5 windows: 9017a39354fa65375c6ee748963cf2ff
 		  hashvalue MD5 linux:   xxx
 		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	-->
 	<installunit name="eclipse"
-		version="3.7.1"
+		version="3.7.2"
 		depends="jdk,jboss,maven"
 		sourcefile="${eclipse.sourcefile}"
 		sourceurl="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/${eclipse.distname}/${eclipse.servicerelease}/${eclipse.sourcefile}&amp;url=http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/technology/epp/downloads/release/${eclipse.distname}/${eclipse.servicerelease}/${eclipse.sourcefile}&amp;mirror_id=17"
@@ -531,7 +531,7 @@ uniquely defines a development environment on your machine.</description>
 		<sourcefilecheck
 			osfamily="windows"
 			hashalgorithm="MD5"
-			hashvalue="48647f4b3b2bb559fbcd8a428dc7a638"
+			hashvalue="9017a39354fa65375c6ee748963cf2ff"
 			/>
 		<sourcefilecheck
 			osfamily="linux"
@@ -544,7 +544,7 @@ uniquely defines a development environment on your machine.</description>
 			value="indigo"
 		/>
 		<property name="servicerelease" category="common"
-			value="SR1"
+			value="SR2"
 		/>
 		<property name="sourcefile" category="common"
 			valuetype="string" value="eclipse-jee-${eclipse.distname}-${eclipse.servicerelease}-''osname('windows=win32;linux=linux-gtk')''architecture('x86=;i386=;x86_64=-x86_64').''packaging('windows=zip;linux=tar.gz')"
