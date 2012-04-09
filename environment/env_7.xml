@@ -768,16 +768,16 @@ uniquely defines a development environment on your machine.</description>
 				deleteafterdeinstall="false"
 				>
 				<setnodevalue
-					path="//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 7.0 Runtime Server']/@factoryID"
+					path="//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 7.1 Runtime Server']/@factoryID"
 					value="org.eclipse.wst.server.ui.editor.input.factory"
 				/>
 				<setnodevalue
-					path="//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 7.0 Runtime Server']/@tooltip"
-					value="JBoss 7.0 Runtime Server"
+					path="//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 7.1 Runtime Server']/@tooltip"
+					value="JBoss 7.1 Runtime Server"
 				/>
 				<setnodevalue
-					path="//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 7.0 Runtime Server']/persistable/@server-id"
-					value="JBoss 7.0 Runtime Server123456789"
+					path="//workbench/mruList/file[@id='org.eclipse.wst.server.ui.editor' and @name='JBoss 7.1 Runtime Server']/persistable/@server-id"
+					value="JBoss 7.1 Runtime Server123456789"
 				/>
 			</xmlfile>
 			<propertiesfile
@@ -787,11 +787,11 @@ uniquely defines a development environment on your machine.</description>
 				>
 				<setpropvalue
 					name="org.jboss.ide.eclipse.as.ui.defaultWebServer"
-					value="JBoss 7.0 Runtime Server123456789"
+					value="JBoss 7.1 Runtime Server123456789"
 					/>
 				<setpropvalue
 					name="org.jboss.ide.eclipse.as.ui.wizards.LAST_SERVER_CREATED"
-					value="JBoss 7.0 Runtime Server123456789"
+					value="JBoss 7.1 Runtime Server123456789"
 					/>
 			</propertiesfile>
 
