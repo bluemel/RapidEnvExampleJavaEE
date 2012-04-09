@@ -35,7 +35,7 @@ software:
            version 3.0.3 (upgrade to 3.0.4)
 
 - jboss    JBoss Application Server
-           version 6.0.0.Final, (upgrade to 7.0.2.Final)
+           version 6.0.0.Final, (upgrade to 7.1.1.Final)
 
 - eclipse  Eclipse IDE for Java EE developers SR2
            version 3.6.2 / Helios SR2, 3.7.1 (upgrade to 3.7.2 / Indigo SR2)
@@ -310,7 +310,7 @@ Use Cases:
         Install units:
           = jdk 1.7.0_3
           = maven 3.0.4
-          = jboss 7.0.2.Final
+          = jboss 7.1.1.Final
           = rapidenv-eclipseheadless 1.0.0
           = eclipse 3.7.1
           = eclipse/jbosstools 3.3.0.M5.aggregate-Update-2011-12-14_19-42-13-H61
@@ -331,12 +331,12 @@ Use Cases:
         Maven home: <root folder>\RapidEnvExampleJavaEE\tools\maven\3.0.4
         ...
 
-    * JBoss 7.0.2.Final "Arc":
+    * JBoss 7.1.1.Final "Brontes":
       For JBoss again the extra start command "jboss_start" will start the updated
       JBoss version with an extra associated terminal window. After JBoss has
       started up successfully it should print out a message similar to the following one:
         08:36:05,671 INFO  [org.jboss.as] (Controller Boot Thread)
-            JBoss AS 7.0.2.Final "Arc" started in 34218ms
+            JBoss AS 7.1.1.Final "Brontes" started in 34218ms
             - Started 93 of 148 services (55 services are passive or on-demand)
       Command "jboss_stop" will shut down JBoss and close the associated terminal window.
 
@@ -378,11 +378,11 @@ Use Cases:
 
     If the jeesandboxeample UI appears you have also run the second use case
     successfully. Especially the faster startup and shutdown behaviour of
-    JBoss 7 (Arc) is impressing compared to JBoss 6 (Neo).
+    JBoss 7 (Brontes) is impressing compared to JBoss 6 (Neo).
 
     Small troubleshooting:
 
-    - during your first tries to start Arc from Eclipse the start may fail
+    - during your first tries to start Brontes from Eclipse the start may fail
       with the following error message
         'Starting JBoss 7.0 Runtime Server' has encountered a problem.
         Server JBoss 7.0 Runtime Server failed to start.
@@ -458,7 +458,7 @@ maintained by RapidEnv:
 
 - jboss
   JBoss Application Server
-  Version: 6.0.0.Final "Neo" (7.0.2.Final "Arc")
+  Version: 6.0.0.Final "Neo" (7.1.1.Final "Brontes")
   License: GNU Lesser General Public License 2.1
            http://www.gnu.de/documents/lgpl-2.1.de.html
            and others (see *)
