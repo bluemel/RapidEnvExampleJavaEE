@@ -373,21 +373,21 @@ uniquely defines a development environment on your machine.</description>
 		  sourceurl="http://downloads.sourceforge.net/project/jboss/JBoss/JBoss-''version()/jboss-as-distribution-''version().zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fjboss%2Ffiles%2FJBoss%2FJBoss-6.0.0.Final%2F&amp;ts=1322341475&amp;use_mirror=dfn"
 		  hashvalue MD5: 81ed7c2c274881963467c11f204eedfc
 
-		version 7.0.2.Final:
+		version 7.1.1.Final:
 		  sourcefile="jboss-as-web-''version().zip"
-		  sourceurl="http://download.jboss.org/jbossas/7.0/jboss-as-''version()/jboss-as-web-''version().zip"
-		  hashvalue MD5: eb2d9f58d030fcb4d9a255a9ba6052c2
+		  sourceurl="http://download.jboss.org/jbossas/7.1/jboss-as-''version()/jboss-as-''version().zip"
+		  hashvalue MD5: 175c92545454f4e7270821f4b8326c4e
 		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	-->
 	<installunit name="jboss"
-		version="7.0.2.Final"
+		version="7.1.1.Final"
 		depends="jdk"
-		sourcefile="jboss-as-web-''version().zip"
-		sourceurl="http://download.jboss.org/jbossas/7.0/jboss-as-''version()/jboss-as-web-''version().zip"
+		sourcefile="jboss-as-''version().zip"
+		sourceurl="http://download.jboss.org/jbossas/7.1/jboss-as-''version()/jboss-as-''version().zip"
 		>
 		<sourcefilecheck
 			hashalgorithm="MD5"
-			hashvalue="eb2d9f58d030fcb4d9a255a9ba6052c2"
+			hashvalue="175c92545454f4e7270821f4b8326c4e"
 			/>
 
 		<property name="home" category="common"
@@ -413,7 +413,7 @@ uniquely defines a development environment on your machine.</description>
 			osfamily="windows">
 			<insert line="set NOPAUSE=yes"
 				mode="prepend"/>
-			<insert line="homedir()\bin\jboss-admin.bat --connect command=:shutdown"
+			<insert line="homedir()\bin\jboss-cli.bat --connect command=:shutdown"
 				mode="append"/>
 		</textfile>
 		<textfile path="homedir()/bin/standalone.bat"
