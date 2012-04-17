@@ -1,7 +1,7 @@
-<html><head><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>RapidEnv Reference Manual Martin Bl&uuml;mel</title><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" title="RapidEnv Reference Manual Martin Bl&uuml;mel"><div class="titlepage"><div><div><h1 class="title"><a name="N2000B"></a>
+<html><head><META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>RapidEnv Reference Manual Martin Bl&uuml;mel</title><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" title="RapidEnv Reference Manual Martin Bl&uuml;mel"><div class="titlepage"><div><div><h1 class="title"><a name="N2000B"></a>
 		RapidEnv Reference Manual
 		<div class="author"><h3 class="author">Martin Bl&uuml;mel</h3></div>
-	</h1></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="preface"><a href="#N20018"></a></span></dt><dt><span class="chapter"><a href="#N20020">1. RapidEnv Configuration Language Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#N20025">project</a></span></dt><dt><span class="section"><a href="#N200BB">property</a></span></dt><dt><span class="section"><a href="#N20219">specificvalue</a></span></dt><dt><span class="section"><a href="#N2025B">environment</a></span></dt><dt><span class="section"><a href="#N202AF">extension</a></span></dt><dt><span class="section"><a href="#N20303">installunit</a></span></dt><dt><span class="section"><a href="#N205E8">download</a></span></dt><dt><span class="section"><a href="#N20668">sourcefilecheck</a></span></dt><dt><span class="section"><a href="#N206E8">subunit</a></span></dt><dt><span class="section"><a href="#N209CD">folder</a></span></dt><dt><span class="section"><a href="#N20B73">task</a></span></dt><dt><span class="section"><a href="#N20BB5">commandonconfig</a></span></dt><dt><span class="section"><a href="#N20D52">argument</a></span></dt><dt><span class="section"><a href="#N20DE8">return</a></span></dt><dt><span class="section"><a href="#N20E18">stdout</a></span></dt><dt><span class="section"><a href="#N20E5A">stderr</a></span></dt><dt><span class="section"><a href="#N20E9C">verifycmd</a></span></dt><dt><span class="section"><a href="#N21039">icon</a></span></dt><dt><span class="section"><a href="#N2119A">propertiesfile</a></span></dt><dt><span class="section"><a href="#N21340">setpropvalue</a></span></dt><dt><span class="section"><a href="#N213CA">textfile</a></span></dt><dt><span class="section"><a href="#N2158E">replace</a></span></dt><dt><span class="section"><a href="#N215F4">delete</a></span></dt><dt><span class="section"><a href="#N21648">insert</a></span></dt><dt><span class="section"><a href="#N216DA">anttask</a></span></dt><dt><span class="section"><a href="#N21889">command</a></span></dt><dt><span class="section"><a href="#N21A26">xmlfile</a></span></dt><dt><span class="section"><a href="#N21C11">deletenode</a></span></dt><dt><span class="section"><a href="#N21C65">setnodevalue</a></span></dt><dt><span class="section"><a href="#N21CCB">installcommand</a></span></dt><dt><span class="section"><a href="#N21E68">deinstallcommand</a></span></dt><dt><span class="section"><a href="#N22005">propextension</a></span></dt></dl></dd><dt><span class="chapter"><a href="#N22069">2. RapidEnv Expression Language Reference</a></span></dt><dd><dl><dt><span class="sect1"><a href="#N2206E">String Literal</a></span></dt><dt><span class="sect1"><a href="#N22077">Property Value Expansion</a></span></dt><dt><span class="sect1"><a href="#N22080">Functions</a></span></dt></dl></dd><dt><span class="chapter"><a href="#N22295">3. RapidEnv Command Line Reference</a></span></dt><dd><dl><dt><span class="sect1"><a href="#N2229A">Usage</a></span></dt><dt><span class="sect1"><a href="#N222A3">Commands</a></span></dt><dt><span class="sect1"><a href="#N22306">Options</a></span></dt></dl></dd></dl></div>
+	</h1></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="preface"><a href="#N20018"></a></span></dt><dt><span class="chapter"><a href="#N20020">1. RapidEnv Configuration Language Reference</a></span></dt><dd><dl><dt><span class="section"><a href="#N20025">project</a></span></dt><dt><span class="section"><a href="#N200BB">property</a></span></dt><dt><span class="section"><a href="#N20219">specificvalue</a></span></dt><dt><span class="section"><a href="#N2025B">environment</a></span></dt><dt><span class="section"><a href="#N202AF">extension</a></span></dt><dt><span class="section"><a href="#N20303">installunit</a></span></dt><dt><span class="section"><a href="#N2060C">download</a></span></dt><dt><span class="section"><a href="#N2068C">sourcefilecheck</a></span></dt><dt><span class="section"><a href="#N2070C">subunit</a></span></dt><dt><span class="section"><a href="#N20A15">folder</a></span></dt><dt><span class="section"><a href="#N21245">task</a></span></dt><dt><span class="section"><a href="#N21287">commandonconfig</a></span></dt><dt><span class="section"><a href="#N21424">argument</a></span></dt><dt><span class="section"><a href="#N214BA">return</a></span></dt><dt><span class="section"><a href="#N214EA">stdout</a></span></dt><dt><span class="section"><a href="#N2152C">stderr</a></span></dt><dt><span class="section"><a href="#N2156E">verifycmd</a></span></dt><dt><span class="section"><a href="#N2170B">icon</a></span></dt><dt><span class="section"><a href="#N2186C">propertiesfile</a></span></dt><dt><span class="section"><a href="#N2209C">setpropvalue</a></span></dt><dt><span class="section"><a href="#N22126">textfile</a></span></dt><dt><span class="section"><a href="#N22974">replace</a></span></dt><dt><span class="section"><a href="#N229DA">delete</a></span></dt><dt><span class="section"><a href="#N22A2E">insert</a></span></dt><dt><span class="section"><a href="#N22AC0">anttask</a></span></dt><dt><span class="section"><a href="#N22C6F">command</a></span></dt><dt><span class="section"><a href="#N22E0C">xmlfile</a></span></dt><dt><span class="section"><a href="#N23681">deletenode</a></span></dt><dt><span class="section"><a href="#N236D5">setnodevalue</a></span></dt><dt><span class="section"><a href="#N2373B">installcommand</a></span></dt><dt><span class="section"><a href="#N238D8">deinstallcommand</a></span></dt><dt><span class="section"><a href="#N23A75">propextension</a></span></dt></dl></dd><dt><span class="chapter"><a href="#N23AD9">2. RapidEnv Expression Language Reference</a></span></dt><dd><dl><dt><span class="sect1"><a href="#N23ADE">String Literal</a></span></dt><dt><span class="sect1"><a href="#N23AE7">Property Value Expansion</a></span></dt><dt><span class="sect1"><a href="#N23AF0">Functions</a></span></dt></dl></dd><dt><span class="chapter"><a href="#N23D05">3. RapidEnv Command Line Reference</a></span></dt><dd><dl><dt><span class="sect1"><a href="#N23D0A">Usage</a></span></dt><dt><span class="sect1"><a href="#N23D13">Commands</a></span></dt><dt><span class="sect1"><a href="#N23D76">Options</a></span></dt></dl></dd></dl></div>
 	
 	<div class="preface"><div class="titlepage"></div>
 		<p>
@@ -10,7 +10,7 @@
 		</p>
 
 	</div>
-	<div class="chapter" title="Chapter&nbsp;1.&nbsp;RapidEnv Configuration Language Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N20020"></a>Chapter&nbsp;1.&nbsp;RapidEnv Configuration Language Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#N20025">project</a></span></dt><dt><span class="section"><a href="#N200BB">property</a></span></dt><dt><span class="section"><a href="#N20219">specificvalue</a></span></dt><dt><span class="section"><a href="#N2025B">environment</a></span></dt><dt><span class="section"><a href="#N202AF">extension</a></span></dt><dt><span class="section"><a href="#N20303">installunit</a></span></dt><dt><span class="section"><a href="#N205E8">download</a></span></dt><dt><span class="section"><a href="#N20668">sourcefilecheck</a></span></dt><dt><span class="section"><a href="#N206E8">subunit</a></span></dt><dt><span class="section"><a href="#N209CD">folder</a></span></dt><dt><span class="section"><a href="#N20B73">task</a></span></dt><dt><span class="section"><a href="#N20BB5">commandonconfig</a></span></dt><dt><span class="section"><a href="#N20D52">argument</a></span></dt><dt><span class="section"><a href="#N20DE8">return</a></span></dt><dt><span class="section"><a href="#N20E18">stdout</a></span></dt><dt><span class="section"><a href="#N20E5A">stderr</a></span></dt><dt><span class="section"><a href="#N20E9C">verifycmd</a></span></dt><dt><span class="section"><a href="#N21039">icon</a></span></dt><dt><span class="section"><a href="#N2119A">propertiesfile</a></span></dt><dt><span class="section"><a href="#N21340">setpropvalue</a></span></dt><dt><span class="section"><a href="#N213CA">textfile</a></span></dt><dt><span class="section"><a href="#N2158E">replace</a></span></dt><dt><span class="section"><a href="#N215F4">delete</a></span></dt><dt><span class="section"><a href="#N21648">insert</a></span></dt><dt><span class="section"><a href="#N216DA">anttask</a></span></dt><dt><span class="section"><a href="#N21889">command</a></span></dt><dt><span class="section"><a href="#N21A26">xmlfile</a></span></dt><dt><span class="section"><a href="#N21C11">deletenode</a></span></dt><dt><span class="section"><a href="#N21C65">setnodevalue</a></span></dt><dt><span class="section"><a href="#N21CCB">installcommand</a></span></dt><dt><span class="section"><a href="#N21E68">deinstallcommand</a></span></dt><dt><span class="section"><a href="#N22005">propextension</a></span></dt></dl></div>
+	<div class="chapter" title="Chapter&nbsp;1.&nbsp;RapidEnv Configuration Language Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N20020"></a>Chapter&nbsp;1.&nbsp;RapidEnv Configuration Language Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#N20025">project</a></span></dt><dt><span class="section"><a href="#N200BB">property</a></span></dt><dt><span class="section"><a href="#N20219">specificvalue</a></span></dt><dt><span class="section"><a href="#N2025B">environment</a></span></dt><dt><span class="section"><a href="#N202AF">extension</a></span></dt><dt><span class="section"><a href="#N20303">installunit</a></span></dt><dt><span class="section"><a href="#N2060C">download</a></span></dt><dt><span class="section"><a href="#N2068C">sourcefilecheck</a></span></dt><dt><span class="section"><a href="#N2070C">subunit</a></span></dt><dt><span class="section"><a href="#N20A15">folder</a></span></dt><dt><span class="section"><a href="#N21245">task</a></span></dt><dt><span class="section"><a href="#N21287">commandonconfig</a></span></dt><dt><span class="section"><a href="#N21424">argument</a></span></dt><dt><span class="section"><a href="#N214BA">return</a></span></dt><dt><span class="section"><a href="#N214EA">stdout</a></span></dt><dt><span class="section"><a href="#N2152C">stderr</a></span></dt><dt><span class="section"><a href="#N2156E">verifycmd</a></span></dt><dt><span class="section"><a href="#N2170B">icon</a></span></dt><dt><span class="section"><a href="#N2186C">propertiesfile</a></span></dt><dt><span class="section"><a href="#N2209C">setpropvalue</a></span></dt><dt><span class="section"><a href="#N22126">textfile</a></span></dt><dt><span class="section"><a href="#N22974">replace</a></span></dt><dt><span class="section"><a href="#N229DA">delete</a></span></dt><dt><span class="section"><a href="#N22A2E">insert</a></span></dt><dt><span class="section"><a href="#N22AC0">anttask</a></span></dt><dt><span class="section"><a href="#N22C6F">command</a></span></dt><dt><span class="section"><a href="#N22E0C">xmlfile</a></span></dt><dt><span class="section"><a href="#N23681">deletenode</a></span></dt><dt><span class="section"><a href="#N236D5">setnodevalue</a></span></dt><dt><span class="section"><a href="#N2373B">installcommand</a></span></dt><dt><span class="section"><a href="#N238D8">deinstallcommand</a></span></dt><dt><span class="section"><a href="#N23A75">propextension</a></span></dt></dl></div>
 		
 
 			<div class="section" title="project"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20025"></a>project</h2></div></div></div>
@@ -711,14 +711,39 @@ zipped tar file.
 
 				</li><li class="listitem">
 					<p>
-<span class="bold"><strong>removerootdirs: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+<span class="bold"><strong>unpackstrategy: </strong></span>single choice of { simple | removeroot | removerootdeep }, <span class="emphasis"><em>optional</em></span>, default = "removerootdeep"
 					</p>
 
-					<p>This flag drives the removal of one or more
+					<p>This property drives the removal of one or more
 (single) root directories after having unpacked the
-installation zip file under "homedir". While "homedir" is usually
-sufficient the default behavior is removerootdirs="true".
+installation archive file under "homedir()".
+The default behavior is "removerootdeep" but in most cases "removeroot"
+will be sufficient and have better performance as well as less problems under Windows file system.
 					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>simple:</strong></span>
+Simply put a single file into the specified folder.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>removeroot:</strong></span>
+Remove the root folder. Requires the archive to have one
+single root folder for all files included.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>removerootdeep:</strong></span>
+Automatically remove one or more root folders in case there are any.
+Does not require the archive to have one or more root folders for all files included
+but in case they are there they are removed.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
 				</li><li class="listitem">
 					<p>
 <span class="bold"><strong>deinstallunusedmode: </strong></span>single choice of { never | always | prompt }, <span class="emphasis"><em>optional</em></span>, default = "always"
@@ -858,7 +883,7 @@ The extension will lead to some migration of the property value during upgrade i
 
 			</div>
 
-			<div class="section" title="download"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N205E8"></a>download</h2></div></div></div>
+			<div class="section" title="download"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2060C"></a>download</h2></div></div></div>
 				
 
 				<p>Defines a download for one single file. 
@@ -927,7 +952,7 @@ You have to download the file manually e. g. for license reasons.
 
 			</div>
 
-			<div class="section" title="sourcefilecheck"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20668"></a>sourcefilecheck</h2></div></div></div>
+			<div class="section" title="sourcefilecheck"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2068C"></a>sourcefilecheck</h2></div></div></div>
 				
 
 				<p>Defines a hash value check on a file. 
@@ -996,7 +1021,7 @@ SHA1 hash algorithm
 
 			</div>
 
-			<div class="section" title="subunit"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N206E8"></a>subunit</h2></div></div></div>
+			<div class="section" title="subunit"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2070C"></a>subunit</h2></div></div></div>
 				
 
 				<p>An installation unit is an installable and configurable unit
@@ -1263,14 +1288,39 @@ zipped tar file.
 
 				</li><li class="listitem">
 					<p>
-<span class="bold"><strong>removerootdirs: </strong></span>boolean (single choice of { 'true' | 'false' }), <span class="emphasis"><em>optional</em></span>, default = "true"
+<span class="bold"><strong>unpackstrategy: </strong></span>single choice of { simple | removeroot | removerootdeep }, <span class="emphasis"><em>optional</em></span>, default = "removerootdeep"
 					</p>
 
-					<p>This flag drives the removal of one or more
+					<p>This property drives the removal of one or more
 (single) root directories after having unpacked the
-installation zip file under "homedir". While "homedir" is usually
-sufficient the default behavior is removerootdirs="true".
+installation archive file under "homedir()".
+The default behavior is "removerootdeep" but in most cases "removeroot"
+will be sufficient and have better performance as well as less problems under Windows file system.
 					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>simple:</strong></span>
+Simply put a single file into the specified folder.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>removeroot:</strong></span>
+Remove the root folder. Requires the archive to have one
+single root folder for all files included.
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>removerootdeep:</strong></span>
+Automatically remove one or more root folders in case there are any.
+Does not require the archive to have one or more root folders for all files included
+but in case they are there they are removed.
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
 				</li><li class="listitem">
 					<p>
 <span class="bold"><strong>deinstallunusedmode: </strong></span>single choice of { never | always | prompt }, <span class="emphasis"><em>optional</em></span>, default = "always"
@@ -1410,7 +1460,7 @@ The extension will lead to some migration of the property value during upgrade i
 
 			</div>
 
-			<div class="section" title="folder"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N209CD"></a>folder</h2></div></div></div>
+			<div class="section" title="folder"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20A15"></a>folder</h2></div></div></div>
 				
 
 				<p>An configuration operation on a single folder 
@@ -1621,6 +1671,859 @@ THis ist the strictest rule.
 
 				</li><li class="listitem">
 					<p>
+<span class="bold"><strong>encoding: </strong></span>single choice of { Big5 | Big5-HKSCS | EUC-JP | EUC-KR | GB18030 | GB2312 | GBK | IBM-Thai | IBM00858 | IBM01140 | IBM01141 | IBM01142 | IBM01143 | IBM01144 | IBM01145 | IBM01146 | IBM01147 | IBM01148 | IBM01149 | IBM037 | IBM1026 | IBM1047 | IBM273 | IBM277 | IBM278 | IBM280 | IBM284 | IBM285 | IBM297 | IBM420 | IBM424 | IBM437 | IBM500 | IBM775 | IBM850 | IBM852 | IBM855 | IBM857 | IBM860 | IBM861 | IBM862 | IBM863 | IBM864 | IBM865 | IBM866 | IBM868 | IBM869 | IBM870 | IBM871 | IBM918 | ISO-2022-CN | ISO-2022-JP | ISO-2022-JP-2 | ISO-2022-KR | ISO-8859-1 | ISO-8859-13 | ISO-8859-15 | ISO-8859-2 | ISO-8859-3 | ISO-8859-4 | ISO-8859-5 | ISO-8859-6 | ISO-8859-7 | ISO-8859-8 | ISO-8859-9 | JIS_X0201 | JIS_X0212-1990 | KOI8-R | KOI8-U | Shift_JIS | TIS-620 | US-ASCII | UTF-16 | UTF-16BE | UTF-16LE | UTF-32 | UTF-32BE | UTF-32LE | UTF-8 | windows-1250 | windows-1251 | windows-1252 | windows-1253 | windows-1254 | windows-1255 | windows-1256 | windows-1257 | windows-1258 | windows-31j | x-Big5-HKSCS-2001 | x-Big5-Solaris | x-euc-jp-linux | x-EUC-TW | x-eucJP-Open | x-IBM1006 | x-IBM1025 | x-IBM1046 | x-IBM1097 | x-IBM1098 | x-IBM1112 | x-IBM1122 | x-IBM1123 | x-IBM1124 | x-IBM1381 | x-IBM1383 | x-IBM33722 | x-IBM737 | x-IBM833 | x-IBM834 | x-IBM856 | x-IBM874 | x-IBM875 | x-IBM921 | x-IBM922 | x-IBM930 | x-IBM933 | x-IBM935 | x-IBM937 | x-IBM939 | x-IBM942 | x-IBM942C | x-IBM943 | x-IBM943C | x-IBM948 | x-IBM949 | x-IBM949C | x-IBM950 | x-IBM964 | x-IBM970 | x-ISCII91 | x-ISO-2022-CN-CNS | x-ISO-2022-CN-GB | x-iso-8859-11 | x-JIS0208 | x-JISAutoDetect | x-Johab | x-MacArabic | x-MacCentralEurope | x-MacCroatian | x-MacCyrillic | x-MacDingbat | x-MacGreek | x-MacHebrew | x-MacIceland | x-MacRoman | x-MacRomania | x-MacSymbol | x-MacThai | x-MacTurkish | x-MacUkraine | x-MS932_0213 | x-MS950-HKSCS | x-MS950-HKSCS-XP | x-mswin-936 | x-PCK | x-SJIS_0213 | x-UTF-16LE-BOM | X-UTF-32BE-BOM | X-UTF-32LE-BOM | x-windows-50220 | x-windows-50221 | x-windows-874 | x-windows-949 | x-windows-950 | x-windows-iso2022jp }, <span class="emphasis"><em>optional</em></span>, default = "UTF-8"
+					</p>
+
+					<p>One of the following text file encodings: Big5, Big5-HKSCS, EUC-JP, EUC-KR, GB18030, GB2312, GBK, IBM-Thai,
+		IBM00858, IBM01140, IBM01141, IBM01142, IBM01143, IBM01144, IBM01145, IBM01146, IBM01147, IBM01148, IBM01149, IBM037,
+		IBM1026, IBM1047, IBM273, IBM277, IBM278, IBM280, IBM284, IBM285, IBM297, IBM420, IBM424, IBM437, IBM500, IBM775, IBM850,
+		IBM852, IBM855, IBM857, IBM860, IBM861, IBM862, IBM863, IBM864, IBM865, IBM866, IBM868, IBM869, IBM870, IBM871, IBM918,
+		ISO-2022-CN, ISO-2022-JP, ISO-2022-JP-2, ISO-2022-KR, ISO-8859-1, ISO-8859-13, ISO-8859-15, ISO-8859-2, ISO-8859-3, ISO-8859-4,
+		ISO-8859-5, ISO-8859-6, ISO-8859-7, ISO-8859-8, ISO-8859-9, JIS_X0201, JIS_X0212-1990, KOI8-R, KOI8-U, Shift_JIS, TIS-620,
+		US-ASCII, UTF-16, UTF-16BE, UTF-16LE, UTF-32, UTF-32BE, UTF-32LE, UTF-8, windows-1250, windows-1251, windows-1252, windows-1253,
+		windows-1254, windows-1255, windows-1256, windows-1257, windows-1258, windows-31j,
+		x-Big5-HKSCS-2001, x-Big5-Solaris, x-euc-jp-linux, x-EUC-TW, x-eucJP-Open, x-IBM1006, x-IBM1025, x-IBM1046, x-IBM1097,
+		x-IBM1098, x-IBM1112, x-IBM1122, x-IBM1123, x-IBM1124, x-IBM1381, x-IBM1383, x-IBM33722, x-IBM737, x-IBM833, x-IBM834,
+		x-IBM856, x-IBM874, x-IBM875, x-IBM921, x-IBM922, x-IBM930, x-IBM933, x-IBM935, x-IBM937, x-IBM939, x-IBM942, x-IBM942C,
+		x-IBM943, x-IBM943C, x-IBM948, x-IBM949, x-IBM949C, x-IBM950, x-IBM964, x-IBM970, x-ISCII91, x-ISO-2022-CN-CNS, x-ISO-2022-CN-GB,
+		x-iso-8859-11, x-JIS0208, x-JISAutoDetect, x-Johab, x-MacArabic, x-MacCentralEurope, x-MacCroatian, x-MacCyrillic, x-MacDingbat,
+		x-MacGreek, x-MacHebrew, x-MacIceland, x-MacRoman, x-MacRomania, x-MacSymbol, x-MacThai, x-MacTurkish, x-MacUkraine, x-MS932_0213,
+		x-MS950-HKSCS, x-MS950-HKSCS-XP, x-mswin-936, x-PCK, x-SJIS_0213, x-UTF-16LE-BOM, X-UTF-32BE-BOM, X-UTF-32LE-BOM, x-windows-50220,
+		x-windows-50221, x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>Big5:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>Big5-HKSCS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>EUC-JP:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>EUC-KR:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>GB18030:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>GB2312:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>GBK:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM-Thai:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM00858:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01140:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01141:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01142:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01143:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01144:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01145:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01146:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01147:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01148:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01149:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM037:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM1026:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM1047:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM273:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM277:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM278:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM280:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM284:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM285:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM297:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM420:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM424:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM437:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM500:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM775:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM850:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM852:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM855:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM857:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM860:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM861:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM862:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM863:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM864:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM865:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM866:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM868:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM869:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM870:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM871:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM918:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-CN:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-JP:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-JP-2:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-KR:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-1:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-13:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-15:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-2:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-3:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-4:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-5:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-6:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-7:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-8:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-9:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>JIS_X0201:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>JIS_X0212-1990:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>KOI8-R:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>KOI8-U:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>Shift_JIS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>TIS-620:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>US-ASCII:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-16:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-16BE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-16LE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-32:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-32BE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-32LE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-8:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1250:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1251:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1252:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1253:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1254:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1255:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1256:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1257:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1258:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-31j:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-Big5-HKSCS-2001:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-Big5-Solaris:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-euc-jp-linux:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-EUC-TW:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-eucJP-Open:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1006:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1025:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1046:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1097:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1098:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1112:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1122:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1123:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1124:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1381:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1383:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM33722:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM737:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM833:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM834:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM856:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM874:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM875:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM921:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM922:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM930:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM933:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM935:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM937:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM939:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM942:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM942C:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM943:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM943C:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM948:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM949:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM949C:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM950:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM964:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM970:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-ISCII91:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-ISO-2022-CN-CNS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-ISO-2022-CN-GB:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-iso-8859-11:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-JIS0208:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-JISAutoDetect:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-Johab:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacArabic:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacCentralEurope:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacCroatian:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacCyrillic:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacDingbat:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacGreek:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacHebrew:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacIceland:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacRoman:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacRomania:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacSymbol:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacThai:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacTurkish:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacUkraine:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MS932_0213:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MS950-HKSCS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MS950-HKSCS-XP:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-mswin-936:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-PCK:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-SJIS_0213:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-UTF-16LE-BOM:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>X-UTF-32BE-BOM:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>X-UTF-32LE-BOM:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-50220:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-50221:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-874:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-949:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-950:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-iso2022jp:</strong></span>
+@@@undefined@@@
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
 <span class="bold"><strong>task: </strong></span>child element [0..*]
 					</p>
 
@@ -1638,7 +2541,7 @@ executed whenever a configuration on this file or folder has been performed
 
 			</div>
 
-			<div class="section" title="task"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20B73"></a>task</h2></div></div></div>
+			<div class="section" title="task"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21245"></a>task</h2></div></div></div>
 				
 
 				<p>A single configuration step for a RapidEnv installation unit
@@ -1685,7 +2588,7 @@ Apple Mac OS.
 
 			</div>
 
-			<div class="section" title="commandonconfig"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20BB5"></a>commandonconfig</h2></div></div></div>
+			<div class="section" title="commandonconfig"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21287"></a>commandonconfig</h2></div></div></div>
 				
 
 				<p>A system command configuration allows you to define
@@ -1891,7 +2794,7 @@ to have automatic user input
 
 			</div>
 
-			<div class="section" title="argument"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20D52"></a>argument</h2></div></div></div>
+			<div class="section" title="argument"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21424"></a>argument</h2></div></div></div>
 				
 
 				<p>
@@ -1973,7 +2876,7 @@ want to suppress this default behaviour. In these cases set this property to "fa
 
 			</div>
 
-			<div class="section" title="return"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20DE8"></a>return</h2></div></div></div>
+			<div class="section" title="return"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N214BA"></a>return</h2></div></div></div>
 				
 
 				<p>Defines a condition on the return value
@@ -1998,7 +2901,7 @@ at the end of the system command execution.
 
 			</div>
 
-			<div class="section" title="stdout"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20E18"></a>stdout</h2></div></div></div>
+			<div class="section" title="stdout"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N214EA"></a>stdout</h2></div></div></div>
 				
 
 				<p>Defines a condition on the standard out contents
@@ -2030,7 +2933,7 @@ at the end of the system command execution.
 
 			</div>
 
-			<div class="section" title="stderr"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20E5A"></a>stderr</h2></div></div></div>
+			<div class="section" title="stderr"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2152C"></a>stderr</h2></div></div></div>
 				
 
 				<p>Defines a condition on the standard error contents
@@ -2062,7 +2965,7 @@ at the end of the system command execution.
 
 			</div>
 
-			<div class="section" title="verifycmd"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N20E9C"></a>verifycmd</h2></div></div></div>
+			<div class="section" title="verifycmd"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2156E"></a>verifycmd</h2></div></div></div>
 				
 
 				<p>A system command configuration allows you to define
@@ -2268,7 +3171,7 @@ to have automatic user input
 
 			</div>
 
-			<div class="section" title="icon"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21039"></a>icon</h2></div></div></div>
+			<div class="section" title="icon"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2170B"></a>icon</h2></div></div></div>
 				
 
 				<p>A shell link icon configuration allows you to define
@@ -2452,7 +3355,7 @@ after this configuration has been performed
 
 			</div>
 
-			<div class="section" title="propertiesfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2119A"></a>propertiesfile</h2></div></div></div>
+			<div class="section" title="propertiesfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2186C"></a>propertiesfile</h2></div></div></div>
 				
 
 				<p>An configuration operation on a single properties file 
@@ -2663,6 +3566,859 @@ THis ist the strictest rule.
 
 				</li><li class="listitem">
 					<p>
+<span class="bold"><strong>encoding: </strong></span>single choice of { Big5 | Big5-HKSCS | EUC-JP | EUC-KR | GB18030 | GB2312 | GBK | IBM-Thai | IBM00858 | IBM01140 | IBM01141 | IBM01142 | IBM01143 | IBM01144 | IBM01145 | IBM01146 | IBM01147 | IBM01148 | IBM01149 | IBM037 | IBM1026 | IBM1047 | IBM273 | IBM277 | IBM278 | IBM280 | IBM284 | IBM285 | IBM297 | IBM420 | IBM424 | IBM437 | IBM500 | IBM775 | IBM850 | IBM852 | IBM855 | IBM857 | IBM860 | IBM861 | IBM862 | IBM863 | IBM864 | IBM865 | IBM866 | IBM868 | IBM869 | IBM870 | IBM871 | IBM918 | ISO-2022-CN | ISO-2022-JP | ISO-2022-JP-2 | ISO-2022-KR | ISO-8859-1 | ISO-8859-13 | ISO-8859-15 | ISO-8859-2 | ISO-8859-3 | ISO-8859-4 | ISO-8859-5 | ISO-8859-6 | ISO-8859-7 | ISO-8859-8 | ISO-8859-9 | JIS_X0201 | JIS_X0212-1990 | KOI8-R | KOI8-U | Shift_JIS | TIS-620 | US-ASCII | UTF-16 | UTF-16BE | UTF-16LE | UTF-32 | UTF-32BE | UTF-32LE | UTF-8 | windows-1250 | windows-1251 | windows-1252 | windows-1253 | windows-1254 | windows-1255 | windows-1256 | windows-1257 | windows-1258 | windows-31j | x-Big5-HKSCS-2001 | x-Big5-Solaris | x-euc-jp-linux | x-EUC-TW | x-eucJP-Open | x-IBM1006 | x-IBM1025 | x-IBM1046 | x-IBM1097 | x-IBM1098 | x-IBM1112 | x-IBM1122 | x-IBM1123 | x-IBM1124 | x-IBM1381 | x-IBM1383 | x-IBM33722 | x-IBM737 | x-IBM833 | x-IBM834 | x-IBM856 | x-IBM874 | x-IBM875 | x-IBM921 | x-IBM922 | x-IBM930 | x-IBM933 | x-IBM935 | x-IBM937 | x-IBM939 | x-IBM942 | x-IBM942C | x-IBM943 | x-IBM943C | x-IBM948 | x-IBM949 | x-IBM949C | x-IBM950 | x-IBM964 | x-IBM970 | x-ISCII91 | x-ISO-2022-CN-CNS | x-ISO-2022-CN-GB | x-iso-8859-11 | x-JIS0208 | x-JISAutoDetect | x-Johab | x-MacArabic | x-MacCentralEurope | x-MacCroatian | x-MacCyrillic | x-MacDingbat | x-MacGreek | x-MacHebrew | x-MacIceland | x-MacRoman | x-MacRomania | x-MacSymbol | x-MacThai | x-MacTurkish | x-MacUkraine | x-MS932_0213 | x-MS950-HKSCS | x-MS950-HKSCS-XP | x-mswin-936 | x-PCK | x-SJIS_0213 | x-UTF-16LE-BOM | X-UTF-32BE-BOM | X-UTF-32LE-BOM | x-windows-50220 | x-windows-50221 | x-windows-874 | x-windows-949 | x-windows-950 | x-windows-iso2022jp }, <span class="emphasis"><em>optional</em></span>, default = "UTF-8"
+					</p>
+
+					<p>One of the following text file encodings: Big5, Big5-HKSCS, EUC-JP, EUC-KR, GB18030, GB2312, GBK, IBM-Thai,
+		IBM00858, IBM01140, IBM01141, IBM01142, IBM01143, IBM01144, IBM01145, IBM01146, IBM01147, IBM01148, IBM01149, IBM037,
+		IBM1026, IBM1047, IBM273, IBM277, IBM278, IBM280, IBM284, IBM285, IBM297, IBM420, IBM424, IBM437, IBM500, IBM775, IBM850,
+		IBM852, IBM855, IBM857, IBM860, IBM861, IBM862, IBM863, IBM864, IBM865, IBM866, IBM868, IBM869, IBM870, IBM871, IBM918,
+		ISO-2022-CN, ISO-2022-JP, ISO-2022-JP-2, ISO-2022-KR, ISO-8859-1, ISO-8859-13, ISO-8859-15, ISO-8859-2, ISO-8859-3, ISO-8859-4,
+		ISO-8859-5, ISO-8859-6, ISO-8859-7, ISO-8859-8, ISO-8859-9, JIS_X0201, JIS_X0212-1990, KOI8-R, KOI8-U, Shift_JIS, TIS-620,
+		US-ASCII, UTF-16, UTF-16BE, UTF-16LE, UTF-32, UTF-32BE, UTF-32LE, UTF-8, windows-1250, windows-1251, windows-1252, windows-1253,
+		windows-1254, windows-1255, windows-1256, windows-1257, windows-1258, windows-31j,
+		x-Big5-HKSCS-2001, x-Big5-Solaris, x-euc-jp-linux, x-EUC-TW, x-eucJP-Open, x-IBM1006, x-IBM1025, x-IBM1046, x-IBM1097,
+		x-IBM1098, x-IBM1112, x-IBM1122, x-IBM1123, x-IBM1124, x-IBM1381, x-IBM1383, x-IBM33722, x-IBM737, x-IBM833, x-IBM834,
+		x-IBM856, x-IBM874, x-IBM875, x-IBM921, x-IBM922, x-IBM930, x-IBM933, x-IBM935, x-IBM937, x-IBM939, x-IBM942, x-IBM942C,
+		x-IBM943, x-IBM943C, x-IBM948, x-IBM949, x-IBM949C, x-IBM950, x-IBM964, x-IBM970, x-ISCII91, x-ISO-2022-CN-CNS, x-ISO-2022-CN-GB,
+		x-iso-8859-11, x-JIS0208, x-JISAutoDetect, x-Johab, x-MacArabic, x-MacCentralEurope, x-MacCroatian, x-MacCyrillic, x-MacDingbat,
+		x-MacGreek, x-MacHebrew, x-MacIceland, x-MacRoman, x-MacRomania, x-MacSymbol, x-MacThai, x-MacTurkish, x-MacUkraine, x-MS932_0213,
+		x-MS950-HKSCS, x-MS950-HKSCS-XP, x-mswin-936, x-PCK, x-SJIS_0213, x-UTF-16LE-BOM, X-UTF-32BE-BOM, X-UTF-32LE-BOM, x-windows-50220,
+		x-windows-50221, x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>Big5:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>Big5-HKSCS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>EUC-JP:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>EUC-KR:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>GB18030:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>GB2312:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>GBK:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM-Thai:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM00858:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01140:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01141:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01142:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01143:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01144:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01145:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01146:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01147:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01148:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01149:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM037:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM1026:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM1047:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM273:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM277:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM278:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM280:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM284:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM285:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM297:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM420:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM424:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM437:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM500:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM775:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM850:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM852:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM855:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM857:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM860:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM861:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM862:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM863:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM864:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM865:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM866:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM868:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM869:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM870:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM871:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM918:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-CN:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-JP:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-JP-2:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-KR:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-1:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-13:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-15:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-2:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-3:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-4:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-5:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-6:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-7:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-8:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-9:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>JIS_X0201:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>JIS_X0212-1990:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>KOI8-R:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>KOI8-U:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>Shift_JIS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>TIS-620:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>US-ASCII:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-16:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-16BE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-16LE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-32:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-32BE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-32LE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-8:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1250:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1251:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1252:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1253:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1254:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1255:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1256:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1257:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1258:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-31j:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-Big5-HKSCS-2001:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-Big5-Solaris:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-euc-jp-linux:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-EUC-TW:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-eucJP-Open:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1006:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1025:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1046:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1097:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1098:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1112:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1122:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1123:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1124:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1381:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1383:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM33722:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM737:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM833:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM834:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM856:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM874:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM875:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM921:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM922:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM930:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM933:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM935:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM937:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM939:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM942:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM942C:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM943:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM943C:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM948:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM949:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM949C:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM950:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM964:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM970:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-ISCII91:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-ISO-2022-CN-CNS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-ISO-2022-CN-GB:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-iso-8859-11:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-JIS0208:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-JISAutoDetect:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-Johab:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacArabic:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacCentralEurope:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacCroatian:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacCyrillic:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacDingbat:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacGreek:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacHebrew:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacIceland:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacRoman:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacRomania:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacSymbol:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacThai:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacTurkish:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacUkraine:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MS932_0213:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MS950-HKSCS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MS950-HKSCS-XP:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-mswin-936:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-PCK:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-SJIS_0213:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-UTF-16LE-BOM:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>X-UTF-32BE-BOM:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>X-UTF-32LE-BOM:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-50220:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-50221:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-874:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-949:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-950:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-iso2022jp:</strong></span>
+@@@undefined@@@
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
 <span class="bold"><strong>setpropvalue: </strong></span>child element [0..*]
 					</p>
 
@@ -2680,7 +4436,7 @@ executed whenever a configuration on this file or folder has been performed
 
 			</div>
 
-			<div class="section" title="setpropvalue"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21340"></a>setpropvalue</h2></div></div></div>
+			<div class="section" title="setpropvalue"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2209C"></a>setpropvalue</h2></div></div></div>
 				
 
 				<p>Sets an XML node (element or attribute).
@@ -2749,7 +4505,7 @@ Defaults to "RapidEnv project ((project name))".
 
 			</div>
 
-			<div class="section" title="textfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N213CA"></a>textfile</h2></div></div></div>
+			<div class="section" title="textfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22126"></a>textfile</h2></div></div></div>
 				
 
 				<p>An configuration operation on a single text file 
@@ -2960,6 +4716,859 @@ THis ist the strictest rule.
 
 				</li><li class="listitem">
 					<p>
+<span class="bold"><strong>encoding: </strong></span>single choice of { Big5 | Big5-HKSCS | EUC-JP | EUC-KR | GB18030 | GB2312 | GBK | IBM-Thai | IBM00858 | IBM01140 | IBM01141 | IBM01142 | IBM01143 | IBM01144 | IBM01145 | IBM01146 | IBM01147 | IBM01148 | IBM01149 | IBM037 | IBM1026 | IBM1047 | IBM273 | IBM277 | IBM278 | IBM280 | IBM284 | IBM285 | IBM297 | IBM420 | IBM424 | IBM437 | IBM500 | IBM775 | IBM850 | IBM852 | IBM855 | IBM857 | IBM860 | IBM861 | IBM862 | IBM863 | IBM864 | IBM865 | IBM866 | IBM868 | IBM869 | IBM870 | IBM871 | IBM918 | ISO-2022-CN | ISO-2022-JP | ISO-2022-JP-2 | ISO-2022-KR | ISO-8859-1 | ISO-8859-13 | ISO-8859-15 | ISO-8859-2 | ISO-8859-3 | ISO-8859-4 | ISO-8859-5 | ISO-8859-6 | ISO-8859-7 | ISO-8859-8 | ISO-8859-9 | JIS_X0201 | JIS_X0212-1990 | KOI8-R | KOI8-U | Shift_JIS | TIS-620 | US-ASCII | UTF-16 | UTF-16BE | UTF-16LE | UTF-32 | UTF-32BE | UTF-32LE | UTF-8 | windows-1250 | windows-1251 | windows-1252 | windows-1253 | windows-1254 | windows-1255 | windows-1256 | windows-1257 | windows-1258 | windows-31j | x-Big5-HKSCS-2001 | x-Big5-Solaris | x-euc-jp-linux | x-EUC-TW | x-eucJP-Open | x-IBM1006 | x-IBM1025 | x-IBM1046 | x-IBM1097 | x-IBM1098 | x-IBM1112 | x-IBM1122 | x-IBM1123 | x-IBM1124 | x-IBM1381 | x-IBM1383 | x-IBM33722 | x-IBM737 | x-IBM833 | x-IBM834 | x-IBM856 | x-IBM874 | x-IBM875 | x-IBM921 | x-IBM922 | x-IBM930 | x-IBM933 | x-IBM935 | x-IBM937 | x-IBM939 | x-IBM942 | x-IBM942C | x-IBM943 | x-IBM943C | x-IBM948 | x-IBM949 | x-IBM949C | x-IBM950 | x-IBM964 | x-IBM970 | x-ISCII91 | x-ISO-2022-CN-CNS | x-ISO-2022-CN-GB | x-iso-8859-11 | x-JIS0208 | x-JISAutoDetect | x-Johab | x-MacArabic | x-MacCentralEurope | x-MacCroatian | x-MacCyrillic | x-MacDingbat | x-MacGreek | x-MacHebrew | x-MacIceland | x-MacRoman | x-MacRomania | x-MacSymbol | x-MacThai | x-MacTurkish | x-MacUkraine | x-MS932_0213 | x-MS950-HKSCS | x-MS950-HKSCS-XP | x-mswin-936 | x-PCK | x-SJIS_0213 | x-UTF-16LE-BOM | X-UTF-32BE-BOM | X-UTF-32LE-BOM | x-windows-50220 | x-windows-50221 | x-windows-874 | x-windows-949 | x-windows-950 | x-windows-iso2022jp }, <span class="emphasis"><em>optional</em></span>, default = "UTF-8"
+					</p>
+
+					<p>One of the following text file encodings: Big5, Big5-HKSCS, EUC-JP, EUC-KR, GB18030, GB2312, GBK, IBM-Thai,
+		IBM00858, IBM01140, IBM01141, IBM01142, IBM01143, IBM01144, IBM01145, IBM01146, IBM01147, IBM01148, IBM01149, IBM037,
+		IBM1026, IBM1047, IBM273, IBM277, IBM278, IBM280, IBM284, IBM285, IBM297, IBM420, IBM424, IBM437, IBM500, IBM775, IBM850,
+		IBM852, IBM855, IBM857, IBM860, IBM861, IBM862, IBM863, IBM864, IBM865, IBM866, IBM868, IBM869, IBM870, IBM871, IBM918,
+		ISO-2022-CN, ISO-2022-JP, ISO-2022-JP-2, ISO-2022-KR, ISO-8859-1, ISO-8859-13, ISO-8859-15, ISO-8859-2, ISO-8859-3, ISO-8859-4,
+		ISO-8859-5, ISO-8859-6, ISO-8859-7, ISO-8859-8, ISO-8859-9, JIS_X0201, JIS_X0212-1990, KOI8-R, KOI8-U, Shift_JIS, TIS-620,
+		US-ASCII, UTF-16, UTF-16BE, UTF-16LE, UTF-32, UTF-32BE, UTF-32LE, UTF-8, windows-1250, windows-1251, windows-1252, windows-1253,
+		windows-1254, windows-1255, windows-1256, windows-1257, windows-1258, windows-31j,
+		x-Big5-HKSCS-2001, x-Big5-Solaris, x-euc-jp-linux, x-EUC-TW, x-eucJP-Open, x-IBM1006, x-IBM1025, x-IBM1046, x-IBM1097,
+		x-IBM1098, x-IBM1112, x-IBM1122, x-IBM1123, x-IBM1124, x-IBM1381, x-IBM1383, x-IBM33722, x-IBM737, x-IBM833, x-IBM834,
+		x-IBM856, x-IBM874, x-IBM875, x-IBM921, x-IBM922, x-IBM930, x-IBM933, x-IBM935, x-IBM937, x-IBM939, x-IBM942, x-IBM942C,
+		x-IBM943, x-IBM943C, x-IBM948, x-IBM949, x-IBM949C, x-IBM950, x-IBM964, x-IBM970, x-ISCII91, x-ISO-2022-CN-CNS, x-ISO-2022-CN-GB,
+		x-iso-8859-11, x-JIS0208, x-JISAutoDetect, x-Johab, x-MacArabic, x-MacCentralEurope, x-MacCroatian, x-MacCyrillic, x-MacDingbat,
+		x-MacGreek, x-MacHebrew, x-MacIceland, x-MacRoman, x-MacRomania, x-MacSymbol, x-MacThai, x-MacTurkish, x-MacUkraine, x-MS932_0213,
+		x-MS950-HKSCS, x-MS950-HKSCS-XP, x-mswin-936, x-PCK, x-SJIS_0213, x-UTF-16LE-BOM, X-UTF-32BE-BOM, X-UTF-32LE-BOM, x-windows-50220,
+		x-windows-50221, x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>Big5:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>Big5-HKSCS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>EUC-JP:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>EUC-KR:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>GB18030:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>GB2312:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>GBK:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM-Thai:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM00858:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01140:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01141:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01142:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01143:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01144:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01145:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01146:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01147:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01148:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01149:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM037:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM1026:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM1047:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM273:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM277:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM278:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM280:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM284:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM285:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM297:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM420:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM424:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM437:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM500:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM775:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM850:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM852:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM855:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM857:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM860:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM861:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM862:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM863:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM864:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM865:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM866:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM868:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM869:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM870:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM871:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM918:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-CN:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-JP:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-JP-2:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-KR:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-1:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-13:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-15:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-2:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-3:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-4:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-5:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-6:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-7:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-8:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-9:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>JIS_X0201:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>JIS_X0212-1990:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>KOI8-R:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>KOI8-U:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>Shift_JIS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>TIS-620:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>US-ASCII:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-16:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-16BE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-16LE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-32:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-32BE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-32LE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-8:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1250:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1251:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1252:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1253:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1254:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1255:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1256:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1257:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1258:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-31j:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-Big5-HKSCS-2001:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-Big5-Solaris:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-euc-jp-linux:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-EUC-TW:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-eucJP-Open:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1006:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1025:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1046:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1097:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1098:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1112:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1122:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1123:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1124:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1381:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1383:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM33722:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM737:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM833:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM834:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM856:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM874:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM875:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM921:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM922:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM930:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM933:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM935:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM937:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM939:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM942:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM942C:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM943:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM943C:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM948:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM949:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM949C:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM950:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM964:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM970:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-ISCII91:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-ISO-2022-CN-CNS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-ISO-2022-CN-GB:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-iso-8859-11:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-JIS0208:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-JISAutoDetect:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-Johab:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacArabic:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacCentralEurope:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacCroatian:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacCyrillic:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacDingbat:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacGreek:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacHebrew:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacIceland:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacRoman:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacRomania:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacSymbol:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacThai:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacTurkish:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacUkraine:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MS932_0213:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MS950-HKSCS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MS950-HKSCS-XP:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-mswin-936:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-PCK:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-SJIS_0213:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-UTF-16LE-BOM:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>X-UTF-32BE-BOM:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>X-UTF-32LE-BOM:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-50220:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-50221:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-874:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-949:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-950:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-iso2022jp:</strong></span>
+@@@undefined@@@
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
 <span class="bold"><strong>replace: </strong></span>child element [0..*]
 					</p>
 
@@ -2991,7 +5600,7 @@ executed whenever a configuration on this file or folder has been performed
 
 			</div>
 
-			<div class="section" title="replace"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2158E"></a>replace</h2></div></div></div>
+			<div class="section" title="replace"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22974"></a>replace</h2></div></div></div>
 				
 
 				<p>Replace the given seach pattern by the given text. 
@@ -3044,7 +5653,7 @@ Apple Mac OS.
 
 			</div>
 
-			<div class="section" title="delete"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N215F4"></a>delete</h2></div></div></div>
+			<div class="section" title="delete"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N229DA"></a>delete</h2></div></div></div>
 				
 
 				<p>Delete all lines specified by the given search pattern. 
@@ -3090,7 +5699,7 @@ Apple Mac OS.
 
 			</div>
 
-			<div class="section" title="insert"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21648"></a>insert</h2></div></div></div>
+			<div class="section" title="insert"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22A2E"></a>insert</h2></div></div></div>
 				
 
 				<p>Insert a new line at the end or the beginning of the
@@ -3172,7 +5781,7 @@ or after (append)
 
 			</div>
 
-			<div class="section" title="anttask"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N216DA"></a>anttask</h2></div></div></div>
+			<div class="section" title="anttask"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22AC0"></a>anttask</h2></div></div></div>
 				
 
 				<p>An ant task command configuration allows you to define
@@ -3387,7 +5996,7 @@ to have automatic user input
 
 			</div>
 
-			<div class="section" title="command"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21889"></a>command</h2></div></div></div>
+			<div class="section" title="command"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22C6F"></a>command</h2></div></div></div>
 				
 
 				<p>A system command configuration allows you to define
@@ -3593,7 +6202,7 @@ to have automatic user input
 
 			</div>
 
-			<div class="section" title="xmlfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21A26"></a>xmlfile</h2></div></div></div>
+			<div class="section" title="xmlfile"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22E0C"></a>xmlfile</h2></div></div></div>
 				
 
 				<p>An configuration operation on a single XML file 
@@ -3804,6 +6413,859 @@ THis ist the strictest rule.
 
 				</li><li class="listitem">
 					<p>
+<span class="bold"><strong>encoding: </strong></span>single choice of { Big5 | Big5-HKSCS | EUC-JP | EUC-KR | GB18030 | GB2312 | GBK | IBM-Thai | IBM00858 | IBM01140 | IBM01141 | IBM01142 | IBM01143 | IBM01144 | IBM01145 | IBM01146 | IBM01147 | IBM01148 | IBM01149 | IBM037 | IBM1026 | IBM1047 | IBM273 | IBM277 | IBM278 | IBM280 | IBM284 | IBM285 | IBM297 | IBM420 | IBM424 | IBM437 | IBM500 | IBM775 | IBM850 | IBM852 | IBM855 | IBM857 | IBM860 | IBM861 | IBM862 | IBM863 | IBM864 | IBM865 | IBM866 | IBM868 | IBM869 | IBM870 | IBM871 | IBM918 | ISO-2022-CN | ISO-2022-JP | ISO-2022-JP-2 | ISO-2022-KR | ISO-8859-1 | ISO-8859-13 | ISO-8859-15 | ISO-8859-2 | ISO-8859-3 | ISO-8859-4 | ISO-8859-5 | ISO-8859-6 | ISO-8859-7 | ISO-8859-8 | ISO-8859-9 | JIS_X0201 | JIS_X0212-1990 | KOI8-R | KOI8-U | Shift_JIS | TIS-620 | US-ASCII | UTF-16 | UTF-16BE | UTF-16LE | UTF-32 | UTF-32BE | UTF-32LE | UTF-8 | windows-1250 | windows-1251 | windows-1252 | windows-1253 | windows-1254 | windows-1255 | windows-1256 | windows-1257 | windows-1258 | windows-31j | x-Big5-HKSCS-2001 | x-Big5-Solaris | x-euc-jp-linux | x-EUC-TW | x-eucJP-Open | x-IBM1006 | x-IBM1025 | x-IBM1046 | x-IBM1097 | x-IBM1098 | x-IBM1112 | x-IBM1122 | x-IBM1123 | x-IBM1124 | x-IBM1381 | x-IBM1383 | x-IBM33722 | x-IBM737 | x-IBM833 | x-IBM834 | x-IBM856 | x-IBM874 | x-IBM875 | x-IBM921 | x-IBM922 | x-IBM930 | x-IBM933 | x-IBM935 | x-IBM937 | x-IBM939 | x-IBM942 | x-IBM942C | x-IBM943 | x-IBM943C | x-IBM948 | x-IBM949 | x-IBM949C | x-IBM950 | x-IBM964 | x-IBM970 | x-ISCII91 | x-ISO-2022-CN-CNS | x-ISO-2022-CN-GB | x-iso-8859-11 | x-JIS0208 | x-JISAutoDetect | x-Johab | x-MacArabic | x-MacCentralEurope | x-MacCroatian | x-MacCyrillic | x-MacDingbat | x-MacGreek | x-MacHebrew | x-MacIceland | x-MacRoman | x-MacRomania | x-MacSymbol | x-MacThai | x-MacTurkish | x-MacUkraine | x-MS932_0213 | x-MS950-HKSCS | x-MS950-HKSCS-XP | x-mswin-936 | x-PCK | x-SJIS_0213 | x-UTF-16LE-BOM | X-UTF-32BE-BOM | X-UTF-32LE-BOM | x-windows-50220 | x-windows-50221 | x-windows-874 | x-windows-949 | x-windows-950 | x-windows-iso2022jp }, <span class="emphasis"><em>optional</em></span>, default = "UTF-8"
+					</p>
+
+					<p>One of the following text file encodings: Big5, Big5-HKSCS, EUC-JP, EUC-KR, GB18030, GB2312, GBK, IBM-Thai,
+		IBM00858, IBM01140, IBM01141, IBM01142, IBM01143, IBM01144, IBM01145, IBM01146, IBM01147, IBM01148, IBM01149, IBM037,
+		IBM1026, IBM1047, IBM273, IBM277, IBM278, IBM280, IBM284, IBM285, IBM297, IBM420, IBM424, IBM437, IBM500, IBM775, IBM850,
+		IBM852, IBM855, IBM857, IBM860, IBM861, IBM862, IBM863, IBM864, IBM865, IBM866, IBM868, IBM869, IBM870, IBM871, IBM918,
+		ISO-2022-CN, ISO-2022-JP, ISO-2022-JP-2, ISO-2022-KR, ISO-8859-1, ISO-8859-13, ISO-8859-15, ISO-8859-2, ISO-8859-3, ISO-8859-4,
+		ISO-8859-5, ISO-8859-6, ISO-8859-7, ISO-8859-8, ISO-8859-9, JIS_X0201, JIS_X0212-1990, KOI8-R, KOI8-U, Shift_JIS, TIS-620,
+		US-ASCII, UTF-16, UTF-16BE, UTF-16LE, UTF-32, UTF-32BE, UTF-32LE, UTF-8, windows-1250, windows-1251, windows-1252, windows-1253,
+		windows-1254, windows-1255, windows-1256, windows-1257, windows-1258, windows-31j,
+		x-Big5-HKSCS-2001, x-Big5-Solaris, x-euc-jp-linux, x-EUC-TW, x-eucJP-Open, x-IBM1006, x-IBM1025, x-IBM1046, x-IBM1097,
+		x-IBM1098, x-IBM1112, x-IBM1122, x-IBM1123, x-IBM1124, x-IBM1381, x-IBM1383, x-IBM33722, x-IBM737, x-IBM833, x-IBM834,
+		x-IBM856, x-IBM874, x-IBM875, x-IBM921, x-IBM922, x-IBM930, x-IBM933, x-IBM935, x-IBM937, x-IBM939, x-IBM942, x-IBM942C,
+		x-IBM943, x-IBM943C, x-IBM948, x-IBM949, x-IBM949C, x-IBM950, x-IBM964, x-IBM970, x-ISCII91, x-ISO-2022-CN-CNS, x-ISO-2022-CN-GB,
+		x-iso-8859-11, x-JIS0208, x-JISAutoDetect, x-Johab, x-MacArabic, x-MacCentralEurope, x-MacCroatian, x-MacCyrillic, x-MacDingbat,
+		x-MacGreek, x-MacHebrew, x-MacIceland, x-MacRoman, x-MacRomania, x-MacSymbol, x-MacThai, x-MacTurkish, x-MacUkraine, x-MS932_0213,
+		x-MS950-HKSCS, x-MS950-HKSCS-XP, x-mswin-936, x-PCK, x-SJIS_0213, x-UTF-16LE-BOM, X-UTF-32BE-BOM, X-UTF-32LE-BOM, x-windows-50220,
+		x-windows-50221, x-windows-874, x-windows-949, x-windows-950, x-windows-iso2022jp
+					</p>
+					<p>
+
+							</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+									<p>
+<span class="bold"><strong>Big5:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>Big5-HKSCS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>EUC-JP:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>EUC-KR:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>GB18030:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>GB2312:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>GBK:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM-Thai:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM00858:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01140:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01141:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01142:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01143:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01144:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01145:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01146:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01147:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01148:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM01149:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM037:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM1026:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM1047:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM273:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM277:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM278:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM280:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM284:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM285:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM297:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM420:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM424:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM437:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM500:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM775:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM850:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM852:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM855:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM857:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM860:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM861:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM862:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM863:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM864:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM865:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM866:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM868:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM869:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM870:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM871:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>IBM918:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-CN:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-JP:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-JP-2:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-2022-KR:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-1:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-13:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-15:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-2:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-3:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-4:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-5:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-6:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-7:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-8:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>ISO-8859-9:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>JIS_X0201:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>JIS_X0212-1990:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>KOI8-R:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>KOI8-U:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>Shift_JIS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>TIS-620:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>US-ASCII:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-16:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-16BE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-16LE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-32:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-32BE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-32LE:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>UTF-8:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1250:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1251:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1252:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1253:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1254:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1255:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1256:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1257:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-1258:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>windows-31j:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-Big5-HKSCS-2001:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-Big5-Solaris:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-euc-jp-linux:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-EUC-TW:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-eucJP-Open:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1006:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1025:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1046:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1097:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1098:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1112:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1122:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1123:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1124:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1381:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM1383:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM33722:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM737:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM833:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM834:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM856:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM874:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM875:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM921:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM922:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM930:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM933:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM935:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM937:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM939:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM942:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM942C:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM943:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM943C:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM948:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM949:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM949C:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM950:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM964:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-IBM970:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-ISCII91:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-ISO-2022-CN-CNS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-ISO-2022-CN-GB:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-iso-8859-11:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-JIS0208:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-JISAutoDetect:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-Johab:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacArabic:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacCentralEurope:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacCroatian:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacCyrillic:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacDingbat:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacGreek:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacHebrew:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacIceland:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacRoman:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacRomania:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacSymbol:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacThai:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacTurkish:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MacUkraine:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MS932_0213:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MS950-HKSCS:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-MS950-HKSCS-XP:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-mswin-936:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-PCK:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-SJIS_0213:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-UTF-16LE-BOM:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>X-UTF-32BE-BOM:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>X-UTF-32LE-BOM:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-50220:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-50221:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-874:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-949:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-950:</strong></span>
+@@@undefined@@@
+									</p>
+								</li><li class="listitem">
+									<p>
+<span class="bold"><strong>x-windows-iso2022jp:</strong></span>
+@@@undefined@@@
+									</p>
+								</li></ul></div><p>
+
+					</p>
+
+				</li><li class="listitem">
+					<p>
 <span class="bold"><strong>deletenode: </strong></span>child element [0..*]
 					</p>
 
@@ -3849,7 +7311,7 @@ executed whenever a configuration on this file or folder has been performed
 
 			</div>
 
-			<div class="section" title="deletenode"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21C11"></a>deletenode</h2></div></div></div>
+			<div class="section" title="deletenode"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23681"></a>deletenode</h2></div></div></div>
 				
 
 				<p>Deletes an XML node (element or attribute) if it exists. 
@@ -3896,7 +7358,7 @@ value has to be set.
 
 			</div>
 
-			<div class="section" title="setnodevalue"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21C65"></a>setnodevalue</h2></div></div></div>
+			<div class="section" title="setnodevalue"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N236D5"></a>setnodevalue</h2></div></div></div>
 				
 
 				<p>Sets an XML node (element or attribute).
@@ -3951,7 +7413,7 @@ value has to be set.
 
 			</div>
 
-			<div class="section" title="installcommand"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21CCB"></a>installcommand</h2></div></div></div>
+			<div class="section" title="installcommand"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2373B"></a>installcommand</h2></div></div></div>
 				
 
 				<p>A system command configuration allows you to define
@@ -4157,7 +7619,7 @@ to have automatic user input
 
 			</div>
 
-			<div class="section" title="deinstallcommand"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N21E68"></a>deinstallcommand</h2></div></div></div>
+			<div class="section" title="deinstallcommand"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N238D8"></a>deinstallcommand</h2></div></div></div>
 				
 
 				<p>A system command configuration allows you to define
@@ -4363,7 +7825,7 @@ to have automatic user input
 
 			</div>
 
-			<div class="section" title="propextension"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22005"></a>propextension</h2></div></div></div>
+			<div class="section" title="propextension"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23A75"></a>propextension</h2></div></div></div>
 				
 
 				<p>A path extension definition coming from an install unit.
@@ -4423,27 +7885,27 @@ Could be platform specific when using the "osfamily" attribute.
 
 			</div>
 	</div>
-	<div class="chapter" title="Chapter&nbsp;2.&nbsp;RapidEnv Expression Language Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N22069"></a>Chapter&nbsp;2.&nbsp;RapidEnv Expression Language Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#N2206E">String Literal</a></span></dt><dt><span class="sect1"><a href="#N22077">Property Value Expansion</a></span></dt><dt><span class="sect1"><a href="#N22080">Functions</a></span></dt></dl></div>
+	<div class="chapter" title="Chapter&nbsp;2.&nbsp;RapidEnv Expression Language Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N23AD9"></a>Chapter&nbsp;2.&nbsp;RapidEnv Expression Language Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#N23ADE">String Literal</a></span></dt><dt><span class="sect1"><a href="#N23AE7">Property Value Expansion</a></span></dt><dt><span class="sect1"><a href="#N23AF0">Functions</a></span></dt></dl></div>
 		
-		<div class="sect1" title="String Literal"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2206E"></a>String Literal</h2></div></div></div>
+		<div class="sect1" title="String Literal"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23ADE"></a>String Literal</h2></div></div></div>
 			
 			<p>
 				Syntax: '&lt;literal&gt;'
 			</p>
 		</div>
-		<div class="sect1" title="Property Value Expansion"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22077"></a>Property Value Expansion</h2></div></div></div>
+		<div class="sect1" title="Property Value Expansion"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23AE7"></a>Property Value Expansion</h2></div></div></div>
 			
 			<p>
 				Syntax: ${&lt;property name&gt;}
 			</p>
 		</div>
-		<div class="sect1" title="Functions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22080"></a>Functions</h2></div></div></div>
+		<div class="sect1" title="Functions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23AF0"></a>Functions</h2></div></div></div>
 			
 			<p>
 				Syntax: &lt;function name&gt;(&lt;argument value 1&gt;, &lt;argument value 1&gt;, ...)
 			</p>
 			<p>
-				</p><div class="section" title="architecture"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2208A"></a>architecture</h2></div></div></div>
+				</p><div class="section" title="architecture"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23AFA"></a>architecture</h2></div></div></div>
 					
 					<p>Identifys the processor architecture of the machine used.
 					</p>
@@ -4471,7 +7933,7 @@ OS: linux, ARCH: x86_64 (64 Bit) =&gt; eclipse-modeling-indigo-linux-gtk-x86_64.
 
 					</div><p>
 
-				</p><div class="section" title="environment"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N220AD"></a>environment</h2></div></div></div>
+				</p><div class="section" title="environment"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23B1D"></a>environment</h2></div></div></div>
 					
 					<p>Retrieve the value of the given environment variable.
 					</p>
@@ -4492,7 +7954,7 @@ OS: linux, ARCH: x86_64 (64 Bit) =&gt; eclipse-modeling-indigo-linux-gtk-x86_64.
 
 					</div><p>
 
-				</p><div class="section" title="filecontents"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N220D0"></a>filecontents</h2></div></div></div>
+				</p><div class="section" title="filecontents"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23B40"></a>filecontents</h2></div></div></div>
 					
 					<p>Give the contents of the specified text file in one single string.
 					</p>
@@ -4524,7 +7986,7 @@ normalize: always use \n as line feed
 
 					</div><p>
 
-				</p><div class="section" title="homedir"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22107"></a>homedir</h2></div></div></div>
+				</p><div class="section" title="homedir"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23B77"></a>homedir</h2></div></div></div>
 					
 					<p>Determine the home directory of the specified
 or enclosing install unit.
@@ -4555,7 +8017,7 @@ or enclosing install unit.
 
 					</div><p>
 
-				</p><div class="section" title="hostname"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22134"></a>hostname</h2></div></div></div>
+				</p><div class="section" title="hostname"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23BA4"></a>hostname</h2></div></div></div>
 					
 					<p>Determine the host name of the machine used.
 					</p>
@@ -4572,7 +8034,7 @@ or enclosing install unit.
 
 					</div><p>
 
-				</p><div class="section" title="osname"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2214D"></a>osname</h2></div></div></div>
+				</p><div class="section" title="osname"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23BBD"></a>osname</h2></div></div></div>
 					
 					<p>Determine the operating system (family) name of the underlying node.
 Currently the following operating systems (families) are recognized:
@@ -4602,7 +8064,7 @@ OS: linux, ARCH: x86_64 (64 Bit) =&gt; eclipse-modeling-indigo-linux-gtk-x86_64.
 
 					</div><p>
 
-				</p><div class="section" title="packaging"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22170"></a>packaging</h2></div></div></div>
+				</p><div class="section" title="packaging"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23BE0"></a>packaging</h2></div></div></div>
 					
 					<p>Determine the operating system (family) specific packaging.
 					</p>
@@ -4630,7 +8092,7 @@ OS: linux, ARCH: x86_64 (64 Bit) =&gt; eclipse-modeling-indigo-linux-gtk-x86_64.
 
 					</div><p>
 
-				</p><div class="section" title="pathconvert"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22193"></a>pathconvert</h2></div></div></div>
+				</p><div class="section" title="pathconvert"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23C03"></a>pathconvert</h2></div></div></div>
 					
 					<p>Determine platform independently either a platform independent
 or a platform specific path. This function simply replaces all '/' and '\' separator
@@ -4660,7 +8122,7 @@ separator. The platform's separator the is taken by default.
 
 					</div><p>
 
-				</p><div class="section" title="pathconvertc"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N221C0"></a>pathconvertc</h2></div></div></div>
+				</p><div class="section" title="pathconvertc"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23C30"></a>pathconvertc</h2></div></div></div>
 					
 					<p>Determine a platform specific and canonical (absolute and normalized) path.
 					</p>
@@ -4681,7 +8143,7 @@ separator. The platform's separator the is taken by default.
 
 					</div><p>
 
-				</p><div class="section" title="replace"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N221E3"></a>replace</h2></div></div></div>
+				</p><div class="section" title="replace"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23C53"></a>replace</h2></div></div></div>
 					
 					<p>Text replacement using Java regular expressions.
 					</p>
@@ -4710,7 +8172,7 @@ separator. The platform's separator the is taken by default.
 
 					</div><p>
 
-				</p><div class="section" title="substractextensions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2221A"></a>substractextensions</h2></div></div></div>
+				</p><div class="section" title="substractextensions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23C8A"></a>substractextensions</h2></div></div></div>
 					
 					<p>Very special function need for recursive definitions of path properties with extensions.
 It causes extenstions to be substracted from a path property before it ia expanded again.
@@ -4732,7 +8194,7 @@ It causes extenstions to be substracted from a path property before it ia expand
 
 					</div><p>
 
-				</p><div class="section" title="userhome"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2223D"></a>userhome</h2></div></div></div>
+				</p><div class="section" title="userhome"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23CAD"></a>userhome</h2></div></div></div>
 					
 					<p>Determine the current user's home directory.
 					</p>
@@ -4749,7 +8211,7 @@ It causes extenstions to be substracted from a path property before it ia expand
 
 					</div><p>
 
-				</p><div class="section" title="username"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22256"></a>username</h2></div></div></div>
+				</p><div class="section" title="username"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23CC6"></a>username</h2></div></div></div>
 					
 					<p>Determine the account name of operating system user currently logged in.
 					</p>
@@ -4766,7 +8228,7 @@ It causes extenstions to be substracted from a path property before it ia expand
 
 					</div><p>
 
-				</p><div class="section" title="version"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2226F"></a>version</h2></div></div></div>
+				</p><div class="section" title="version"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23CDF"></a>version</h2></div></div></div>
 					
 					<p>Determine the (scheduled) version of the specified
 or enclosing install unit.
@@ -4795,13 +8257,13 @@ or enclosing install unit as string.
 			</p>
 		</div>
 	</div>
-	<div class="chapter" title="Chapter&nbsp;3.&nbsp;RapidEnv Command Line Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N22295"></a>Chapter&nbsp;3.&nbsp;RapidEnv Command Line Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#N2229A">Usage</a></span></dt><dt><span class="sect1"><a href="#N222A3">Commands</a></span></dt><dt><span class="sect1"><a href="#N22306">Options</a></span></dt></dl></div>
+	<div class="chapter" title="Chapter&nbsp;3.&nbsp;RapidEnv Command Line Reference"><div class="titlepage"><div><div><h2 class="title"><a name="N23D05"></a>Chapter&nbsp;3.&nbsp;RapidEnv Command Line Reference</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#N23D0A">Usage</a></span></dt><dt><span class="sect1"><a href="#N23D13">Commands</a></span></dt><dt><span class="sect1"><a href="#N23D76">Options</a></span></dt></dl></div>
 		
-		<div class="sect1" title="Usage"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N2229A"></a>Usage</h2></div></div></div>
+		<div class="sect1" title="Usage"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23D0A"></a>Usage</h2></div></div></div>
 			
 			<p>renv [-&lt;option&gt; ...] [&lt;command&gt;] [&lt;install unit&gt; ...]</p>
 		</div>
-		<div class="sect1" title="Commands"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N222A3"></a>Commands</h2></div></div></div>
+		<div class="sect1" title="Commands"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23D13"></a>Commands</h2></div></div></div>
 			
 			<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 					<p>
@@ -4852,7 +8314,7 @@ print RapidEnv version
 				</li></ul></div>
 		</div>
 
-		<div class="sect1" title="Options"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N22306"></a>Options</h2></div></div></div>
+		<div class="sect1" title="Options"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="N23D76"></a>Options</h2></div></div></div>
 			
 			<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 					<p>
